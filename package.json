@@ -23,7 +23,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "deploy": "CI=true yarn test && yarn build && aws s3 sync build/ s3://jamiebray-ui"
+    "deploy": "CI=true yarn test && yarn build && aws s3 sync build/ s3://jamiebray-ui",
+    "make": "plop"
   },
   "eslintConfig": {
     "extends": "react-app"
