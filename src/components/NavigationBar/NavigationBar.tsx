@@ -11,7 +11,7 @@ const NavigationBar: React.FC<{
         <div className={styles.title}>{title}</div>
         <div className={styles.links}>
           {links.map(({ label, href }) => (
-            <div className={styles.link}>
+            <div className={styles.link} key={href}>
               {label}
             </div>
           ))}
