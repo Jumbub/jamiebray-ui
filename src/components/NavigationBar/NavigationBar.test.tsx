@@ -1,20 +1,23 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import NavigationBar from './NavigationBar'
+import { shallow } from 'enzyme'
+
+const basicProps = {
+  title: 'Title here',
+  links: [
+    { label: 'These', href: '/these' },
+    { label: 'Are', href: '/are' },
+    { label: 'Navigation', href: '/navigation' },
+    { label: 'Links', href: '/links' },
+  ],
+}
 
 it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(
-    <NavigationBar
-      title="Title here"
-      links={[
-        { label: 'These', href: '/these' },
-        { label: 'Are', href: '/are' },
-        { label: 'Navigation', href: '/navigation' },
-        { label: 'Links', href: '/links' },
-      ]}
-    />,
-    div
-  )
-  ReactDOM.unmountComponentAtNode(div)
+  shallow(<NavigationBar {...basicProps} />)
+})
+
+it('rendered the copy', () => {
+  const copy = shallow(<NavigationBar {...basicProps} />).text()
+  expect(copy).toContain(basicProps.title)
+  basicProps.links.forEach(item => expect(copy).toContain(item.label))
 })
