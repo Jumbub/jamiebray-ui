@@ -8,7 +8,7 @@ module.exports = {
     "^.+\\.scss?$": "jest-css-modules-transform"
   },
   "setupFilesAfterEnv": [
-    "<rootDir>/src/setupTests.js"
+    "<rootDir>/configs/setupTests.js"
   ],
   "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
   "moduleFileExtensions": [
