@@ -1,5 +1,5 @@
 import React from 'react'
-import ContentCard from './ContentCard'
+import Card from './Card'
 import { shallow } from 'enzyme';
 
 const basicProps = {
@@ -8,7 +8,7 @@ const basicProps = {
 }
 
 it('rendered the copy', () => {
-  const copy = shallow(<ContentCard {...basicProps} />).text()
+  const copy = shallow(<Card {...basicProps} />).text()
   expect(copy).toContain(basicProps.title)
   expect(copy).toContain(basicProps.children)
 })

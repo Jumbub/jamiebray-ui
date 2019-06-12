@@ -1,13 +1,14 @@
 import React from 'react'
 import styles from './NavigationBar.module.scss'
+import Card from '../Card/Card'
 
 const NavigationBar: React.FC<{
   title: string
   links: { label: string; href: string }[]
 }> = ({ title, links }) => {
   return (
-    <div className={styles.outer}>
-      <div className={styles.inner}>
+    <Card className={styles.card}>
+      <div className={styles.container}>
         <div className={styles.title}>{title}</div>
         <div className={styles.links}>
           {links.map(({ label, href }) => (
@@ -17,7 +18,7 @@ const NavigationBar: React.FC<{
           ))}
         </div>
       </div>
-    </div>
+    </Card>
   )
 }
 
