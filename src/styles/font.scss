@@ -1,8 +1,10 @@
 // Font related partials and mixins
 
-$font-size: 24px;
+$font-size: 26px;
 
 $font-weight: 300;
+
+$font-line-height: 32px;
 
 $font-color: #222;
 $font-color-light: #a9a9a9;
@@ -17,6 +19,7 @@ $font-family-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', mono
   font-size: $font-size;
   font-weight: $font-weight;
   color: $font-color;
+  line-height: $font-line-height;
 }
 
 @mixin font-light {

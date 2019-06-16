@@ -1,0 +1,37 @@
+@import '../../styles/font';
+
+.horizontalSplit {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 24px 0;
+
+  .label {
+    @include font-light;
+    min-width: 140px;
+  }
+  
+  .descriptor {
+    @include font-regular;
+    font-style: italic;
+  }
+  
+  .descriptorSecondary {  
+    @include font-regular;
+  }
+}
+
+
+.face {
+  border-radius: 50%;
+  max-width: 350px;
+  padding: 16px;
+}
