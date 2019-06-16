@@ -1,0 +1,20 @@
+// Font related partials and mixins
+
+$font-size: 24px;
+$font-weight: 300;
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+@mixin font-regular {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+$font-family-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+@mixin font-code {
+  @include font-regular;
+  font-family: $font-family-code;
+}

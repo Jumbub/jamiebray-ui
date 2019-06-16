@@ -1,3 +1,5 @@
+@import '../../styles/font';
+
 .card {
   margin-top: 30px;
   width: 100%;
@@ -13,12 +15,10 @@
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-
-  font-size: 22px;
-  font-weight: 200;
 }
 
 .title {
+  @include font-regular;
   color: #a9a9a9;
 }
 
@@ -28,6 +28,7 @@
 }
 
 .link {
+  @include font-regular;
   display: flex;
   align-items: center;
   justify-content: center;

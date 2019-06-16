@@ -1,5 +1,8 @@
+@import '../../styles/font';
+
 .container {
   text-align: center;
+  @include font-regular;
 }
 
 .logo {
