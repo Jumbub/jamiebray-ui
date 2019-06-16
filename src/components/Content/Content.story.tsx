@@ -1,11 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import Content from './Content'
+import MockContent from '../../mocks/MockContent'
 
 storiesOf('Components', module).add('Content', () => (
   <Content title="Title">
-    Content
-    <br />
-    Goes here
+    <MockContent />
   </Content>
 ))
