@@ -18,8 +18,7 @@
 }
 
 .title {
-  @include font-regular;
-  color: #a9a9a9;
+  @include font-light;
 }
 
 .links {
@@ -38,7 +37,6 @@
   padding-left: 12px;
   padding-right: 12px;
   
-  color: rgb(53, 53, 53);
   cursor: pointer;
   text-decoration: none;
   

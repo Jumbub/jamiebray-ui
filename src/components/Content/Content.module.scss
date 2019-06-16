@@ -12,10 +12,9 @@
 }
 
 .title {
-  @include font-regular;
+  @include font-light;
   
   font-style: italic;
-  color: #a9a9a9;
   padding: 4px;
   text-align: left;
 }
