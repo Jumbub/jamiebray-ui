@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react'
-import ContentCardAbout from './ContentCardAbout'
+import ContentCardContact from './ContentCardContact'
 
 storiesOf('Components/Content Cards', module)
-  .add('About', () => <ContentCardAbout />)
+  .add('Contact', () => <ContentCardContact />)

@@ -1,0 +1,47 @@
+@import '../../styles/font.scss';
+@import '../../styles/animation.scss';
+
+.content {
+  p {
+    @include font-regular;
+  }
+  blockquote {
+    font-style: italic;
+    background: #f9f9f9;
+    border-left: 1px solid #ccc;
+    margin: 0;
+    margin-bottom: 22px;
+    padding: 16px;
+  }
+}
+
+.multipleCards {
+  display: flex;
+}
+
+.dataAndIcon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconCard {
+  background: black;
+  padding: 12px;
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+}
+
+.highlight {
+  animation: shadowPulse 1s infinite;
+}
+
+.icon {
+  background: black;
+  color: white;
+}
+
+.data {
+  @include font-regular;
+}
