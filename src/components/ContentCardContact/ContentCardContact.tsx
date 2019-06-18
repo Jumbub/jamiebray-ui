@@ -4,6 +4,7 @@ import Card from '../Card/Card'
 import Content from '../Content/Content'
 import { EMAIL } from '../../constants/personal'
 import { FaLinkedinIn, FaGithub, FaCopy } from 'react-icons/fa'
+import copy from 'copy-to-clipboard'
 
 const ContentCardContact: React.FC = () => {
   return (
@@ -27,7 +28,11 @@ const ContentCardContact: React.FC = () => {
           <blockquote className={styles.dataAndIcon}>
             <div className={styles.data}>{EMAIL}</div>
             <Card className={styles.iconCard}>
-              <FaCopy size={'24px'} className={styles.icon} />
+              <FaCopy
+                size={'24px'}
+                className={styles.icon}
+                onClick={() => copy(EMAIL)}
+              />
             </Card>
           </blockquote>
         </div>
