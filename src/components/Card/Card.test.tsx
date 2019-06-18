@@ -3,12 +3,10 @@ import Card from './Card'
 import { shallow } from 'enzyme';
 
 const basicProps = {
-  title: 'Title here',
   children: 'Content here',
 }
 
 it('rendered the copy', () => {
-  const copy = shallow(<Card {...basicProps} />).text()
-  expect(copy).toContain(basicProps.title)
+  const copy = shallow(<Card {...basicProps} />).html()
   expect(copy).toContain(basicProps.children)
 })

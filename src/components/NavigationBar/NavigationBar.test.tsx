@@ -17,7 +17,7 @@ it('renders without crashing', () => {
 })
 
 it('rendered the copy', () => {
-  const copy = shallow(<NavigationBar {...basicProps} />).text()
+  const copy = shallow(<NavigationBar {...basicProps} />).html()
   expect(copy).toContain(basicProps.title)
   basicProps.links.forEach(item => expect(copy).toContain(item.label))
 })
