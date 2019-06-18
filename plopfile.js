@@ -31,4 +31,21 @@ module.exports = plop => {
       },
     ],
   })
+  plop.setGenerator('style', {
+    description: 'Create a style',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is the name of the style?',
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'src/styles/{{name}}.scss',
+        templateFile: 'src/templates/Style.scss.tmpl',
+      },
+    ],
+  })
 }
