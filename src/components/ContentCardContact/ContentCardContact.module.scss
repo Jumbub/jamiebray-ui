@@ -1,5 +1,6 @@
 @import '../../styles/font.scss';
 @import '../../styles/animation.scss';
+@import '../../styles/interaction.scss';
 
 .content {
   p {
@@ -26,6 +27,8 @@
 }
 
 .iconCard {
+  @include clickable;
+
   background: black;
   padding: 12px;
   width: 24px;
