@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './ContentCardAbout.module.scss'
 import Card from '../Card/Card'
 import Content from '../Content/Content'
-import Logo from '../../assets/jamiebray-face.jpg'
+import Face from '../../assets/jamiebray-face.jpg'
 
 const ContentCardAbout: React.FC = () => {
   return (
@@ -38,7 +38,7 @@ const ContentCardAbout: React.FC = () => {
               </div>
             </div>
           </div>
-          <img src={Logo} alt="Jamie Bray" className={styles.face}/>
+          <img src={Face} alt="Jamie Bray" className={styles.face}/>
         </div>
       </Content>
     </Card>
