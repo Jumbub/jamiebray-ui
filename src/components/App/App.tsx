@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from '../../assets/logo.svg';
+import React from 'react'
 import styles from './App.module.scss'
+import NavigationBar from '../NavigationBar/NavigationBar'
+import ContentCardAbout from '../ContentCardAbout/ContentCardAbout'
+import ContentCardContact from '../ContentCardContact/ContentCardContact'
+import { FULL_NAME } from '../../constants/personal'
 
 const App: React.FC = () => {
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
-        <img src={logo} className={styles.logo} alt="logo" />
-        <p>
-          <code>Hello World</code>
-        </p>
-        <a
-          className={styles.link}
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.outer}>
+      <NavigationBar
+        title={FULL_NAME}
+        links={[
+          { label: 'About', href: '/about' },
+          // { label: 'Contact', href: '/contact' },
+        ]}
+      />
+      <div className={styles.inner}>
+        <ContentCardAbout />
+        {/* <ContentCardContact /> */}
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
