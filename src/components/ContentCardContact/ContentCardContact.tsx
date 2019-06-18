@@ -3,6 +3,7 @@ import styles from './ContentCardContact.module.scss'
 import Card from '../Card/Card'
 import Content from '../Content/Content'
 import { EMAIL } from '../../constants/personal'
+import { GITHUB, LINKEDIN } from '../../constants/social'
 import { FaLinkedinIn, FaGithub, FaCopy } from 'react-icons/fa'
 import copy from 'copy-to-clipboard'
 
@@ -13,14 +14,14 @@ const ContentCardContact: React.FC = () => {
         <div className={styles.content}>
           <p>Feel free to contact me through any form of social media!</p>
           <blockquote className={styles.multipleCards}>
-            <a href="https://www.linkedin.com/in/jamie-stuart-bray/">
+            <a href={LINKEDIN}>
               <Card className={`${styles.iconCard} ${styles.highlight}`}>
-                <FaLinkedinIn size={'24px'} className={styles.icon} />
+                <FaLinkedinIn className={styles.icon} />
               </Card>
             </a>
-            <a href="https://github.com/jumbub/">
+            <a href={GITHUB}>
               <Card className={styles.iconCard}>
-                <FaGithub size={'24px'} className={styles.icon} />
+                <FaGithub className={styles.icon} />
               </Card>
             </a>
           </blockquote>
@@ -28,11 +29,7 @@ const ContentCardContact: React.FC = () => {
           <blockquote className={styles.dataAndIcon}>
             <div className={styles.data}>{EMAIL}</div>
             <Card className={styles.iconCard}>
-              <FaCopy
-                size={'24px'}
-                className={styles.icon}
-                onClick={() => copy(EMAIL)}
-              />
+              <FaCopy className={styles.icon} onClick={() => copy(EMAIL)} />
             </Card>
           </blockquote>
         </div>
