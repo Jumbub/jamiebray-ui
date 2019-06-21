@@ -21,16 +21,26 @@
   }
 }
 
+@keyframes swipe
+{
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 .fadeEnter {
-  animation: fade 500ms;
-  animation-direction: reverse;
+  opacity: 0;
   transform: translate(100%);
 }
 
 .fadeEnterActive {
+  opacity: 1;
   transform: translate(0%);
-  transition: opacity 500ms ease-in;
-  transition: transform 300ms ease-out;
+  transition: opacity 400ms, transform 300ms;
+  transition-timing-function: ease-out;
 }
 
 .fadeExit {
