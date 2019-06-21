@@ -1,6 +1,7 @@
 import React from 'react'
 import NavigationBar from './NavigationBar'
 import { shallow } from 'enzyme'
+import { BrowserRouter } from 'react-router-dom';
 
 const basicProps = {
   title: 'Title here',
@@ -12,12 +13,18 @@ const basicProps = {
   ],
 }
 
+const createNavigationBar = () => (
+  <BrowserRouter>
+    <NavigationBar {...basicProps} />
+  </BrowserRouter>
+)
+
 it('renders without crashing', () => {
-  shallow(<NavigationBar {...basicProps} />)
+  shallow(createNavigationBar())
 })
 
 it('rendered the copy', () => {
-  const copy = shallow(<NavigationBar {...basicProps} />).html()
+  const copy = shallow(createNavigationBar()).html()
   expect(copy).toContain(basicProps.title)
   basicProps.links.forEach(item => expect(copy).toContain(item.label))
 })
