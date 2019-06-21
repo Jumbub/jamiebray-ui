@@ -10,3 +10,33 @@
     box-shadow: 0 0 0 12px rgba(0, 0, 0, 0);
   }
 }
+
+@keyframes fade
+{
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeEnter {
+  animation: fade 500ms;
+  animation-direction: reverse;
+  transform: translate(100%);
+}
+
+.fadeEnterActive {
+  transform: translate(0%);
+  transition: opacity 500ms ease-in;
+  transition: transform 300ms ease-out;
+}
+
+.fadeExit {
+  display: none;
+}
+
+.fadeExitActive {
+  display: none;
+}
