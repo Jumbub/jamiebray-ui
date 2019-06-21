@@ -4,7 +4,8 @@ import NavigationBar from '../NavigationBar/NavigationBar'
 import ContentCardAbout from '../ContentCardAbout/ContentCardAbout'
 import { FULL_NAME } from '../../constants/personal'
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
-import ContentCardContact from '../ContentCardContact/ContentCardContact';
+import ContentCardContact from '../ContentCardContact/ContentCardContact'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 const App: React.FC = () => {
   return (
@@ -18,11 +19,28 @@ const App: React.FC = () => {
           ]}
         />
         <div className={styles.inner}>
-          <Switch>
-            <Route path="/about" component={ContentCardAbout}/>
-            <Route path="/contact" component={ContentCardContact}/>
-            <Route component={ContentCardAbout} />
-          </Switch>
+          <Route
+            render={({ location }) => (
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  timeout={500}
+                  classNames={{
+                    enter: styles.fadeEnter,
+                    enterActive: styles.fadeEnterActive,
+                    exit: styles.fadeExit,
+                    exitActive: styles.fadeExitActive,
+                  }}
+                >
+                  <Switch location={location}>
+                    <Route path="/about" component={ContentCardAbout}/>
+                    <Route path="/contact" component={ContentCardContact} />
+                    <Route component={ContentCardAbout} />
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            )}
+          />
         </div>
       </BrowserRouter>
     </div>
