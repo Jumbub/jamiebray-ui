@@ -6,10 +6,9 @@ const Card: React.FC<{
   inverted?: boolean
   className?: string
 }> = ({ children, className = '', inverted }) => {
+  const outerModifier = (inverted && styles.inverted) || ''
   return (
-    <div
-      className={`${styles.outer} ${inverted && styles.inverted || ''} ${className}`}
-    >
+    <div className={`${styles.outer} ${outerModifier} ${className}`}>
       {children}
     </div>
   )
