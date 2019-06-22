@@ -1,0 +1,29 @@
+@import '../../styles/font.scss';
+@import '../../styles/interaction.scss';
+
+.textAndAction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    @include font-regular;
+  }
+}
+
+.iconCard {
+  @include clickable;
+
+  background: black;
+  padding: 12px;
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+}
+
+.icon {
+  background: black;
+  color: white;
+  width: 24px;
+  height: 24px;
+}
