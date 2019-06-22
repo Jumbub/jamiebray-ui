@@ -31,7 +31,6 @@ const App: React.FC = () => {
                     enter: styles.fadeEnter,
                     enterActive: styles.fadeEnterActive,
                     exit: styles.fadeExit,
-                    exitActive: styles.fadeExitActive,
                   }}
                 >
                   <Switch location={location}>
