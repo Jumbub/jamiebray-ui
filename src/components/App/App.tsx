@@ -6,6 +6,7 @@ import { FULL_NAME } from '../../constants/personal'
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import ContentCardContact from '../ContentCardContact/ContentCardContact'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import ContentCardResume from '../ContentCardResume/ContentCardResume';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           links={[
             { label: 'About', href: '/about' },
             { label: 'Contact', href: '/contact' },
+            { label: 'Resume', href: '/resume' },
           ]}
         />
         <div className={styles.inner}>
@@ -35,6 +37,7 @@ const App: React.FC = () => {
                   <Switch location={location}>
                     <Route path="/about" component={ContentCardAbout}/>
                     <Route path="/contact" component={ContentCardContact} />
+                    <Route path="/resume" component={ContentCardResume} />
                     <Route component={ContentCardAbout} />
                   </Switch>
                 </CSSTransition>
