@@ -16,8 +16,8 @@ const App: React.FC = () => {
           title={FULL_NAME}
           links={[
             { label: 'About', href: '/about' },
-            { label: 'Contact', href: '/contact' },
             { label: 'Resume', href: '/resume' },
+            { label: 'Contact', href: '/contact' },
           ]}
         />
         <div className={styles.inner}>
