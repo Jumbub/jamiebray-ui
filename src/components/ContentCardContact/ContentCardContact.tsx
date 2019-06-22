@@ -14,12 +14,12 @@ const ContentCardContact: React.FC = () => {
         <div className={styles.content}>
           <p>Feel free to contact me through any form of social media!</p>
           <blockquote className={styles.multipleCards}>
-            <a href={LINKEDIN}>
+            <a href={LINKEDIN} title="My LinkedIn profile">
               <Card className={`${styles.iconCard} ${styles.highlight}`}>
                 <FaLinkedinIn className={styles.icon} />
               </Card>
             </a>
-            <a href={GITHUB}>
+            <a href={GITHUB} title="My LinkedIn profile">
               <Card className={styles.iconCard}>
                 <FaGithub className={styles.icon} />
               </Card>
