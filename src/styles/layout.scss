@@ -1,6 +1,11 @@
+@function createCardShadow($inset: false, $blur: 0, $opacity: 1) {
+  $option1: if($inset, inset, null);
+  @return
+    $option1 0 4px 5px $blur rgba(0, 0, 0, 0.14 * $opacity),
+    $option1 0 1px 10px $blur rgba(0, 0, 0, 0.12 * $opacity),
+    $option1 0 2px 4px $blur rgba(0, 0, 0, 0.3 * $opacity);
+}
+
+$card-shadow: createCardShadow();
+$card-shadow-inset: createCardShadow(true);
 $content-card-max-width: 900px;
-$card-shadow-1: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
-$card-shadow-2: 0 1px 10px 0 rgba(0, 0, 0, 0.12);
-$card-shadow-3: 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-$card-shadow: $card-shadow-1, $card-shadow-2, $card-shadow-3;
-$card-shadow-inset: inset $card-shadow-1, inset $card-shadow-2, inset $card-shadow-3;
