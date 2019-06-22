@@ -17,7 +17,7 @@ const ContentCardResume: React.FC = () => {
             </Card>
           </a>
         </div>
-        <Card className={styles.documentWrapper}>
+        <Card className={styles.documentWrapper} inverted>
           <iframe
             src="https://docs.google.com/document/d/e/2PACX-1vSRoB7vomuVYqdlVbF49GwDtgjuCXpytklI8upjOQ5-CTcZfLutDBeUs7ZtnLsM60ySe-nbupFz1UPK/pub?embedded=true"
             className={styles.document}
