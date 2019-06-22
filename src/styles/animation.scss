@@ -1,12 +1,18 @@
+@import './layout.scss';
+
 @keyframes shadowPulse {
   0% {
-    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.6);
+    box-shadow: createCardShadow(), createCardShadow(false, 0, 0);
   }
-  50% {
-    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5);
+  30% {
+    box-shadow: createCardShadow(false, 12px, 0), createCardShadow();
   }
-  100% {
-    box-shadow: 0 0 0 12px rgba(0, 0, 0, 0);
+  31% {
+    box-shadow: createCardShadow(false, 0, 0), createCardShadow();
+  }
+  // Delay
+  32%, 100% {
+    box-shadow: createCardShadow(), createCardShadow(false, 0, 0);
   }
 }
 
