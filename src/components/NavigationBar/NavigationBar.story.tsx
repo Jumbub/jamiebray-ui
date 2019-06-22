@@ -2,10 +2,9 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import NavigationBar from './NavigationBar'
 import { BrowserRouter } from 'react-router-dom'
-import { withKnobs, text, array } from '@storybook/addon-knobs'
+import { text, array } from '@storybook/addon-knobs'
 
 storiesOf('Components', module)
-  .addDecorator(withKnobs)
   .add('Navigation Bar', () => (
     <BrowserRouter>
       <NavigationBar
