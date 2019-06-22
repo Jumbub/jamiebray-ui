@@ -1,22 +1,23 @@
 import React from 'react'
 import styles from './MockContent.module.scss'
 import { LoremIpsum } from 'lorem-ipsum'
+import { text } from '@storybook/addon-knobs';
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
-    max: 6,
-    min: 3,
+    max: 5,
+    min: 2,
   },
   wordsPerSentence: {
-    max: 8,
-    min: 4,
+    max: 7,
+    min: 3,
   },
 })
 
 const Content: React.FC = () => {
   return (
     <div className={styles.container}>
-      Orange content is mock data. {lorem.generateParagraphs(7)}
+      {text('content', `Orange content is mock data. ${lorem.generateParagraphs(7)}`)}
     </div>
   )
 }
