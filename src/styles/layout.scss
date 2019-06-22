@@ -1,1 +1,6 @@
 $content-card-max-width: 900px;
+$card-shadow-1: 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+$card-shadow-2: 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+$card-shadow-3: 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+$card-shadow: $card-shadow-1, $card-shadow-2, $card-shadow-3;
+$card-shadow-inset: inset $card-shadow-1, inset $card-shadow-2, inset $card-shadow-3;

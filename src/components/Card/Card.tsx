@@ -2,11 +2,14 @@ import React from 'react'
 import styles from './Card.module.scss'
 
 const Card: React.FC<{
-  children: React.ReactNode,
-  className?: string,
-}> = ({ children, className='' }) => {
+  children: React.ReactNode
+  inverted?: boolean
+  className?: string
+}> = ({ children, className = '', inverted }) => {
   return (
-    <div className={`${styles.outer} ${className}`}>
+    <div
+      className={`${styles.outer} ${inverted && styles.inverted || ''} ${className}`}
+    >
       {children}
     </div>
   )
