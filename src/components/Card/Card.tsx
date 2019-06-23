@@ -5,7 +5,7 @@ const Card: React.FC<{
   children: React.ReactNode
   inverted?: boolean
   className?: string
-  onClick?: () => void
+  onClick?: (e?: any) => void
 }> = ({ children, className = '', inverted, onClick = () => { } }) => {
   const outerModifier = (inverted && styles.inverted) || ''
   return (
