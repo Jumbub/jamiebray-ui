@@ -12,7 +12,7 @@ const NavigationBar: React.FC<{
   const isMobile = useIsMobile()
   const [showDrawer, setShowDrawer] = useState(false)
   return (
-    <Card className={styles.card}>
+    <div className={styles.card}>
       <div className={styles.container}>
         <div className={styles.title}>{title}</div>
         <div className={styles.links}>
@@ -46,7 +46,7 @@ const NavigationBar: React.FC<{
           )}
         </div>
       </div>
-    </Card>
+    </div>
   )
 }
 
