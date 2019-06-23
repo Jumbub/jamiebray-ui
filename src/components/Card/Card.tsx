@@ -5,10 +5,11 @@ const Card: React.FC<{
   children: React.ReactNode
   inverted?: boolean
   className?: string
-}> = ({ children, className = '', inverted }) => {
+  onClick?: () => void
+}> = ({ children, className = '', inverted, onClick = () => { } }) => {
   const outerModifier = (inverted && styles.inverted) || ''
   return (
-    <div className={`${styles.outer} ${outerModifier} ${className}`}>
+    <div className={`${styles.outer} ${outerModifier} ${className}`} onClick={onClick}>
       {children}
     </div>
   )
