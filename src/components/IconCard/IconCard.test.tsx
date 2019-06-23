@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme';
-import Icon from './Icon'
+import IconCard from './IconCard'
 
 it('renders without crashing', () => {
-  shallow(<Icon />)
+  shallow(<IconCard />)
 })

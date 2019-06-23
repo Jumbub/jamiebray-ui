@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
-import styles from './Icon.module.scss'
+import styles from './IconCard.module.scss'
 import Card from '../Card/Card'
 
-const Icon: React.FC<{
+const IconCard: React.FC<{
   onClick?: () => void
   highlight?: boolean
   render: (className: string) => ReactNode
@@ -18,4 +18,4 @@ const Icon: React.FC<{
   )
 }
 
-export default Icon
+export default IconCard
