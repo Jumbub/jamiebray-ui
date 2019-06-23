@@ -22,6 +22,7 @@ const NavigationBar: React.FC<{
                 <LightBox onClose={() => setShowDrawer(false)}>
                   {links.map(({ label, href }) =>
                     <NavigationBarLink
+                      key={href}
                       label={label}
                       href={href}
                       className={`${styles.link} ${styles.mobileLink}`}
@@ -38,6 +39,7 @@ const NavigationBar: React.FC<{
           ) : (
             links.map(({ label, href }) =>
               <NavigationBarLink
+                key={href}
                 label={label}
                 href={href}
                 className={`${styles.link}`}

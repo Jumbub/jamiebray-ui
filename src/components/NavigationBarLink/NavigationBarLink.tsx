@@ -1,6 +1,5 @@
 import React from 'react'
-import styles from './NavigationBarLink.module.scss'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Card from '../Card/Card'
 import useReactRouter from 'use-react-router'
 
