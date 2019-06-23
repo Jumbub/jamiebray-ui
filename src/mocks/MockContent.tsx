@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './MockContent.module.scss'
 import { LoremIpsum } from 'lorem-ipsum'
-import { text } from '@storybook/addon-knobs';
+import { text } from '@storybook/addon-knobs'
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
