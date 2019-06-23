@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import styles from './NavigationBar.module.scss'
-import Card from '../Card/Card'
-import { Link } from 'react-router-dom'
 import useIsMobile from '../../hooks/useIsMobile'
 import { FaGripLines } from 'react-icons/fa'
 import LightBox from '../LightBox/LightBox'
+import NavigationBarLink from '../NavigationBarLink/NavigationBarLink';
 
 const NavigationBar: React.FC<{
   title: string
@@ -21,11 +20,14 @@ const NavigationBar: React.FC<{
             <>
               {showDrawer && (
                 <LightBox onClose={() => setShowDrawer(false)}>
-                  {links.map(({ label, href }) => (
-                    <Link onClick={() => setShowDrawer(false)} to={href} key={href} className={`${styles.link} ${styles.mobileLink}`}>
-                      {label}
-                    </Link>
-                  ))}
+                  {links.map(({ label, href }) =>
+                    <NavigationBarLink
+                      label={label}
+                      href={href}
+                      className={`${styles.link} ${styles.mobileLink}`}
+                      onClick={() => setShowDrawer(false)}
+                    />
+                  )}
                 </LightBox>
               )}
               <FaGripLines
@@ -34,11 +36,13 @@ const NavigationBar: React.FC<{
               />
             </>
           ) : (
-            links.map(({ label, href }) => (
-              <Link to={href} key={href} className={styles.link}>
-                {label}
-              </Link>
-            ))
+            links.map(({ label, href }) =>
+              <NavigationBarLink
+                label={label}
+                href={href}
+                className={`${styles.link}`}
+              />
+            )
           )}
         </div>
       </div>
