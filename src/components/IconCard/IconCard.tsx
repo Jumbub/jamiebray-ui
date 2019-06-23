@@ -7,12 +7,9 @@ const IconCard: React.FC<{
   highlight?: boolean
   render: (className: string) => ReactNode
 }> = ({ onClick, highlight, render }) => {
-  const highlightClass = highlight && styles.highlight || ''
+  const highlightClass = (highlight && styles.highlight) || ''
   return (
-    <Card
-      className={`${styles.iconCard} ${highlightClass}`}
-      onClick={onClick}
-    >
+    <Card className={`${styles.iconCard} ${highlightClass}`} onClick={onClick}>
       {render(styles.icon)}
     </Card>
   )
