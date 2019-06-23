@@ -14,10 +14,13 @@ const lorem = new LoremIpsum({
   },
 })
 
-const Content: React.FC = () => {
+const Content: React.FC<{ label?: string }> = ({ label }) => {
   return (
     <div className={styles.container}>
-      {text('content', `Orange content is mock data. ${lorem.generateParagraphs(7)}`)}
+      {text(
+        label || 'content',
+        `Orange content is mock data. ${lorem.generateParagraphs(7)}`
+      )}
     </div>
   )
 }
