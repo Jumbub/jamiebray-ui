@@ -4,7 +4,7 @@ import Card from '../Card/Card'
 import { Link } from 'react-router-dom'
 import useIsMobile from '../../hooks/useIsMobile'
 import { FaGripLines } from 'react-icons/fa'
-import LightBox from '../LightBox/LightBox';
+import LightBox from '../LightBox/LightBox'
 
 const NavigationBar: React.FC<{
   title: string
@@ -19,8 +19,19 @@ const NavigationBar: React.FC<{
         <div className={styles.links}>
           {isMobile ? (
             <>
-              {showDrawer && <LightBox onClose={() => setShowDrawer(false)}>hello world</LightBox>}
-              <FaGripLines className={`${styles.link} ${styles.skinnyLink}`} onClick={() => setShowDrawer(true)}/>
+              {showDrawer && (
+                <LightBox onClose={() => setShowDrawer(false)}>
+                  {links.map(({ label, href }) => (
+                    <Link onClick={() => setShowDrawer(false)} to={href} key={href} className={`${styles.link} ${styles.mobileLink}`}>
+                      {label}
+                    </Link>
+                  ))}
+                </LightBox>
+              )}
+              <FaGripLines
+                className={`${styles.link} ${styles.skinnyLink}`}
+                onClick={() => setShowDrawer(true)}
+              />
             </>
           ) : (
             links.map(({ label, href }) => (
