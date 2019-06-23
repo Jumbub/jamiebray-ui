@@ -6,6 +6,7 @@ import { EMAIL } from '../../constants/personal'
 import { GITHUB, LINKEDIN } from '../../constants/social'
 import { FaLinkedinIn, FaGithub, FaCopy } from 'react-icons/fa'
 import copy from 'copy-to-clipboard'
+import IconCard from '../IconCard/IconCard'
 
 const ContentCardContact: React.FC = () => {
   return (
@@ -15,22 +16,22 @@ const ContentCardContact: React.FC = () => {
           <p>Feel free to contact me through any form of social media!</p>
           <blockquote className={styles.multipleCards}>
             <a href={LINKEDIN} title="My LinkedIn profile">
-              <Card className={`${styles.iconCard} ${styles.highlight}`}>
-                <FaLinkedinIn className={styles.icon} />
-              </Card>
+              <IconCard
+                highlight
+                render={className => <FaLinkedinIn className={className} />}
+              />
             </a>
             <a href={GITHUB} title="My LinkedIn profile">
-              <Card className={styles.iconCard}>
-                <FaGithub className={styles.icon} />
-              </Card>
+              <IconCard render={className => <FaGithub className={className} />} />
             </a>
           </blockquote>
           <p>Or shoot me an email directly at...</p>
           <blockquote className={styles.dataAndIcon}>
             <div className={styles.data}>{EMAIL}</div>
-            <Card className={styles.iconCard}>
-              <FaCopy className={styles.icon} onClick={() => copy(EMAIL)} />
-            </Card>
+            <IconCard
+              onClick={() => copy(EMAIL)}
+              render={className => <FaCopy className={className} />}
+            />
           </blockquote>
         </div>
       </Content>

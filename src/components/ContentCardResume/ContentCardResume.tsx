@@ -4,6 +4,7 @@ import Card from '../Card/Card'
 import Content from '../Content/Content'
 import { FaDownload } from 'react-icons/fa'
 import { RESUME_PDF_DOWNLOAD } from '../../constants/personal'
+import IconCard from '../IconCard/IconCard'
 
 const ContentCardResume: React.FC = () => {
   return (
@@ -12,9 +13,9 @@ const ContentCardResume: React.FC = () => {
         <div className={styles.textAndAction}>
           <p>You can view my resume here, or download it!</p>
           <a href={RESUME_PDF_DOWNLOAD} title="Download Resume PDF">
-            <Card className={styles.iconCard}>
-              <FaDownload className={styles.icon} />
-            </Card>
+            <IconCard
+              render={className => <FaDownload className={className} />}
+            />
           </a>
         </div>
         <Card className={styles.documentWrapper} inverted>

@@ -11,23 +11,6 @@
   }
 }
 
-.iconCard {
-  @include clickable;
-
-  background: black;
-  padding: 12px;
-  width: 24px;
-  height: 24px;
-  margin-right: 24px;
-}
-
-.icon {
-  background: black;
-  color: white;
-  width: 24px;
-  height: 24px;
-}
-
 .documentWrapper {
   max-width: 830px;
   padding: 10px;
