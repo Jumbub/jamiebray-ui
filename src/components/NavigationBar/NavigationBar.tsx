@@ -32,7 +32,7 @@ const NavigationBar: React.FC<{
                 </LightBox>
               )}
               <FaGripLines
-                className={`${styles.link} ${styles.skinnyLink}`}
+                className={`${styles.link} ${styles.dropDownLink} ${styles.skinnyLink}`}
                 onClick={() => setShowDrawer(true)}
               />
             </>
