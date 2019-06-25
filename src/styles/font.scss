@@ -1,8 +1,4 @@
-// Font related partials and mixins
-
-$font-size: 24px;
-
-$font-line-height: 1.5;
+@import './layout.scss';
 
 $font-color: #222;
 $font-color-light: #949494;
@@ -11,13 +7,23 @@ $font-color-light: #949494;
 $font-family: 'Roboto', sans-serif;
 $font-family-code: 'Roboto Mono', monospace;
 
+
 @mixin font-regular {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-family: $font-family;
-  font-size: $font-size;
   color: $font-color;
-  line-height: $font-line-height;
+  line-height: 1.5;
+
+  @include breakpoint(small) {
+    font-size: 18px;
+  }
+  @include breakpoint(medium) {
+    font-size: 20px;
+  }
+  @include breakpoint(large) {
+    font-size: 22px;
+  }
 }
 
 @mixin font-light {
