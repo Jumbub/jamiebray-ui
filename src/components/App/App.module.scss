@@ -12,7 +12,12 @@
 .inner {
   perspective: 1000;
   -webkit-perspective: 1000;
-  margin-top: 32px;
+
   width: 100%;
   max-width: $content-card-max-width;
+
+  margin-top: 32px;
+  @include breakpoint(small) {
+    margin-top: 8px;
+  }
 }

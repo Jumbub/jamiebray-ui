@@ -2,8 +2,12 @@
 @import '../../styles/layout';
 
 .card {
-  margin-top: 16px;
   width: 100%;
+
+  margin-top: 16px;
+  @include breakpoint(small) {
+    margin-top: 0;
+  }
 }
 
 .container {
