@@ -1,6 +1,8 @@
 # Jamie Bray UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The code is deployed live on [jamiebray.me](https://jamiebray.me/)
+
+Also check out the live [storybook](https://d1iilxp4gd5ftk.cloudfront.net/)
 
 ## Available Scripts
 
@@ -11,7 +13,7 @@ In the project directory, you can run:
 Runs the app in the component level development environment.<br>
 Open [http://localhost:9009](http://localhost:9009) to view it in the browser.
 
-To preview the currently deployed storybook visit - [Live Storybook](http://d1iilxp4gd5ftk.cloudfront.net/)
+To preview the currently deployed storybook visit - [Live Storybook](https://d1iilxp4gd5ftk.cloudfront.net/)
 
 ### `yarn start`
 
