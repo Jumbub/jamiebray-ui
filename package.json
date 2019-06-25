@@ -28,8 +28,9 @@
     "test": "jest",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
-    "deploy": "CI=true yarn test && yarn build && aws s3 sync build/ s3://jamiebray-ui --delete",
+    "storybook-build": "build-storybook -s public -o build-storybook",
+    "deploy": "CI=true yarn test && yarn build && aws s3 sync build/ s3://jamiebray-ui --delete && deploy-storybook",
+    "deploy-storybook": "yarn storybook-build && aws s3 sync build-storybook/ s3://jamiebray-ui-storybook --delete",
     "make": "plop"
   },
   "eslintConfig": {
