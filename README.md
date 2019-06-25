@@ -11,6 +11,8 @@ In the project directory, you can run:
 Runs the app in the component level development environment.<br>
 Open [http://localhost:9009](http://localhost:9009) to view it in the browser.
 
+To preview the currently deployed storybook visit - [Live Storybook](http://d1iilxp4gd5ftk.cloudfront.net/)
+
 ### `yarn start`
 
 Runs the app in the development mode.<br>
