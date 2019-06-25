@@ -1,3 +1,26 @@
+// Breakpoints
+
+$small-max: 499px;
+$medium-max: 799px;
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == small {
+    @media screen and (max-width: $small-max) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media screen and (min-width: $small-max + 1) and (max-width: $medium-max) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media screen and (min-width: $medium-max + 1) {
+      @content;
+    }
+  }
+}
+
+// Cards
+
 @function createCardShadow($inset: false, $blur: 0, $opacity: 1) {
   $option1: if($inset, inset, null);
   @return
