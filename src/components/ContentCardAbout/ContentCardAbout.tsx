@@ -38,7 +38,9 @@ const ContentCardAbout: React.FC = () => {
               </div>
             </div>
           </div>
-          <img src={Face} alt="Jamie Bray" className={styles.face}/>
+          <div>
+            <img src={Face} alt="Jamie Bray" className={styles.face}/>
+          </div>
         </div>
       </Content>
     </Card>
