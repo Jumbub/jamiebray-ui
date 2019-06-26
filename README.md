@@ -1,35 +1,59 @@
-# Jamie Bray UI
+# [Jamie Bray UI][Live SIte]
 
-The code is deployed live on [jamiebray.me](https://jamiebray.me/)
+This project is my personal website.<br>
+It is developed primarily with [React][React], [TypeScript][TypeScript], and [Storybook][Storybook]!
 
-Also check out the live [storybook](https://d1iilxp4gd5ftk.cloudfront.net/)
+Visit the [site][Live Site].
 
-## Available Scripts
+View the [storybook][Live Storybook].
 
-In the project directory, you can run:
+## Setup
 
-### `yarn storybook`
+### Required Software
 
-Runs the app in the component level development environment.<br>
-Open [http://localhost:9009](http://localhost:9009) to view it in the browser.
+- [Yarn][Yarn]
+- [AWS CLI][AWS CLI Install] (only required for deployment)
 
-To preview the currently deployed storybook visit - [Live Storybook](https://d1iilxp4gd5ftk.cloudfront.net/)
+### Installing Dependencies
 
-### `yarn start`
+`yarn`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This command will download the required dependencies for the project.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Development
 
-### `yarn test`
+### Viewing Locally
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`yarn start`
 
-### `yarn deploy`
+This command will build and serve a local copy of the website.
 
-Runs the tests, builds the app, and uploads the build files to AWS S3.<br>
-See the section about [downloading awscli](https://docs.aws.amazon.com/cli/latest/userguide/install-bundle.html)
-and [configuring awscli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) for more information.
+### Developing Components
+
+`yarn storybook`
+
+This command runs [Storybook][Storybook], the tool used for isolated component development.
+
+### Running Tests
+
+`yarn test`
+
+This command aliases [jest][Jest], the tool used for testing component behaviourss.
+
+### Deploying Changes
+
+`yarn deploy`
+
+This command will run the tests; build the app; and upload the new build to AWS S3.<br>
+(This command requires the AWS CLI tool to be [installed][AWS CLI Install] and [configured][AWS CLI Configure] correctly.)
+
+
+[Yarn]: https://yarnpkg.com/en/docs/install
+[Live Site]: https://jamiebray.me/
+[Live Storybook]: https://jamiebray.me/
+[TypeScript]: https://www.typescriptlang.org/
+[React]: https://reactjs.org/
+[Jest]: https://jestjs.io/
+[Storybook]: https://storybook.js.org/
+[AWS CLI Install]: https://docs.aws.amazon.com/cli/latest/userguide/
+[AWS CLI Configure]: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
