@@ -50,7 +50,7 @@ This command will run the tests; build the app; and upload the new build to AWS 
 
 [Yarn]: https://yarnpkg.com/en/docs/install
 [Live Site]: https://jamiebray.me/
-[Live Storybook]: https://jamiebray.me/
+[Live Storybook]: https://storybook.jamiebray.me/
 [TypeScript]: https://www.typescriptlang.org/
 [React]: https://reactjs.org/
 [Jest]: https://jestjs.io/
