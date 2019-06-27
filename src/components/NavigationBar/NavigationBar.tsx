@@ -25,7 +25,7 @@ const NavigationBar: React.FC<{
                       key={href}
                       label={label}
                       href={href}
-                      className={`${styles.link} ${styles.mobileLink}`}
+                      className={styles.mobileLink}
                       onClick={() => setShowDrawer(false)}
                     />
                   )}
@@ -42,7 +42,6 @@ const NavigationBar: React.FC<{
                 key={href}
                 label={label}
                 href={href}
-                className={`${styles.link}`}
               />
             )
           )}

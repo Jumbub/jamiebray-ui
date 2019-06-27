@@ -11,6 +11,7 @@ it('renders without crashing', () => {
         label="About"
         href="/about"
         className="cssClassGoesHere"
+        onClick={() => { }}
       />
     </BrowserRouter>
   )

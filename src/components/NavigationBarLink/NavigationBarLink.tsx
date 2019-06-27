@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../Card/Card'
+import styles from './NavigationBarLink.module.scss'
 import useReactRouter from 'use-react-router'
 
 const NavigationBarLink: React.FC<{
   label: string
   href: string
-  className: string
+  className?: string
   onClick?: () => void
 }> = ({ label, href, className, onClick }) => {
   const { location } = useReactRouter();
@@ -16,7 +17,7 @@ const NavigationBarLink: React.FC<{
       onClick={() => (onClick && onClick()) || {}}
       to={href}
       key={href}
-      className={className}
+      className={`${styles.link} ${className}`}
     >
       {label}
     </Link>
