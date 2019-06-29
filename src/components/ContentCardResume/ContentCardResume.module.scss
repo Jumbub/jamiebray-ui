@@ -1,5 +1,6 @@
 @import '../../styles/font.scss';
 @import '../../styles/interaction.scss';
+@import '../../styles/layout.scss';
 
 .textAndAction {
   display: flex;
@@ -17,9 +18,21 @@
   margin-bottom: 16px;
 }
 
+.documentCropper {
+  overflow: hidden;
+}
+
 .document {
-  width: 100%;
-  max-width: 900px;
-  height: 1200px;
   border: none;
+  height: 1170px;
+  margin: -5%;
+  max-width: 900px;
+  width: 130%;
+
+  @include breakpoint(medium) {
+    margin: -10%;
+    max-width: 900px;
+    width: 125%;
+    height: 1300px;
+  }
 }

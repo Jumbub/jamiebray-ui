@@ -19,11 +19,13 @@ const ContentCardResume: React.FC = () => {
           </a>
         </div>
         <Card className={styles.documentWrapper} inverted>
-          <iframe
-            title="Jamie Bray's Resume"
-            src="https://docs.google.com/document/d/e/2PACX-1vSRoB7vomuVYqdlVbF49GwDtgjuCXpytklI8upjOQ5-CTcZfLutDBeUs7ZtnLsM60ySe-nbupFz1UPK/pub?embedded=true"
-            className={styles.document}
-          />
+          <div className={styles.documentCropper}>
+            <iframe
+              title="Jamie Bray's Resume"
+              src="https://docs.google.com/document/d/e/2PACX-1vSRoB7vomuVYqdlVbF49GwDtgjuCXpytklI8upjOQ5-CTcZfLutDBeUs7ZtnLsM60ySe-nbupFz1UPK/pub?embedded=true"
+              className={styles.document}
+            />
+          </div>
         </Card>
       </Content>
     </Card>
