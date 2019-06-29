@@ -20,4 +20,8 @@
   &:hover {
     box-shadow: $card-shadow
   }
+
+  &.disabled {
+    pointer-events: none;
+  }
 }
