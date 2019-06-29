@@ -3,7 +3,7 @@ import styles from './App.module.scss'
 import NavigationBar from '../NavigationBar/NavigationBar'
 import ContentCardAbout from '../ContentCardAbout/ContentCardAbout'
 import { FULL_NAME } from '../../constants/personal'
-import { Route, BrowserRouter, Switch } from 'react-router-dom'
+import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom'
 import ContentCardContact from '../ContentCardContact/ContentCardContact'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import ContentCardResume from '../ContentCardResume/ContentCardResume';
@@ -37,7 +37,7 @@ const App: React.FC = () => {
                     <Route path="/about" component={ContentCardAbout}/>
                     <Route path="/contact" component={ContentCardContact} />
                     <Route path="/resume" component={ContentCardResume} />
-                    <Route component={ContentCardAbout} />
+                    <Redirect to="/about" />
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>
