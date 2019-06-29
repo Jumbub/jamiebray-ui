@@ -29,6 +29,7 @@ module.exports = {
     }
   },
   "collectCoverageFrom": [
-    "src/**/*.{ts,tsx}"
+    "!src/components/**/*story.{ts,tsx}",
+    "src/{components,constants,hooks,utils}/**/*{ts,tsx}",
   ],
 }
