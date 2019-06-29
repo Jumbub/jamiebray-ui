@@ -6,7 +6,7 @@ import { FULL_NAME } from '../../constants/personal'
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom'
 import ContentCardContact from '../ContentCardContact/ContentCardContact'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import ContentCardResume from '../ContentCardResume/ContentCardResume';
+import ContentCardResume from '../ContentCardResume/ContentCardResume'
 
 const App: React.FC = () => {
   return (
@@ -26,15 +26,14 @@ const App: React.FC = () => {
               <TransitionGroup>
                 <CSSTransition
                   key={location.key}
-                  timeout={500}
+                  timeout={600}
                   classNames={{
-                    enter: styles.fadeEnter,
                     enterActive: styles.fadeEnterActive,
-                    exit: styles.fadeExit,
+                    exitActive: styles.fadeExitActive,
                   }}
                 >
                   <Switch location={location}>
-                    <Route path="/about" component={ContentCardAbout}/>
+                    <Route path="/about" component={ContentCardAbout} />
                     <Route path="/contact" component={ContentCardContact} />
                     <Route path="/resume" component={ContentCardResume} />
                     <Redirect to="/about" />
