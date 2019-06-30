@@ -1,4 +1,4 @@
-# [Jamie Bray UI][Live SIte]
+# [Jamie Bray UI][Live Site] [![CircleCI](https://circleci.com/gh/Jumbub/jamiebray-ui/tree/master.svg?style=svg)](https://circleci.com/gh/Jumbub/jamiebray-ui/tree/master)
 
 This project is my personal website.<br>
 It is developed primarily with [React][React], [TypeScript][TypeScript], and [Storybook][Storybook]!
@@ -11,7 +11,7 @@ View the [storybook][Live Storybook].
 
 ### Required Software
 
-- [Yarn][Yarn]
+- [Yarn Package Manager][Yarn]
 - [AWS CLI][AWS CLI Install] (only required for deployment)
 
 ### Installing Dependencies
