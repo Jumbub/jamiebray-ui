@@ -3,8 +3,8 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
-    "test": "yarn -s prettier --check .",
-    "fix": "yarn -s prettier --write --list-different ."
+    "test": "yarn prettier --check . && yarn tsc",
+    "fix": "yarn prettier --write --list-different ."
   },
   "dependencies": {
     "@types/node": "^13.11.1",
