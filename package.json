@@ -2,7 +2,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "start": "next start"
+    "start": "next start",
+    "test": "yarn -s prettier --check .",
+    "fix": "yarn -s prettier --write --list-different ."
   },
   "dependencies": {
     "@types/node": "^13.11.1",
@@ -13,5 +15,8 @@
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.0",
     "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.4"
   }
 }

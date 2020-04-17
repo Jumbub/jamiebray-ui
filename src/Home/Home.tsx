@@ -1,3 +1,3 @@
-import { Hello } from './Home.styles'
+import { Hello } from './Home.styles';
 
-export const Home = () => <Hello>Hello World</Hello>
+export const Home = () => <Hello>Hello World</Hello>;
