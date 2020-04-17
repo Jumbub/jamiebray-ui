@@ -1,1 +1,3 @@
-export default () => <div>Hello Typescript!</div>
+import { Home } from '../Home/Home'
+
+export default () => <Home />
