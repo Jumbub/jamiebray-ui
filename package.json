@@ -2,6 +2,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
+    "build": "next build",
     "start": "next start",
     "test": "yarn prettier --check . && yarn eslint src/**/*.{ts,tsx} && yarn tsc",
     "fix": "yarn prettier --write --list-different . && yarn eslint src/**/*.{ts,tsx} --fix"
