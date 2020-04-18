@@ -1,18 +1,18 @@
-# [Jamie Bray UI][Live Site]
+# [Jamie Bray UI][live site]
 
 This project is my personal website.
 
-Developed with [React][React], [Next.js][NextJs], [TypeScript][TypeScript], [Styled Components][StyledComponents] and [Storybook][Storybook]!
+Developed with [React][react], [Next.js][nextjs], [TypeScript][typescript], [Styled Components][styledcomponents] and [Storybook][storybook]!
 
-Visit the [site][Live Site].
+Visit the [site][live site].
 
-View the [storybook][Live Storybook].
+View the [storybook][live storybook].
 
 ## Setup
 
 ### Required Software
 
-- [Yarn Package Manager][Yarn]
+- [Yarn Package Manager][yarn]
 
 ### Installing Dependencies
 
@@ -26,13 +26,13 @@ This command will install the projects required dependencies.
 
 `yarn dev`
 
-This command runs the [Next.js][NextJs] dev server.
+This command runs the [Next.js][nextjs] dev server.
 
 ### Building isolated components
 
 `yarn storybook`
 
-This command runs [Storybook][Storybook].
+This command runs [Storybook][storybook].
 
 ### Running tests
 
@@ -46,12 +46,12 @@ This command runs: opiniated linting (prettier and eslint), tests (jest).
 
 This command will fix most of the linting issues automatically.
 
-[Jest]: https://jestjs.io/
-[Live Site]: https://jamiebray.me/
-[Live Storybook]: https://storybook.jamiebray.me/
-[NextJs]: https://nextjs.org/
-[React]: https://reactjs.org/
-[Storybook]: https://storybook.js.org/
-[StyledComponents]: https://styled-components.com/
-[TypeScript]: https://www.typescriptlang.org/
-[Yarn]: https://yarnpkg.com/en/docs/install
+[jest]: https://jestjs.io/
+[live site]: https://jamiebray.me/
+[live storybook]: https://storybook.jamiebray.me/
+[nextjs]: https://nextjs.org/
+[react]: https://reactjs.org/
+[storybook]: https://storybook.js.org/
+[styledcomponents]: https://styled-components.com/
+[typescript]: https://www.typescriptlang.org/
+[yarn]: https://yarnpkg.com/en/docs/install
