@@ -1,14 +1,14 @@
 import { usePathName } from '../gui/hooks/usePathName';
-import { App as GuiApp } from '../gui/components/App/App';
+import { App as ResumeApp } from '../gui/components/App/App';
 
 export const App = ({ Component, pageProps }) => {
   const path = usePathName();
 
-  if (path.includes('gui')) {
+  if (['about', 'resume', 'contact'].some(check => path.includes(check))) {
     return (
-      <GuiApp>
+      <ResumeApp>
         <Component key={path} {...pageProps} />
-      </GuiApp>
+      </ResumeApp>
     );
   }
 

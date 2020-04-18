@@ -10,9 +10,9 @@ export const App = ({ children }: { children: ReactNode }) => (
     <NavigationBar
       title={FULL_NAME}
       links={[
-        { label: 'About', href: '/gui/about' },
-        { label: 'Resume', href: '/gui/resume' },
-        { label: 'Contact', href: '/gui/contact' },
+        { label: 'About', href: '/about' },
+        { label: 'Resume', href: '/resume' },
+        { label: 'Contact', href: '/contact' },
       ]}
     />
     <div className={styles.inner}>

@@ -1,4 +1,4 @@
-import About from './gui/about';
+import { makeServerRedirect } from '../next/makeServerRedirect';
 
 // eslint-disable-next-line import/no-default-export
-export default About;
+export default makeServerRedirect('/about');
