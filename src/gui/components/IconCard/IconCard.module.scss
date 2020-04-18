@@ -1,0 +1,23 @@
+@import '../../styles/interaction.scss';
+@import '../../styles/animation.scss';
+
+.iconCard {
+  @include clickable;
+
+  background: black;
+  padding: 12px;
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+}
+
+.highlight {
+  animation: $shadowPulse 2s infinite;
+}
+
+.icon {
+  background: black;
+  color: white;
+  width: 24px;
+  height: 24px;
+}

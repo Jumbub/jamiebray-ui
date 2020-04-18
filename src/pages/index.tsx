@@ -1,4 +1,4 @@
-import { Home } from '../gui/Home/Home';
+import About from './gui/about';
 
 // eslint-disable-next-line import/no-default-export
-export default Home;
+export default About;

@@ -1,0 +1,9 @@
+@import '../../styles/layout.scss';
+
+.outer {
+  box-shadow: $card-shadow;
+
+  &.inverted {
+    box-shadow: $card-shadow-inset;
+  }
+}
