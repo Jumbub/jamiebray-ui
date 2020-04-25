@@ -1,59 +1,57 @@
-# [Jamie Bray UI][Live Site] [![CircleCI](https://circleci.com/gh/Jumbub/jamiebray-ui/tree/master.svg?style=svg)](https://circleci.com/gh/Jumbub/jamiebray-ui/tree/master)
+# [Jamie Bray UI][live site]
 
-This project is my personal website.<br>
-It is developed primarily with [React][React], [TypeScript][TypeScript], and [Storybook][Storybook]!
+This project is my personal website.
 
-Visit the [site][Live Site].
+Developed with [React][react], [Next.js][nextjs], [TypeScript][typescript], [Styled Components][styledcomponents] and [Storybook][storybook]!
 
-View the [storybook][Live Storybook].
+Visit the [site][live site].
+
+View the [storybook][live storybook].
 
 ## Setup
 
 ### Required Software
 
-- [Yarn Package Manager][Yarn]
-- [AWS CLI][AWS CLI Install] (only required for deployment)
+- [Yarn Package Manager][yarn]
 
 ### Installing Dependencies
 
 `yarn`
 
-This command will download the required dependencies for the project.
+This command will install the projects required dependencies.
 
 ## Development
 
-### Viewing Locally
+### Running server locally
 
-`yarn start`
+`yarn dev`
 
-This command will build and serve a local copy of the website.
+This command runs the [Next.js][nextjs] dev server.
 
-### Developing Components
+### Building isolated components
 
 `yarn storybook`
 
-This command runs [Storybook][Storybook], the tool used for isolated component development.
+This command runs [Storybook][storybook].
 
-### Running Tests
+### Running tests
 
 `yarn test`
 
-This command aliases [jest][Jest], the tool used for testing component behaviourss.
+This command runs: opiniated linting (prettier and eslint), tests (jest).
 
-### Deploying Changes
+### Automatically fix lint issues
 
-`yarn deploy`
+`yarn fix`
 
-This command will run the tests; build the app; and upload the new build to AWS S3.<br>
-(This command requires the AWS CLI tool to be [installed][AWS CLI Install] and [configured][AWS CLI Configure] correctly.)
+This command will fix most of the linting issues automatically.
 
-
-[Yarn]: https://yarnpkg.com/en/docs/install
-[Live Site]: https://jamiebray.me/
-[Live Storybook]: https://storybook.jamiebray.me/
-[TypeScript]: https://www.typescriptlang.org/
-[React]: https://reactjs.org/
-[Jest]: https://jestjs.io/
-[Storybook]: https://storybook.js.org/
-[AWS CLI Install]: https://docs.aws.amazon.com/cli/latest/userguide/
-[AWS CLI Configure]: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+[jest]: https://jestjs.io/
+[live site]: https://jamiebray.me/
+[live storybook]: https://storybook.jamiebray.me/
+[nextjs]: https://nextjs.org/
+[react]: https://reactjs.org/
+[storybook]: https://storybook.js.org/
+[styledcomponents]: https://styled-components.com/
+[typescript]: https://www.typescriptlang.org/
+[yarn]: https://yarnpkg.com/en/docs/install
