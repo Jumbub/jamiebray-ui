@@ -30,7 +30,9 @@ export class Document extends NextDocument {
   public render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link rel="manifest" href="/manifest.webmanifest" />
+        </Head>
         <body>
           <Main />
           <NextScript />
