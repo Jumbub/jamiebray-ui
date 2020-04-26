@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { Card } from '../Card/Card';
-import { usePathName } from '../../hooks/usePathName';
+import { useRedirectedPathName } from '../../hooks/useRedirectPathName';
 import styles from './NavigationBarLink.module.scss';
 
 const NavigationBarLink: React.FC<{
@@ -11,7 +11,7 @@ const NavigationBarLink: React.FC<{
   className?: string;
   onClick?: () => void;
 }> = ({ label, href, className, onClick }) => {
-  const activeLocation = usePathName() === href;
+  const activeLocation = useRedirectedPathName() === href;
 
   const link = (
     <Link href={href}>

@@ -1,4 +1,4 @@
-import { makeServerRedirect } from '../next/makeServerRedirect';
+import ContentCardAbout from './about';
 
 // eslint-disable-next-line import/no-default-export
-export default makeServerRedirect('/about');
+export default ContentCardAbout;
