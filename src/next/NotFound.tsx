@@ -1,1 +1,1 @@
-export const NotFound = () => <div onClick={() => location.replace('/')}>go home</div>;
+export const NotFound = () => <a href="/">you alright there?</a>;
