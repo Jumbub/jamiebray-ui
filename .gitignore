@@ -9,6 +9,7 @@
 /build
 /dist
 /build-storybook
+/out
 
 # log
 yarn-debug.log*

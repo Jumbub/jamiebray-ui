@@ -1,14 +1,36 @@
-name: Tests
+name: Master pipeline
 
-on: push
+on: [push]
 
 jobs:
-  test:
+  test-and-deploy:
     runs-on: ubuntu-latest
-
+    name: Test and deploy
     steps:
-      - uses: actions/checkout@v2
-      - uses: bahmutov/npm-install@v1
+      - name: Checkout branch
+        uses: actions/checkout@v2
+
+      - name: Install packages
+        uses: bahmutov/npm-install@v1
 
       - name: Run tests
         run: yarn test
+
+      - name: Build static site
+        run: yarn next build && yarn next export
+
+      - name: Remove .html postfix from top level html files
+        run: find out -type f -name '*.html' | while read f; do mv "$f" "${f%.html}"; done
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Upload build to S3
+        run: aws s3 sync out s3://${{ secrets.AWS_S3_BUCKET }} --delete
+
+      - name: Invalidate cloudfront cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }} --paths "/*"
