@@ -1,6 +1,9 @@
 name: Master pipeline
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   test-and-deploy:
