@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Test and deploy
+    name: Test
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2
