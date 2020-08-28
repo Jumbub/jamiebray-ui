@@ -19,8 +19,8 @@ jobs:
       - name: Build static site
         run: yarn next build && yarn next export
 
-      # - name: Remove .html postfix from top level html files
-      #   run: find out -type f -name '*.html' | while read f; do mv "$f" "${f%.html}"; done
+      - name: Add files with stripped html extension
+        run: find out -type f -name '*.html' | while read f; do cp "$f" "${f%.html}"; done
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
