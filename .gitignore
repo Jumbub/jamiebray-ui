@@ -10,6 +10,7 @@
 /dist
 /build-storybook
 /out
+/stripped
 
 # log
 yarn-debug.log*

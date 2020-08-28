@@ -2,10 +2,15 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next start",
     "test": "yarn prettier --check . && yarn eslint './**/*.{ts,tsx}' && yarn tsc",
-    "fix": "yarn prettier --write --list-different . && yarn eslint './**/*.{ts,tsx}' --fix"
+    "fix": "yarn prettier --write --list-different . && yarn eslint './**/*.{ts,tsx}' --fix",
+    "deploy:prepare:out": "next build && next export",
+    "deploy:prepare:stripped": "mkdir stripped/out -p && find out -type f -name '*.html' | while read f; do cp \"$f\" \"stripped/${f%.html}\"; done",
+    "deploy:prepare": "yarn deploy:prepare:out && yarn deploy:prepare:stripped",
+    "deploy:upload:out": "aws s3 sync out s3://jamiebray-ui --delete",
+    "deploy:upload:stripped": "aws s3 sync stripped/out s3://jamiebray-ui --content-type \"text/html\"",
+    "deploy:upload": "yarn -s deploy:upload:out && yarn -s deploy:upload:stripped",
+    "deploy": "yarn deploy:prepare && yarn deploy:upload"
   },
   "dependencies": {
     "@types/classnames": "^2.2.10",

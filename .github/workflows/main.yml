@@ -16,12 +16,6 @@ jobs:
       - name: Run tests
         run: yarn test
 
-      - name: Build static site
-        run: yarn next build && yarn next export
-
-      - name: Add files with stripped html extension
-        run: find out -type f -name '*.html' | while read f; do cp "$f" "${f%.html}"; done
-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -29,8 +23,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Upload build to S3
-        run: aws s3 sync out s3://${{ secrets.AWS_S3_BUCKET }} --delete
+      - name: Build and deploy
+        run: yarn deploy
 
       - name: Invalidate cloudfront cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION }} --paths "/*"
