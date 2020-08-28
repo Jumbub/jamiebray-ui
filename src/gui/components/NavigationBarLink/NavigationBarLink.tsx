@@ -1,8 +1,8 @@
-import React from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { Card } from '../Card/Card';
+import React from 'react';
 import { useRedirectedPathName } from '../../hooks/useRedirectPathName';
+import { Card } from '../Card/Card';
 import styles from './NavigationBarLink.module.scss';
 
 const NavigationBarLink: React.FC<{

@@ -2,6 +2,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
+    "live": "next build && next start",
     "test": "yarn prettier --check . && yarn eslint './**/*.{ts,tsx}' && yarn tsc",
     "fix": "yarn prettier --write --list-different . && yarn eslint './**/*.{ts,tsx}' --fix",
     "deploy:prepare:out": "next build && next export",
@@ -22,9 +23,11 @@
     "@zeit/next-sass": "^1.0.1",
     "classnames": "^2.2.6",
     "copy-to-clipboard": "^3.3.1",
+    "eslint-config-prettier": "^6.11.0",
     "lorem-ipsum": "^2.0.3",
     "next": "^9.3.5",
-    "nextjs-fonts": "^0.22.0",
+    "next-compose-plugins": "^2.2.0",
+    "next-images": "^1.4.1",
     "node-sass": "^4.13.1",
     "now": "^20.1.0",
     "react": "^16.13.1",
@@ -32,7 +35,8 @@
     "react-icons": "^3.9.0",
     "react-transition-group": "^4.3.0",
     "styled-components": "^5.1.0",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "url-loader": "^4.1.0"
   },
   "devDependencies": {
     "@storybook/addon-knobs": "^6.0.20",
@@ -43,8 +47,9 @@
     "eslint-plugin-better-styled-components": "^1.1.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prefer-arrow-functions": "^3.0.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.1.0",
-    "prettier": "^2.0.4"
+    "prettier": "^2.1.1"
   }
 }

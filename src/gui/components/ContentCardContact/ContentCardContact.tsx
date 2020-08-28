@@ -1,12 +1,12 @@
+import copy from 'copy-to-clipboard';
 import React from 'react';
 import { FaLinkedinIn, FaGithub, FaCopy } from 'react-icons/fa';
-import copy from 'copy-to-clipboard';
-import { Card } from '../Card/Card';
-import Content from '../Content/Content';
 import { EMAIL } from '../../constants/personal';
 import { GITHUB, LINKEDIN } from '../../constants/social';
-import IconCard from '../IconCard/IconCard';
+import { Card } from '../Card/Card';
+import Content from '../Content/Content';
 import { Head } from '../Head/Head';
+import IconCard from '../IconCard/IconCard';
 import styles from './ContentCardContact.module.scss';
 
 export const ContentCardContact = () => (

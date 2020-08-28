@@ -1,10 +1,10 @@
 import React from 'react';
 import { FaDownload } from 'react-icons/fa';
+import { RESUME_PDF_DOWNLOAD } from '../../constants/personal';
 import { Card } from '../Card/Card';
 import Content from '../Content/Content';
-import { RESUME_PDF_DOWNLOAD } from '../../constants/personal';
-import IconCard from '../IconCard/IconCard';
 import { Head } from '../Head/Head';
+import IconCard from '../IconCard/IconCard';
 import styles from './ContentCardResume.module.scss';
 
 export const ContentCardResume = () => (

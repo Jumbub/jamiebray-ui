@@ -1,6 +1,6 @@
-import React from 'react';
-import { LoremIpsum } from 'lorem-ipsum';
 import { text } from '@storybook/addon-knobs';
+import { LoremIpsum } from 'lorem-ipsum';
+import React from 'react';
 import styles from './MockContent.module.scss';
 
 const lorem = new LoremIpsum({

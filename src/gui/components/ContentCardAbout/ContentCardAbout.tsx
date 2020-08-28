@@ -3,6 +3,7 @@ import { Card } from '../Card/Card';
 import Content from '../Content/Content';
 import { Head } from '../Head/Head';
 import styles from './ContentCardAbout.module.scss';
+import jamieBrayFace from './jamiebray-face.jpg';
 
 export const ContentCardAbout = () => (
   <>
@@ -34,11 +35,7 @@ export const ContentCardAbout = () => (
             </div>
           </div>
           <div>
-            <img
-              src="../../../../assets/jamiebray-face.jpg"
-              alt="Jamie Bray"
-              className={styles.face}
-            />
+            <img src={jamieBrayFace} alt="Jamie Bray" className={styles.face} />
           </div>
         </div>
       </Content>

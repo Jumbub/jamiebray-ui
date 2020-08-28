@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import NavigationBar from '../NavigationBar/NavigationBar';
 import { FULL_NAME } from '../../constants/personal';
 import { usePathName } from '../../hooks/usePathName';
+import NavigationBar from '../NavigationBar/NavigationBar';
 import styles from './App.module.scss';
 
 export const App = ({ children }: { children: ReactNode }) => (
