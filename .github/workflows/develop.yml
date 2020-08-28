@@ -1,0 +1,21 @@
+name: Develop pipeline
+
+on:
+  push:
+    branches:
+      - '*'
+      - '!master'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test and deploy
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+
+      - name: Install packages
+        uses: bahmutov/npm-install@v1
+
+      - name: Run tests
+        run: yarn test
