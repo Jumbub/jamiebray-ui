@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { FaGripLines } from 'react-icons/fa';
 import LightBox from '../LightBox/LightBox';
 import NavigationBarLink from '../NavigationBarLink/NavigationBarLink';
-import styles from './NavigationBar.module.scss';
-import { ShowOnMobile } from '../ShowOnMobile/ShowOnMobile';
 import { ShowOnDesktop } from '../ShowOnDesktop/ShowOnDesktop';
+import { ShowOnMobile } from '../ShowOnMobile/ShowOnMobile';
+import styles from './NavigationBar.module.scss';
 
 const NavigationBar: React.FC<{
   title: string;
@@ -36,8 +36,8 @@ const NavigationBar: React.FC<{
             />
           </ShowOnMobile>
           {links.map(({ label, href }) => (
-            <ShowOnDesktop>
-              <NavigationBarLink key={href} label={label} href={href} />
+            <ShowOnDesktop key={href}>
+              <NavigationBarLink label={label} href={href} />
             </ShowOnDesktop>
           ))}
         </div>
