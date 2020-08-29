@@ -9,8 +9,17 @@ import styles from './ContentCardResume.module.scss';
 import useFetch from 'use-http';
 import styled from 'styled-components';
 
+const NoOverflow = styled.div`
+  overflow: hidden;
+`;
+
 const ResumeStyle = styled.iframe`
+  border: none;
   height: 1170px;
+  max-width: 900px;
+  width: 100%;
+  margin: 10px;
+  overflow: hidden;
 `;
 
 const Resume = () => {
@@ -23,9 +32,11 @@ const Resume = () => {
   if (request.error) return null;
 
   return (
-    <Card inverted>
-      {request.loading && <ResumeStyle sandbox="" />}
-      {!request.loading && <ResumeStyle srcDoc={`${request.data}`} sandbox="" />}
+    <Card>
+      <NoOverflow>
+        {request.loading && <ResumeStyle sandbox="" />}
+        {!request.loading && <ResumeStyle srcDoc={`${request.data}`} sandbox="" />}
+      </NoOverflow>
     </Card>
   );
 };
