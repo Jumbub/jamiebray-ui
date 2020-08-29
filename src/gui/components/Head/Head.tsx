@@ -8,6 +8,5 @@ export const Head = ({ title }: { title: string }) => (
     <meta name="description" content="Personal online resume" />
     <meta name="keywords" content="Personal, Resume, Hire Me, Programmer, Developer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preload" href={RESUME_PDF_IFRAME} />
   </NextHead>
 );
