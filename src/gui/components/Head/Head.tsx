@@ -1,5 +1,4 @@
 import { default as NextHead } from 'next/head';
-import { RESUME_PDF_IFRAME } from '../../constants/personal';
 
 export const Head = ({ title }: { title: string }) => (
   <NextHead>

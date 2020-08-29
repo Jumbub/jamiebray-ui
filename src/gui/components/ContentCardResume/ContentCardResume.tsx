@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaDownload } from 'react-icons/fa';
-import { RESUME_PDF_DOWNLOAD } from '../../constants/personal';
+import { RESUME_PDF_DOWNLOAD, RESUME_PDF_IFRAME } from '../../constants/personal';
 import { Card } from '../Card/Card';
 import Content from '../Content/Content';
 import { Head } from '../Head/Head';
@@ -22,7 +22,7 @@ export const ContentCardResume = () => (
           <div className={styles.documentCropper}>
             <iframe
               title="Jamie Bray's Resume"
-              src="https://docs.google.com/document/d/e/2PACX-1vSRoB7vomuVYqdlVbF49GwDtgjuCXpytklI8upjOQ5-CTcZfLutDBeUs7ZtnLsM60ySe-nbupFz1UPK/pub?embedded=true"
+              src={RESUME_PDF_IFRAME}
               className={styles.document}
             />
           </div>
