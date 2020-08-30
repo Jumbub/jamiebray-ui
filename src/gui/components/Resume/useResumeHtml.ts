@@ -1,16 +1,14 @@
-import { createContext, useEffect } from 'react';
-import useFetch from 'use-http';
+import { useEffect, useState } from 'react';
 import { RESUME_PDF_IFRAME } from '../../constants/personal';
 
-export const useResumeHtml = () => {
-  const [request] = useFetch(RESUME_PDF_IFRAME);
+export const useResumeHtml = (please: boolean) => {
+  const [html, setHtml] = useState(please ? null : 'notLoading');
 
   useEffect(() => {
-    request.get();
-  }, [request]);
+    if (please && (html === null || html === 'notLoading')) {
+      fetch(RESUME_PDF_IFRAME).then(data => data.text().then(html => setHtml(html)));
+    }
+  }, [please]);
 
-  if (request.error || request.loading) return null;
-  if (!request.data) return null;
-
-  return request.data;
+  return html;
 };

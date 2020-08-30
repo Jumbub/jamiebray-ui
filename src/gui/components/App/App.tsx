@@ -6,17 +6,11 @@ import NavigationBar from '../NavigationBar/NavigationBar';
 import { ResumeContext } from '../Resume/ResumeContext';
 import { useResumeHtml } from '../Resume/useResumeHtml';
 import styles from './App.module.scss';
+import { useRedirectedPathName } from '../../hooks/useRedirectPathName';
 
 export const App = ({ children }: { children: ReactNode }) => {
-  const resumeHtml = useResumeHtml();
-
-  const [resumeHtmlStored, setResumeHtml] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (resumeHtml !== null && resumeHtmlStored === null) {
-      setResumeHtml(resumeHtml);
-    }
-  }, [setResumeHtml, resumeHtmlStored, resumeHtml]);
+  const shouldPreloadResume = useRedirectedPathName() !== '/resume';
+  const preloadedResume = useResumeHtml(shouldPreloadResume);
 
   const links = useMemo(
     () => [
@@ -28,7 +22,7 @@ export const App = ({ children }: { children: ReactNode }) => {
   );
 
   return (
-    <ResumeContext.Provider value={resumeHtmlStored}>
+    <ResumeContext.Provider value={preloadedResume}>
       <div className={styles.outer}>
         <NavigationBar title={FULL_NAME} links={links} />
         <div className={styles.inner}>
