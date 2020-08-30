@@ -16,10 +16,10 @@ export const useResumeHtml = () => {
     if (process.browser && resume === null && resumeInStorage !== null) {
       setResume(resumeInStorage);
     }
-  }, []);
+  }, [resume, resumeInStorage]);
 
   useEffect(() => {
-    if (resume === null && !resumeInStorage) {
+    if (resume === null && resumeInStorage === null) {
       fetch(RESUME_PDF_IFRAME).then(data =>
         data.text().then(html => {
           window.sessionStorage.setItem(RESUME_STORAGE_KEY, html);
@@ -27,7 +27,7 @@ export const useResumeHtml = () => {
         }),
       );
     }
-  }, [resume]);
+  }, [resume, resumeInStorage]);
 
   return resume;
 };
