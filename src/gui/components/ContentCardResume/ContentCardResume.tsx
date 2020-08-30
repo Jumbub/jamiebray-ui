@@ -1,45 +1,14 @@
 import React, { useEffect } from 'react';
 import { FaDownload } from 'react-icons/fa';
-import { RESUME_PDF_DOWNLOAD, RESUME_PDF_IFRAME } from '../../constants/personal';
+import styled from 'styled-components';
+import useFetch from 'use-http';
+import { RESUME_PDF_DOWNLOAD } from '../../constants/personal';
 import { Card } from '../Card/Card';
 import Content from '../Content/Content';
 import { Head } from '../Head/Head';
 import IconCard from '../IconCard/IconCard';
+import { Resume } from '../Resume/Resume';
 import styles from './ContentCardResume.module.scss';
-import useFetch from 'use-http';
-import styled from 'styled-components';
-
-const NoOverflow = styled.div`
-  overflow: hidden;
-`;
-
-const ResumeStyle = styled.iframe`
-  border: none;
-  height: 1170px;
-  max-width: 900px;
-  width: 100%;
-  margin: 10px;
-  overflow: hidden;
-`;
-
-const Resume = () => {
-  const [request] = useFetch(RESUME_PDF_IFRAME);
-
-  useEffect(() => {
-    request.get();
-  }, []);
-
-  if (request.error) return null;
-
-  return (
-    <Card>
-      <NoOverflow>
-        {request.loading && <ResumeStyle sandbox="" />}
-        {!request.loading && <ResumeStyle srcDoc={`${request.data}`} sandbox="" />}
-      </NoOverflow>
-    </Card>
-  );
-};
 
 export const ContentCardResume = () => (
   <>

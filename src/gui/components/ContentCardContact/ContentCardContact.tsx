@@ -1,5 +1,5 @@
 import copy from 'copy-to-clipboard';
-import React from 'react';
+import React, { memo } from 'react';
 import { FaLinkedinIn, FaGithub, FaCopy } from 'react-icons/fa';
 import { EMAIL } from '../../constants/personal';
 import { GITHUB, LINKEDIN } from '../../constants/social';
@@ -9,7 +9,7 @@ import { Head } from '../Head/Head';
 import IconCard from '../IconCard/IconCard';
 import styles from './ContentCardContact.module.scss';
 
-export const ContentCardContact = () => (
+export const ContentCardContact = memo(() => (
   <>
     <Head title="Contact - Jamie Bray" />
     <Card>
@@ -36,4 +36,4 @@ export const ContentCardContact = () => (
       </Content>
     </Card>
   </>
-);
+));

@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next",
     "live": "next build && next start",
+    "profile": "next build --profile && next start",
     "test": "yarn prettier --check . && yarn eslint './**/*.{ts,tsx}' && yarn tsc",
     "fix": "yarn prettier --write --list-different . && yarn eslint './**/*.{ts,tsx}' --fix",
     "deploy:prepare:out": "next build && next export",
