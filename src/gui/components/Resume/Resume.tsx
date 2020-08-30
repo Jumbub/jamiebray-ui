@@ -10,8 +10,8 @@ import styles from './ContentCardResume.module.scss';
 import { ResumeContext } from './ResumeContext';
 
 const NoOverflow = styled.div`
-  overflow: hidden;
   display: inline-block;
+  overflow: hidden;
   width: 50%;
 `;
 
@@ -37,9 +37,7 @@ export const Resume = memo(() => {
         SOURCED
         <ResumeStyle
           key="SOURCED"
-          src={
-            'https://docs.google.com/document/d/e/2PACX-1vTiu0_Xy7H6CtthFAXeyHfwV7qxtHaJXS3a7IFzIoUb9dlE24Q8Xs0aLFyJe57Y-rcXsSY7xrtRTjt_/pub?embedded=true'
-          }
+          src="https://docs.google.com/document/d/e/2PACX-1vTiu0_Xy7H6CtthFAXeyHfwV7qxtHaJXS3a7IFzIoUb9dlE24Q8Xs0aLFyJe57Y-rcXsSY7xrtRTjt_/pub?embedded=true"
           sandbox=""
         />
       </NoOverflow>
