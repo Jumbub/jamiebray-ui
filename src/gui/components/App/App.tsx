@@ -1,12 +1,12 @@
-import React, { ReactNode, useState, useEffect, useMemo } from 'react';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import React, { ReactNode, useMemo } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { FULL_NAME } from '../../constants/personal';
 import { usePathName } from '../../hooks/usePathName';
+import { useRedirectedPathName } from '../../hooks/useRedirectPathName';
 import NavigationBar from '../NavigationBar/NavigationBar';
 import { ResumeContext } from '../Resume/ResumeContext';
 import { useResumeHtml } from '../Resume/useResumeHtml';
 import styles from './App.module.scss';
-import { useRedirectedPathName } from '../../hooks/useRedirectPathName';
 
 export const App = ({ children }: { children: ReactNode }) => {
   const shouldPreloadResume = useRedirectedPathName() !== '/resume';

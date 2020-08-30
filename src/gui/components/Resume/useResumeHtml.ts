@@ -8,7 +8,7 @@ export const useResumeHtml = (please: boolean) => {
     if (please && (html === null || html === 'notLoading')) {
       fetch(RESUME_PDF_IFRAME).then(data => data.text().then(html => setHtml(html)));
     }
-  }, [please]);
+  }, [please, html]);
 
   return html;
 };

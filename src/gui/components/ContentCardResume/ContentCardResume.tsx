@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FaDownload } from 'react-icons/fa';
-import styled from 'styled-components';
-import useFetch from 'use-http';
 import { RESUME_PDF_DOWNLOAD } from '../../constants/personal';
 import { Card } from '../Card/Card';
 import Content from '../Content/Content';
