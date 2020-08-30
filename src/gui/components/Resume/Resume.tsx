@@ -33,7 +33,7 @@ export const Resume = memo(() => {
     <Card>
       <NoOverflow>
         {notPreloading && <ResumeStyle key="RESUME" src={RESUME_PDF_IFRAME} sandbox="" />}
-        {stillPreloading && <ResumeStyle sandbox="" />}/
+        {stillPreloading && <ResumeStyle sandbox="" />}
         {preloaded && <ResumeStyle key="RESUME" srcDoc={`${html}`} sandbox="" />}
       </NoOverflow>
     </Card>
