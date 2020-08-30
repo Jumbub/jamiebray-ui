@@ -10,7 +10,9 @@ import styles from './ContentCardResume.module.scss';
 import { ResumeContext } from './ResumeContext';
 
 const NoOverflow = styled.div`
+  display: inline-block;
   overflow: hidden;
+  width: 50%;
 `;
 
 const ResumeStyle = styled.iframe`
@@ -28,8 +30,16 @@ export const Resume = memo(() => {
   return (
     <Card>
       <NoOverflow>
-        {!html && <ResumeStyle sandbox="" />}
-        {!!html && <ResumeStyle key="RESUME" srcDoc={`${html}`} sandbox="" />}
+        PRELOADED
+        <ResumeStyle key="PRELOADED" srcDoc={`${html || ''}`} sandbox="" />
+      </NoOverflow>
+      <NoOverflow>
+        SOURCED
+        <ResumeStyle
+          key="SOURCED"
+          src="https://docs.google.com/document/d/e/2PACX-1vTiu0_Xy7H6CtthFAXeyHfwV7qxtHaJXS3a7IFzIoUb9dlE24Q8Xs0aLFyJe57Y-rcXsSY7xrtRTjt_/pub?embedded=true"
+          sandbox=""
+        />
       </NoOverflow>
     </Card>
   );
