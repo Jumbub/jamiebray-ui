@@ -9,8 +9,7 @@ import { useResumeHtml } from '../Resume/useResumeHtml';
 import styles from './App.module.scss';
 
 export const App = ({ children }: { children: ReactNode }) => {
-  const shouldPreloadResume = useRedirectedPathName() !== '/resume';
-  const preloadedResume = useResumeHtml(shouldPreloadResume);
+  const preloadedResume = useResumeHtml();
 
   const links = useMemo(
     () => [

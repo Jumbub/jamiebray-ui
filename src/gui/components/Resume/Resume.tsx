@@ -25,16 +25,11 @@ const ResumeStyle = styled.iframe`
 export const Resume = memo(() => {
   const html = useContext(ResumeContext);
 
-  const stillPreloading = html === null;
-  const notPreloading = html === 'notLoading';
-  const preloaded = !stillPreloading && !notPreloading;
-
   return (
     <Card>
       <NoOverflow>
-        {notPreloading && <ResumeStyle key="RESUME" src={RESUME_PDF_IFRAME} sandbox="" />}
-        {stillPreloading && <ResumeStyle sandbox="" />}
-        {preloaded && <ResumeStyle key="RESUME" srcDoc={`${html}`} sandbox="" />}
+        {!html && <ResumeStyle sandbox="" />}
+        {!!html && <ResumeStyle key="RESUME" srcDoc={`${html}`} sandbox="" />}
       </NoOverflow>
     </Card>
   );
