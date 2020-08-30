@@ -6,13 +6,15 @@ const RESUME_STORAGE_KEY = 'RESUME_PDF_IFRAME';
 export const useResumeHtml = () => {
   const [resume, setResume] = useState(null);
 
-  const resumeInStorage = process.browser && !!window.sessionStorage.getItem(RESUME_STORAGE_KEY);
+  const resumeInStorage = process.browser
+    ? window.sessionStorage.getItem(RESUME_STORAGE_KEY)
+    : null;
 
   // Check for cached resume,
   // must happen on second render cycle for client
   useEffect(() => {
-    if (process.browser && resume === null && resumeInStorage) {
-      setResume(window.sessionStorage.getItem(RESUME_STORAGE_KEY));
+    if (process.browser && resume === null && resumeInStorage !== null) {
+      setResume(resumeInStorage);
     }
   }, []);
 
