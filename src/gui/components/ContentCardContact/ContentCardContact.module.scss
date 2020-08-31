@@ -3,17 +3,17 @@
 @import '../../styles/interaction.scss';
 
 .content {
-  p {
-    @include font-regular;
-  }
-  blockquote {
-    font-style: italic;
-    background: #f9f9f9;
-    border-left: 1px solid #ccc;
-    margin: 0;
-    margin-bottom: 22px;
-    padding: 16px;
-  }
+  @include font-regular;
+  margin-top: 16px;
+}
+
+.quote {
+  font-style: italic;
+  background: #f9f9f9;
+  border-left: 1px solid #ccc;
+  margin: 0;
+  margin-bottom: 22px;
+  padding: 16px;
 }
 
 .multipleCards {
