@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaDownload, FaEye } from 'react-icons/fa';
+import { FaDownload } from 'react-icons/fa';
 import styled from 'styled-components';
-import { RESUME_PDF_DOWNLOAD, RESUME_PDF_LINK, RESUME_PDF_IFRAME } from '../../constants/personal';
+import { RESUME_PDF_DOWNLOAD, RESUME_PDF_IFRAME } from '../../constants/personal';
 import { Card } from '../Card/Card';
 import Content from '../Content/Content';
 import { Head } from '../Head/Head';
