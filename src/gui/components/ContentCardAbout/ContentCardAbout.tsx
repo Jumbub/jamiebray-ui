@@ -13,24 +13,31 @@ export const ContentCardAbout = () => (
         <div className={styles.horizontalSplit}>
           <div className={styles.textContent}>
             <div className={styles.item}>
-              <div className={styles.label}>Work</div>
+              <div className={styles.label}>2022 2021</div>
               <div>
-                <div className={styles.descriptor}>Software Developer</div>
-                <div className={styles.descriptorSecondary}>at HealthEngine</div>
+                <div className={styles.descriptor}>Senior Full Stack Dev / Lead</div>
+                <div className={styles.descriptorSecondary}>GeoMoby</div>
               </div>
             </div>
             <div className={styles.item}>
-              <div className={styles.label}>Study</div>
+              <div className={styles.label}>2021 2017</div>
               <div>
-                <div className={styles.descriptor}>Computer Science</div>
-                <div className={styles.descriptorSecondary}>at Curtin University</div>
+                <div className={styles.descriptor}>Full Stack Dev</div>
+                <div className={styles.descriptorSecondary}>HealthEngine</div>
               </div>
             </div>
             <div className={styles.item}>
-              <div className={styles.label}>Side</div>
+              <div className={styles.label}>2018 2018</div>
               <div>
-                <div className={styles.descriptor}>More programming,</div>
-                <div className={styles.descriptorSecondary}>dirtbikes, downhill MTB</div>
+                <div className={styles.descriptor}>Backend Dev</div>
+                <div className={styles.descriptorSecondary}>Veritas</div>
+              </div>
+            </div>
+            <div className={styles.item}>
+              <div className={styles.label}>2018 2016</div>
+              <div>
+                <div className={styles.descriptor}>Computer Science Graduate</div>
+                <div className={styles.descriptorSecondary}>Curtin University</div>
               </div>
             </div>
           </div>
