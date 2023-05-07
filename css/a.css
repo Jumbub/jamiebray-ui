@@ -1,0 +1,44 @@
+@import 'colors.css';
+@import 'buttons.css';
+
+a {
+  display: block;
+
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 0 1px #000;
+  width: 100px;
+  height: 100px;
+
+  border-radius: 17px;
+  background: #6e8b5b;
+  box-shadow: 8px 8px 16px #5e764d, -8px -8px 16px #7fa069;
+}
+
+a:hover {
+  border-top: 15px solid #cccccc;
+  border-right: 15px solid #333333;
+  border-bottom: 15px solid #333333;
+  border-left: 15px solid #cccccc;
+  border-radius: 10px;
+}
+
+a {
+  font-size: 0;
+}
+a::first-letter {
+  font-size: 32px;
+  font-weight: bold;
+  color: brown;
+}
+
+a::after {
+  font-size: 32px;
+}
+
+a:hover::after {
+  position: absolute;
+  content: attr(href);
+  font-size: 32px;
+}

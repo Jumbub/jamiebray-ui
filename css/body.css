@@ -1,0 +1,12 @@
+@import 'colors.css';
+@import 'buttons.css';
+
+body {
+  background-color: var(--color-a);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

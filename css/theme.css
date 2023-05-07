@@ -1,0 +1,9 @@
+@import 'https://necolas.github.io/normalize.css/8.0.1/normalize.css';
+
+@import 'header.css';
+@import 'figure.css';
+@import 'a.css';
+@import 'body.css';
+@import 'nav.css';
+
+@import 'animations.css';

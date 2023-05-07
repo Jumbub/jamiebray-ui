@@ -1,0 +1,44 @@
+figure {
+  position: fixed;
+  top: 50px;
+  left: 0;
+
+  transform-style: preserve-3d;
+  transform: rotate(-15deg) translateZ(-1em);
+  transition: transform 300ms;
+
+  position: absolute;
+  width: 180px;
+  height: 235px;
+
+  padding: 10px;
+  background: #eee;
+  color: #fff;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.3em;
+  border: 1px dashed #eef;
+  border-radius: 1px;
+  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
+  font-weight: normal;
+}
+
+header:hover > figure {
+  transition: transform 300ms;
+  transform: rotate(-17deg) translateY(8em) translateZ(-1em);
+}
+
+figure > img {
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #0002;
+}
+
+figure > figcaption {
+  top: 240px;
+
+  margin-top: 5px;
+  color: #000;
+  font-size: 60px;
+  text-align: center;
+}
