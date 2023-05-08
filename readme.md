@@ -24,6 +24,10 @@ Static pages do not need "logic"
 
 Creates a new stacking context within child elements, allowing locally scoped z-index usage.
 
+##### `position: fixed` creates a relative context for a child `position: fixed` element
+
+huh!
+
 ## Stastics
 
 ### Size comparisson with my previous React portfolio
@@ -74,7 +78,6 @@ element:target {
 }
 ```
 
-
 ## References
 
 https://www.smashingmagazine.com/2022/07/article-section-elements-accessibility/
@@ -83,3 +86,4 @@ https://themesberg.com/docs/neumorphism-ui/foundation/typography/
 https://codepen.io/aitchiss/pen/QWKmPqx
 https://codepen.io/thomasrye/pen/VaRoYv
 https://cssgradient.io/
+just cool: https://codepen.io/dev_loop/pen/jOborLv

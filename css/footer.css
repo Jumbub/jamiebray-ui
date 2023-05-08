@@ -1,10 +1,6 @@
 @font-face {
   font-family: "Calculator";
-  src: url("/woff2/technology.bold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "SolidIcons";
-  src: url("/woff2/fa-solid-900.woff2") format("woff2");
+  src: url("/woff2/digital-7.mono.woff2") format("woff2");
 }
 @font-face {
   font-family: "LineIcons";
@@ -15,6 +11,7 @@
   src: url("/woff2/fa-brands-400.woff2") format("woff2");
 }
 
+/* Body of calculator */
 address {
   --bg: #cccbd7;
   --contrast: #e2e0e0;
@@ -34,21 +31,45 @@ address {
   padding: 30px;
 }
 
+/* Screen of calculator */
 address::before {
   content: "";
   background: #000;
   grid-column: 1 / span 2;
   width: 100%;
-  height: 60px;
+  height: 80px;
+
+  margin-bottom: 10px;
 
   border-radius: 7px;
   background: #cccbd7;
   box-shadow: inset 5px 5px 13px #bebdc8, inset -5px -5px 13px #dad9e6;
 }
 
+/* Calculator label */
+address::after {
+  color: #999;
+  font-family: "Courier New", monospace;
+  font-style: normal;
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+
+  position: absolute;
+  top: 120px;
+  right: 35px;
+
+  content: "CONTACTULATOR 9000";
+
+  content: "MY SOCIALS";
+  right: 35%;
+}
+
+/* Calculator button */
 address > a {
   width: 100px;
   height: 100px;
+
+  cursor: alias;
 
   position: relative;
   background-image: linear-gradient(145deg, #dad9e6, #b8b7c2);
@@ -63,45 +84,27 @@ address > a {
 
   background-color: #f00;
 }
-
 address > a:active {
   background-image: linear-gradient(145deg, #cccbd7, #cccbd7);
   box-shadow: inset 10px 10px 20px #adadb7, inset -10px -10px 20px #ebe9f7;
 }
 
 /* ----------------------------------- Button gradient change */
-address > a::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: linear-gradient(145deg, #b8b7c2, #dad9e6);
-  z-index: -1;
-  transition: opacity 0.3s linear;
-  opacity: 0;
-
-  border-radius: 50px;
-  /* background: linear-gradient(145deg, #b8b7c2, #dad9e6); */
-  /* box-shadow: 10px 10px 20px #adadb7, -10px -10px 20px #ebe9f7; */
-}
-address > a:hover::before {
-  opacity: 1;
-}
-address > a:active::before {
-  transition: opacity 0 linear;
-  opacity: 0;
-}
-
-/* ----------------------------------- Button text on screen */
 /* address > a::before { */
 /*   position: absolute; */
-/*   content: "hi"; */
+/*   content: ""; */
 /*   top: 0; */
 /*   right: 0; */
 /*   bottom: 0; */
 /*   left: 0; */
+/*   background-image: linear-gradient(145deg, #b8b7c2, #dad9e6); */
+/*   z-index: -1; */
+/*   transition: opacity 0.3s linear; */
+/*   opacity: 0; */
+
+/*   border-radius: 50px; */
+/*   /1* background: linear-gradient(145deg, #b8b7c2, #dad9e6); *1/ */
+/*   /1* box-shadow: 10px 10px 20px #adadb7, -10px -10px 20px #ebe9f7; *1/ */
 /* } */
 /* address > a:hover::before { */
 /*   opacity: 1; */
@@ -111,6 +114,69 @@ address > a:active::before {
 /*   opacity: 0; */
 /* } */
 
+/* Calculator screen text */
+address > a::before {
+  position: fixed;
+  top: 40px;
+  left: 45px;
+  max-width: 200px;
+
+  font-family: "Calculator";
+  font-style: normal;
+  font-size: 3rem;
+  /* font-weight: 600; */
+  pointer-events: none;
+
+  /* Note: this content is rendered once per contact button (4x at time of writing) */
+  /* (Which is why it won't dissapear unless you were to hover on all contact buttons simultaneously) */
+  content: "000000000";
+  color: #000;
+  opacity: 0.01;
+}
+address > a:hover::before {
+  word-wrap: break-word;
+  transition: opacity 300ms;
+
+  opacity: 1;
+}
+address > a[href*="instagram"]:hover::before {
+  content: "instagram";
+
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: rgba(255, 125, 125, 1) -1px 1px 20px;
+}
+address > a[href*="github"]:hover::before {
+  /* address > a::before:before { */
+  content: "github";
+
+  background: radial-gradient(circle, rgba(64, 78, 152, 1) 20%, rgba(0, 0, 0, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
+}
+address > a[href*="linkedin"]:hover::before {
+  content: "linkedin";
+
+  background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 10px, rgba(10, 102, 194, 0.5) -1px 1px 40px;
+}
+address > a[href*="mailto"]:hover::before {
+  content: "email me";
+
+  background: radial-gradient(circle, rgba(238, 157, 0, 1) 0%, rgba(120, 80, 0, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 10px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
+}
+
 /* ----------------------------------- Button icon */
 address > a::after {
   font-family: "BrandIcons";
@@ -118,16 +184,13 @@ address > a::after {
   font-size: 3rem;
   font-style: normal;
 
-  position: relative;
-  top: 20px;
-  left: 28px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  transition: opacity 300ms;
-  opacity: 1;
-}
-address > a:hover::after {
-  transition: opacity 300ms;
-  opacity: 0.7;
+  transition: filter 300ms, transform 300ms;
+  filter: saturate(1);
 }
 address > a:checked {
   border-radius: 50%;
@@ -165,7 +228,6 @@ address > a[href*="linkedin"]::after {
 }
 address > a[href*="mailto"]::after {
   font-family: "LineIcons";
-  /* font-family: "SolidIcons"; */
   font-size: 2.5rem;
   content: "\f0e0";
 
