@@ -2,6 +2,7 @@ section {
   background: white;
   width: 100%;
   width: 700px;
+  z-index: -10;
 }
 
 section:not(:target)[id*="resume"] {
@@ -17,4 +18,48 @@ section:target {
 
 section > h2 {
   display: none;
+}
+
+section > a {
+  display: none;
+}
+
+section {
+  border: 1px solid #ddd;
+  background-size: cover;
+  background-clip: content-box;
+  background-color: #fff;
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+  top: 30px;
+
+  border: solid 30px #222;
+  box-shadow: inset 5px 5px 5px black, 2px 2px 8px #000c;
+
+  color: #fbfbfb;
+}
+
+section:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 50px solid transparent;
+  border-bottom: 50px solid #fefefe;
+  bottom: -60px;
+  right: -65px;
+  box-shadow: 0px 7px 6px -9px black;
+  transform: rotate(135deg);
+}
+
+section:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 50px solid transparent;
+  border-top: 50px solid #fefefe;
+  top: -60px;
+  left: -65px;
+  box-shadow: 0px -7px 6px -9px black;
+  transform: rotate(135deg);
 }

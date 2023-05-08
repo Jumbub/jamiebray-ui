@@ -7,6 +7,7 @@ header {
   --shadow-size: 10px;
 
   transform-style: preserve-3d;
+  transition: transform 300ms;
   transform: rotate(10deg);
 
   background: linear-gradient(to bottom right, var(--paper-dark), 20%, var(--transparent)), var(--paper-color);
