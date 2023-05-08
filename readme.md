@@ -85,5 +85,6 @@ https://neumorphism.io/
 https://themesberg.com/docs/neumorphism-ui/foundation/typography/
 https://codepen.io/aitchiss/pen/QWKmPqx
 https://codepen.io/thomasrye/pen/VaRoYv
+https://codepen.io/slimsmearlapp/pen/DqVqPy
 https://cssgradient.io/
 just cool: https://codepen.io/dev_loop/pen/jOborLv

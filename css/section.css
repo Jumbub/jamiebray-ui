@@ -1,0 +1,20 @@
+section {
+  background: white;
+  width: 100%;
+  width: 700px;
+}
+
+section:not(:target)[id*="resume"] {
+  display: unset;
+}
+
+section:not(:target) {
+  display: none;
+}
+
+section:target {
+}
+
+section > h2 {
+  display: none;
+}

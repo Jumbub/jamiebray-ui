@@ -13,9 +13,11 @@
 
 /* Calculator body */
 address {
-  transform: rotate(-2deg);
+  transform: rotate(-4deg);
+  transition: transform 300ms, box-shadow 300ms;
 
   display: grid;
+  width: 230px;
   padding: 30px;
   gap: 30px;
 
@@ -26,6 +28,16 @@ address {
   background-color: #cccbd7;
   border-radius: 16px;
   box-shadow: var(--heavy-shadow), var(--body-highlight), var(--soft-shadow), var(--body-shadow);
+}
+
+address:hover {
+  --body-highlight: inset 8px 8px 8px rgba(255, 255, 255, 0.6);
+  --body-shadow: inset -8px -8px 8px rgba(0, 0, 0, 0.4);
+  --heavy-shadow: 4px 4px 8px rgba(0, 0, 0, 0);
+  --soft-shadow: 48px 48px 64px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--heavy-shadow), var(--body-highlight), var(--soft-shadow), var(--body-shadow);
+
+  transform: rotate(-2deg) scale(1.2);
 }
 
 /* Calculator screen */
@@ -62,8 +74,9 @@ address > a {
   position: relative;
   z-index: 1;
 
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
+  margin: auto;
 
   cursor: alias;
 

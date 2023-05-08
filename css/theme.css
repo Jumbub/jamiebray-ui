@@ -3,9 +3,4 @@
 @import "body.css";
 @import "header.css";
 @import "address.css";
-
-section,
-nav,
-aside {
-  display: none;
-}
+@import "section.css";

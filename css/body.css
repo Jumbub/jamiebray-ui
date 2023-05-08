@@ -1,12 +1,29 @@
-@import 'colors.css';
-@import 'buttons.css';
-
 body {
-  background-color: var(--color-a);
+  background-color: #6e8b5b;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 70% 30%;
+
+  overflow-x: hidden;
+  padding: 75px 200px;
+}
+
+body > nav {
+  grid-column: 1 / 1;
+  grid-row: 1 / span 2;
+}
+
+body > section {
+  grid-column: 1 / 1;
+  grid-row: 1 / span 2;
+}
+
+body > header {
+  grid-column: 2 / span 1;
+  grid-row: 1 / 1;
+}
+
+body > address {
+  grid-column: 2 / span 1;
+  grid-row: 2 / 2;
 }

@@ -9,13 +9,8 @@ header {
   transform-style: preserve-3d;
   transform: rotate(10deg);
 
-  position: fixed;
-  right: 100px;
-  top: 100px;
-
   background: linear-gradient(to bottom right, var(--paper-dark), 20%, var(--transparent)), var(--paper-color);
-  min-width: 500px;
-  min-height: 260px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,6 +19,10 @@ header {
   /* font-family: 'Patrick Hand SC', cursive; */
   font-size: 2rem;
   box-shadow: 1px 1px 2px var(--paper-dark), 0px 15px 15px #0003;
+
+  margin-bottom: 150px;
+  width: 260px;
+  height: 200px;
 }
 
 /* The paper creases */

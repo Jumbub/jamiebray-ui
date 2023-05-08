@@ -21,11 +21,14 @@ figure {
   border-radius: 1px;
   box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
   font-weight: normal;
+
+  pointer-events: none;
 }
 
 header:hover > figure {
   transition: transform 300ms;
-  transform: rotate(-17deg) translateY(8em) translateZ(-1em);
+  pointer-events: none;
+  transform: rotate(-17deg) translateX(-8em) translateZ(-1em);
 }
 
 figure > img {
