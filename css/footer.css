@@ -13,20 +13,19 @@
 
 /* Body of calculator */
 address {
+  display: grid;
+  gap: 30px;
+  padding: 30px;
+
   transform: rotate(-2deg);
 
   background-color: #cccbd7;
   border-radius: 16px;
-  --body-highlight: inset 8px 8px 8px rgba(255, 255, 255, 0.8);
-  --body-shadow: inset -8px -8px 8px rgba(0, 0, 0, 0.5);
+  --body-highlight: inset 8px 8px 8px rgba(255, 255, 255, 0.6);
+  --body-shadow: inset -8px -8px 8px rgba(0, 0, 0, 0.4);
   --heavy-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
   --soft-shadow: 16px 16px 32px rgba(0, 0, 0, 0.2);
   box-shadow: var(--heavy-shadow), var(--body-highlight), var(--soft-shadow), var(--body-shadow);
-
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 30px;
-  padding: 30px;
 }
 
 /* Screen of calculator */
