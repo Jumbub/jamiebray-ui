@@ -13,17 +13,15 @@
 
 /* Body of calculator */
 address {
-  --bg: #cccbd7;
-  --contrast: #e2e0e0;
-  --grey: #93a1a1;
-
   transform: rotate(-2deg);
-  position: fixed;
-  bottom: 20px;
 
-  background-color: var(--bg);
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px -2px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.5) 0px -2px 6px 0px inset;
+  background-color: #cccbd7;
+  border-radius: 16px;
+  --body-highlight: inset 4px 4px 16px rgba(255, 255, 255, 1);
+  --body-shadow: inset -4px -4px 16px rgba(0, 0, 0, 1);
+  --heavy-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  --soft-shadow: 16px 16px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--heavy-shadow), var(--body-highlight), var(--soft-shadow), var(--body-shadow);
 
   display: grid;
   grid-template-columns: auto auto;
