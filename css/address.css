@@ -140,21 +140,21 @@ address > a[href*="linkedin"]:hover::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 10px, rgba(10, 102, 194, 0.5) -1px 1px 40px;
+  text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 10px, rgba(10, 102, 194, 0.4) -1px 1px 40px;
 }
 
-/* Calculator screen email me text : on hover */
+/* Calculator screen email text : on hover */
 address > a[href*="mailto"]:hover::before {
-  content: "email me";
+  content: "email";
 
-  background: radial-gradient(circle, rgba(238, 157, 0, 1) 0%, rgba(120, 80, 0, 1) 100%);
+  background: radial-gradient(circle, rgba(238, 157, 0, 1) 0%, rgba(175, 150, 0, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 10px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
 }
 
-/* */
+/* Calculator button : base */
 address > a::after {
   font-family: "BrandIcons";
   font-weight: 500;
@@ -169,13 +169,15 @@ address > a::after {
   transition: filter 300ms, transform 300ms;
   filter: saturate(1);
 }
+
+/* Calculator button : on click */
 address > a:checked {
   border-radius: 50%;
   background: #cccbd7;
   box-shadow: inset 8px 8px 16px #adadb7, inset -8px -8px 16px #ebe9f7;
 }
 
-/* apply icons */
+/* Calculator button : instagram */
 address > a[href*="instagram"]::after {
   content: "\f16d";
 
@@ -185,6 +187,8 @@ address > a[href*="instagram"]::after {
 
   text-shadow: rgba(255, 125, 125, 1) -1px 1px 20px;
 }
+
+/* Calculator button : github */
 address > a[href*="github"]::after {
   content: "\f09b";
 
@@ -194,6 +198,8 @@ address > a[href*="github"]::after {
 
   text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
 }
+
+/* Calculator button : linkedin */
 address > a[href*="linkedin"]::after {
   content: "\f08c";
 
@@ -201,17 +207,19 @@ address > a[href*="linkedin"]::after {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 10px, rgba(10, 102, 194, 0.5) -1px 1px 40px;
+  text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 2px, rgba(10, 102, 194, 0.4) -1px 1px 40px;
 }
+
+/* Calculator button : email */
 address > a[href*="mailto"]::after {
   font-family: "LineIcons";
   font-size: 2.5rem;
   content: "\f0e0";
 
   background: rgb(193, 157, 0);
-  background: radial-gradient(circle, rgba(238, 157, 0, 1) 0%, rgba(120, 80, 0, 1) 100%);
+  background: radial-gradient(circle, rgba(238, 157, 0, 1) 0%, rgba(175, 150, 0, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 10px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
+  text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 2px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
 }
