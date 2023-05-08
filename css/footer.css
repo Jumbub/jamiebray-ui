@@ -17,8 +17,8 @@ address {
 
   background-color: #cccbd7;
   border-radius: 16px;
-  --body-highlight: inset 4px 4px 16px rgba(255, 255, 255, 1);
-  --body-shadow: inset -4px -4px 16px rgba(0, 0, 0, 1);
+  --body-highlight: inset 8px 8px 8px rgba(255, 255, 255, 0.8);
+  --body-shadow: inset -8px -8px 8px rgba(0, 0, 0, 0.5);
   --heavy-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
   --soft-shadow: 16px 16px 32px rgba(0, 0, 0, 0.2);
   box-shadow: var(--heavy-shadow), var(--body-highlight), var(--soft-shadow), var(--body-shadow);
