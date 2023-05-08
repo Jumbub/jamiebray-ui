@@ -11,131 +11,105 @@
   src: url("/woff2/fa-brands-400.woff2") format("woff2");
 }
 
-/* Body of calculator */
+/* Calculator body */
 address {
-  display: grid;
-  gap: 30px;
-  padding: 30px;
-
   transform: rotate(-2deg);
 
-  background-color: #cccbd7;
-  border-radius: 16px;
+  display: grid;
+  padding: 30px;
+  gap: 30px;
+
   --body-highlight: inset 8px 8px 8px rgba(255, 255, 255, 0.6);
   --body-shadow: inset -8px -8px 8px rgba(0, 0, 0, 0.4);
   --heavy-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
   --soft-shadow: 16px 16px 32px rgba(0, 0, 0, 0.2);
+  background-color: #cccbd7;
+  border-radius: 16px;
   box-shadow: var(--heavy-shadow), var(--body-highlight), var(--soft-shadow), var(--body-shadow);
 }
 
-/* Screen of calculator */
+/* Calculator screen */
 address::before {
   content: "";
-  background: #000;
+
   grid-column: 1 / span 2;
   width: 100%;
   height: 80px;
 
-  margin-bottom: 10px;
-
-  border-radius: 7px;
   background: #cccbd7;
+  border-radius: 7px;
   box-shadow: inset 5px 5px 13px #bebdc8, inset -5px -5px 13px #dad9e6;
 }
 
-/* Calculator label */
+/* Calculator title */
 address::after {
+  content: "MY SOCIALS";
+
+  position: absolute;
+  top: 120px;
+  width: 100%;
+  text-align: center;
+
   color: #999;
   font-family: "Courier New", monospace;
   font-style: normal;
   font-size: 0.75rem;
   letter-spacing: 0.05rem;
-
-  position: absolute;
-  top: 120px;
-  right: 35px;
-
-  content: "CONTACTULATOR 9000";
-
-  content: "MY SOCIALS";
-  right: 35%;
 }
 
 /* Calculator button */
 address > a {
+  position: relative;
+  z-index: 1;
+
   width: 100px;
   height: 100px;
 
   cursor: alias;
 
-  position: relative;
-  background-image: linear-gradient(145deg, #dad9e6, #b8b7c2);
-  z-index: 1;
-
-  border-radius: 50px;
-  /* background: linear-gradient(145deg, #dad9e6, #b8b7c2); */
-  box-shadow: 10px 10px 20px #adadb7, -10px -10px 20px #ebe9f7;
-
   font-size: 0;
   text-decoration: none;
 
-  background-color: #f00;
+  border-radius: 50px;
+  background-image: linear-gradient(145deg, #dad9e6, #b8b7c2);
+  box-shadow: 10px 10px 20px #adadb7, -10px -10px 20px #ebe9f7;
 }
+
+/* Calculator button depressed */
 address > a:active {
   background-image: linear-gradient(145deg, #cccbd7, #cccbd7);
   box-shadow: inset 10px 10px 20px #adadb7, inset -10px -10px 20px #ebe9f7;
+
+  /* alternative depression shape */
+  /* background: linear-gradient(145deg, #b8b7c2, #dad9e6); */
+  /* box-shadow: 10px 10px 20px #adadb7, -10px -10px 20px #ebe9f7; */
 }
 
-/* ----------------------------------- Button gradient change */
-/* address > a::before { */
-/*   position: absolute; */
-/*   content: ""; */
-/*   top: 0; */
-/*   right: 0; */
-/*   bottom: 0; */
-/*   left: 0; */
-/*   background-image: linear-gradient(145deg, #b8b7c2, #dad9e6); */
-/*   z-index: -1; */
-/*   transition: opacity 0.3s linear; */
-/*   opacity: 0; */
-
-/*   border-radius: 50px; */
-/*   /1* background: linear-gradient(145deg, #b8b7c2, #dad9e6); *1/ */
-/*   /1* box-shadow: 10px 10px 20px #adadb7, -10px -10px 20px #ebe9f7; *1/ */
-/* } */
-/* address > a:hover::before { */
-/*   opacity: 1; */
-/* } */
-/* address > a:active::before { */
-/*   transition: opacity 0 linear; */
-/*   opacity: 0; */
-/* } */
-
-/* Calculator screen text */
+/* Calculator screen placeholder text */
 address > a::before {
   position: fixed;
   top: 40px;
   left: 45px;
-  max-width: 200px;
 
   font-family: "Calculator";
   font-style: normal;
-  font-size: 3rem;
-  /* font-weight: 600; */
+  font-size: 48px;
   pointer-events: none;
 
   /* Note: this content is rendered once per contact button (4x at time of writing) */
   /* (Which is why it won't dissapear unless you were to hover on all contact buttons simultaneously) */
-  content: "000000000";
+  content: "888888888";
   color: #000;
   opacity: 0.01;
 }
-address > a:hover::before {
-  word-wrap: break-word;
-  transition: opacity 300ms;
 
+/* Calculator screen link text : before hover */
+address > a:hover::before {
+  transition: opacity 300ms;
   opacity: 1;
 }
+
+/* Calculator screen instagram text : on hover */
 address > a[href*="instagram"]:hover::before {
   content: "instagram";
 
@@ -145,6 +119,8 @@ address > a[href*="instagram"]:hover::before {
 
   text-shadow: rgba(255, 125, 125, 1) -1px 1px 20px;
 }
+
+/* Calculator screen github text : on hover */
 address > a[href*="github"]:hover::before {
   /* address > a::before:before { */
   content: "github";
@@ -155,6 +131,8 @@ address > a[href*="github"]:hover::before {
 
   text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
 }
+
+/* Calculator screen linkedin text : on hover */
 address > a[href*="linkedin"]:hover::before {
   content: "linkedin";
 
@@ -164,6 +142,8 @@ address > a[href*="linkedin"]:hover::before {
 
   text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 10px, rgba(10, 102, 194, 0.5) -1px 1px 40px;
 }
+
+/* Calculator screen email me text : on hover */
 address > a[href*="mailto"]:hover::before {
   content: "email me";
 
@@ -174,7 +154,7 @@ address > a[href*="mailto"]:hover::before {
   text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 10px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
 }
 
-/* ----------------------------------- Button icon */
+/* */
 address > a::after {
   font-family: "BrandIcons";
   font-weight: 500;
