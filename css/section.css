@@ -1,65 +1,79 @@
+/* Section booklet */
 section {
-  background: white;
-  width: 100%;
   width: 700px;
-  z-index: -10;
+  height: 1200px;
+  background: gray;
+  padding: 60px 20px 20px 20px;
+  border: solid 20px black;
+
+  --body-highlight: inset 2px 2px 4px #f00f;
+  --body-shadow: inset -2px -2px 4px #0f0f;
+  --reflection: -2px -2px 4px #00ff;
+  --shadow: 2px 2px 0px #ff0f;
+  box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--shadow);
 }
 
-section:not(:target)[id*="resume"] {
-  display: unset;
-}
-
-section:not(:target) {
-  display: none;
-}
-
-section:target {
-}
-
+/* Section title badge */
 section > h2 {
-  display: none;
+  display: inline-block;
+  height: 40px;
+  border-radius: 30px;
+
+  margin: 0;
+  padding: 0;
+
+  line-height: 40px;
+  text-align: center;
+
+  color: #453716;
+  text-shadow: 1px 1px 2px #d1b464;
+
+  background: gold;
+  --left: radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #ffffac 8%, #d1b464 25%, #94783a 62.5%, #876d32 100%);
+  background: var(--left);
+
+  --body-highlight: inset 2px 2px 4px rgba(255, 255, 255, 0.6);
+  --body-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.4);
+  --reflection: -2px -2px 4px rgba(255, 255, 100, 0.2);
+  --shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--shadow);
 }
 
+/* Section title screws */
+section > h2::before,
+section > h2::after {
+  content: "";
+
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 8px;
+  margin-right: 16px;
+  margin-left: 16px;
+
+  background: #8a6004;
+
+  --body-highlight: inset -4px -4px 8px rgba(255, 255, 255, 0.3);
+  --body-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2);
+  --heavy-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  --soft-shadow: 3px 3px 3px rgba(0, 0, 0, 0);
+  box-shadow: var(--heavy-shadow), var(--body-highlight), var(--soft-shadow), var(--body-shadow);
+}
+section > h2::after {
+  background: #735002;
+}
+
+/* Resume & inner edge of booklet */
+iframe {
+  background: darkgray;
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section fullscreen button */
 section > a {
   display: none;
-}
-
-section {
-  border: 1px solid #ddd;
-  background-size: cover;
-  background-clip: content-box;
-  background-color: #fff;
-  box-sizing: border-box;
-  position: relative;
-  margin: auto;
-  top: 30px;
-
-  border: solid 30px #222;
-  box-shadow: inset 5px 5px 5px black, 2px 2px 8px #000c;
-
-  color: #fbfbfb;
-}
-
-section:after {
-  content: "";
-  display: block;
-  position: absolute;
-  border: 50px solid transparent;
-  border-bottom: 50px solid #fefefe;
-  bottom: -60px;
-  right: -65px;
-  box-shadow: 0px 7px 6px -9px black;
-  transform: rotate(135deg);
-}
-
-section:before {
-  content: "";
-  display: block;
-  position: absolute;
-  border: 50px solid transparent;
-  border-top: 50px solid #fefefe;
-  top: -60px;
-  left: -65px;
-  box-shadow: 0px -7px 6px -9px black;
-  transform: rotate(135deg);
 }

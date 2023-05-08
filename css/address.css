@@ -133,6 +133,27 @@ address > a[href*="instagram"]:hover::before {
 
   text-shadow: rgba(255, 125, 125, 1) -1px 1px 20px;
 }
+@keyframes loading {
+  0% {
+    content: "loading";
+    opacity: 1;
+  }
+  33% {
+    content: "loading";
+    opacity: 1;
+  }
+  66% {
+    content: "loading.";
+    opacity: 1;
+  }
+  100% {
+    content: "loading..";
+    opacity: 1;
+  }
+}
+address > a:focus::before {
+  animation: 300ms infinite alternate loading;
+}
 
 /* Calculator screen github text : on hover */
 address > a[href*="github"]:hover::before {

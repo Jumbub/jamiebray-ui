@@ -2,10 +2,14 @@ body {
   background-color: #6e8b5b;
 
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: fit-content(70%) auto;
 
   overflow-x: hidden;
-  padding: 75px 200px;
+  /* -ms-overflow-style: none; /1* IE and Edge *1/ */
+  /* scrollbar-width: none; /1* Firefox *1/ */
+}
+body::-webkit-scrollbar {
+  /* display: none; */
 }
 
 body > nav {
@@ -27,3 +31,10 @@ body > address {
   grid-column: 2 / span 1;
   grid-row: 2 / 2;
 }
+
+/* header, */
+/* address, */
+/* nav, */
+/* aside { */
+/*   display: none !important; */
+/* } */
