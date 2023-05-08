@@ -1,8 +1,0 @@
-@import 'colors.css';
-@import 'buttons.css';
-
-nav {
-  margin: 100px;
-  display: flex;
-  gap: 10px;
-}

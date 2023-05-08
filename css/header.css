@@ -1,5 +1,4 @@
-@import "colors.css";
-@import "buttons.css";
+@import "figure.css";
 
 header {
   --paper-color: #ecb2ba;

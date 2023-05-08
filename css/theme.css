@@ -1,9 +1,11 @@
-@import 'https://necolas.github.io/normalize.css/8.0.1/normalize.css';
+@import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
 
-@import 'header.css';
-@import 'figure.css';
-@import 'a.css';
-@import 'body.css';
-@import 'nav.css';
+@import "body.css";
+@import "header.css";
+@import "footer.css";
 
-@import 'animations.css';
+section,
+nav,
+aside {
+  display: none;
+}

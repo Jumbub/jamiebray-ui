@@ -18,7 +18,13 @@ Raw HTML (animations on actions & transitions between content)
 
 Static pages do not need "logic"
 
-## Cool statistics
+## Favourite learned features
+
+##### `isolation: isolate`
+
+Creates a new stacking context within child elements, allowing locally scoped z-index usage.
+
+## Stastics
 
 ### Size comparisson with my previous React portfolio
 
@@ -75,3 +81,5 @@ https://www.smashingmagazine.com/2022/07/article-section-elements-accessibility/
 https://neumorphism.io/
 https://themesberg.com/docs/neumorphism-ui/foundation/typography/
 https://codepen.io/aitchiss/pen/QWKmPqx
+https://codepen.io/thomasrye/pen/VaRoYv
+https://cssgradient.io/

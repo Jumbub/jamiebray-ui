@@ -1,0 +1,178 @@
+@font-face {
+  font-family: "Calculator";
+  src: url("/woff2/technology.bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "SolidIcons";
+  src: url("/woff2/fa-solid-900.woff2") format("woff2");
+}
+@font-face {
+  font-family: "LineIcons";
+  src: url("/woff2/fa-regular-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BrandIcons";
+  src: url("/woff2/fa-brands-400.woff2") format("woff2");
+}
+
+address {
+  --bg: #cccbd7;
+  --contrast: #e2e0e0;
+  --grey: #93a1a1;
+
+  transform: rotate(-2deg);
+  position: fixed;
+  bottom: 20px;
+
+  background-color: var(--bg);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 10px -2px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.5) 0px -2px 6px 0px inset;
+
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 30px;
+  padding: 30px;
+}
+
+address::before {
+  content: "";
+  background: #000;
+  grid-column: 1 / span 2;
+  width: 100%;
+  height: 60px;
+
+  border-radius: 7px;
+  background: #cccbd7;
+  box-shadow: inset 5px 5px 13px #bebdc8, inset -5px -5px 13px #dad9e6;
+}
+
+address > a {
+  width: 100px;
+  height: 100px;
+
+  position: relative;
+  background-image: linear-gradient(145deg, #dad9e6, #b8b7c2);
+  z-index: 1;
+
+  border-radius: 50px;
+  /* background: linear-gradient(145deg, #dad9e6, #b8b7c2); */
+  box-shadow: 10px 10px 20px #adadb7, -10px -10px 20px #ebe9f7;
+
+  font-size: 0;
+  text-decoration: none;
+
+  background-color: #f00;
+}
+
+address > a:active {
+  background-image: linear-gradient(145deg, #cccbd7, #cccbd7);
+  box-shadow: inset 10px 10px 20px #adadb7, inset -10px -10px 20px #ebe9f7;
+}
+
+/* ----------------------------------- Button gradient change */
+address > a::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(145deg, #b8b7c2, #dad9e6);
+  z-index: -1;
+  transition: opacity 0.3s linear;
+  opacity: 0;
+
+  border-radius: 50px;
+  /* background: linear-gradient(145deg, #b8b7c2, #dad9e6); */
+  /* box-shadow: 10px 10px 20px #adadb7, -10px -10px 20px #ebe9f7; */
+}
+address > a:hover::before {
+  opacity: 1;
+}
+address > a:active::before {
+  transition: opacity 0 linear;
+  opacity: 0;
+}
+
+/* ----------------------------------- Button text on screen */
+/* address > a::before { */
+/*   position: absolute; */
+/*   content: "hi"; */
+/*   top: 0; */
+/*   right: 0; */
+/*   bottom: 0; */
+/*   left: 0; */
+/* } */
+/* address > a:hover::before { */
+/*   opacity: 1; */
+/* } */
+/* address > a:active::before { */
+/*   transition: opacity 0 linear; */
+/*   opacity: 0; */
+/* } */
+
+/* ----------------------------------- Button icon */
+address > a::after {
+  font-family: "BrandIcons";
+  font-weight: 500;
+  font-size: 3rem;
+  font-style: normal;
+
+  position: relative;
+  top: 20px;
+  left: 28px;
+
+  transition: opacity 300ms;
+  opacity: 1;
+}
+address > a:hover::after {
+  transition: opacity 300ms;
+  opacity: 0.7;
+}
+address > a:checked {
+  border-radius: 50%;
+  background: #cccbd7;
+  box-shadow: inset 8px 8px 16px #adadb7, inset -8px -8px 16px #ebe9f7;
+}
+
+/* apply icons */
+address > a[href*="instagram"]::after {
+  content: "\f16d";
+
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: rgba(255, 125, 125, 1) -1px 1px 20px;
+}
+address > a[href*="github"]::after {
+  content: "\f09b";
+
+  background: radial-gradient(circle, rgba(64, 78, 152, 1) 20%, rgba(0, 0, 0, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
+}
+address > a[href*="linkedin"]::after {
+  content: "\f08c";
+
+  background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 10px, rgba(10, 102, 194, 0.5) -1px 1px 40px;
+}
+address > a[href*="mailto"]::after {
+  font-family: "LineIcons";
+  /* font-family: "SolidIcons"; */
+  font-size: 2.5rem;
+  content: "\f0e0";
+
+  background: rgb(193, 157, 0);
+  background: radial-gradient(circle, rgba(238, 157, 0, 1) 0%, rgba(120, 80, 0, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 10px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
+}
