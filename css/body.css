@@ -77,3 +77,21 @@ body > address {
     width: 99dvw;
   }
 }
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+body {
+  opacity: 0;
+  animation-name: slidein;
+  animation-duration: 300ms;
+  animation-delay: 300ms;
+  animation-fill-mode: forwards;
+  counter-increment: countPara;
+}
