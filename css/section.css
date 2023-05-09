@@ -1,26 +1,70 @@
+@font-face {
+  font-family: "LineIcons";
+  src: url("/woff2/fa-regular-400.woff2") format("woff2");
+}
+
 /* Section booklet */
 section {
-  width: 700px;
-  height: 1200px;
-  background: gray;
-  padding: 60px 20px 20px 20px;
-  border: solid 20px black;
+  height: 1270px;
 
-  --body-highlight: inset 2px 2px 4px #f00f;
-  --body-shadow: inset -2px -2px 4px #0f0f;
-  --reflection: -2px -2px 4px #00ff;
-  --shadow: 2px 2px 0px #ff0f;
-  box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--shadow);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: fit-content(9999px);
+
+  padding: 20px;
+  border-radius: 3px;
+  gap: 8px;
+
+  --body-highlight: inset 2px 2px 4px #fff2;
+  --body-shadow: inset -2px -2px 4px #0006;
+  --reflection: -2px -2px 4px #00f2;
+  --hard-shadow: 3px 3px 6px #0008;
+  --soft-shadow: 15px 15px 30px #0005;
+  box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--hard-shadow), var(--soft-shadow);
+  background-color: #12243d;
+}
+
+section::before,
+section::after {
+  content: "";
+
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+  z-index: 1;
+
+  align-self: start;
+  justify-self: start;
+
+  width: 100px;
+  height: 100px;
+
+  border-radius: 4px 4px 100px 4px;
+
+  --body-highlight: inset 2px 2px 4px #fff2;
+  --body-shadow: inset -2px -2px 4px #0006;
+  --reflection: -2px -2px 4px #00f2;
+  --hard-shadow: 3px 3px 6px #0008;
+  --soft-shadow: 15px 15px 30px #0005;
+  box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--hard-shadow), var(--soft-shadow);
+  background-color: #0a1d38;
+}
+section::after {
+  align-self: end;
+  justify-self: end;
+  border-radius: 100px 0 0 0;
 }
 
 /* Section title badge */
 section > h2 {
-  display: inline-block;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+
   height: 40px;
   border-radius: 30px;
 
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  width: 180px;
 
   line-height: 40px;
   text-align: center;
@@ -65,15 +109,82 @@ section > h2::after {
 
 /* Resume & inner edge of booklet */
 iframe {
-  background: darkgray;
-  width: 100%;
-  height: 100%;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+
+  width: 700px;
+  /* height: 100%; */
+  height: 1200px;
+  background: #fff;
   border: none;
-  margin: 0;
+  margin: 10px;
   padding: 0;
+
+  --reflection: -4px -4px 6px #fff2;
+  --shadow: 2px 2px 3px #0008;
+  box-shadow: var(--reflection), var(--shadow);
 }
 
 /* Section fullscreen button */
 section > a {
-  display: none;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+
+  position: relative;
+  top: 35px;
+  left: 570px;
+
+  font-size: 0;
+  text-decoration: none;
+
+  display: block;
+  width: 120px;
+  height: 120px;
+  background: #b00c00;
+  border-radius: 70px 50px 69px 52px;
+
+  transform: skew(0.5deg, 1deg);
+
+  --body-highlight: inset 2px 2px 4px #fff5;
+  --body-shadow: inset -2px -2px 4px #000f;
+  --reflection: -2px -2px 4px #f002;
+  --shadow: 2px 2px 7px #6008;
+  box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--shadow);
+}
+
+section > a::before {
+  content: "";
+  width: 90px;
+  height: 90px;
+  font-size: 70px;
+  display: block;
+  position: absolute;
+  margin: 14px 12px;
+  color: #f008;
+  background: #9c0000;
+
+  border-radius: 45px;
+  --body-highlight: inset 3px 3px 7px #0009;
+  --body-shadow: inset -2px -2px 4px #fff2;
+  --reflection: -3px -3px 3px #000a;
+  --shadow: 2px 2px 7px #fff5;
+  box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--shadow);
+}
+
+section > a::after {
+  content: "\f358";
+  /* content: "\f063"; */
+
+  font-size: 60px;
+  display: block;
+  padding: 25px;
+
+  position: absolute;
+
+  color: #b00c00;
+  background: #b00c0000;
+
+  text-shadow: 2px 2px 2px #0005, -2px -2px 2px #f005, 4px 4px 4px #0005, -4px -4px 4px #f005;
+
+  font-family: "LineIcons";
 }
