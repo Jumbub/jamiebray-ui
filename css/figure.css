@@ -28,7 +28,12 @@ figure {
 header:hover > figure {
   transition: transform 300ms;
   pointer-events: none;
-  transform: rotate(-17deg) translateX(-8em) translateZ(-1em);
+  transform: rotate(-17deg) translateY(8em) translateZ(-1em);
+}
+@media only screen and (max-width: 1150px) {
+  header:hover > figure {
+    transform: rotate(-17deg) translateX(-8em) translateZ(-1em);
+  }
 }
 
 figure > img {

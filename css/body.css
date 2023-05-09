@@ -1,6 +1,7 @@
 body {
-  background: #ff7e5f; /* fallback for old browsers */
-  background: linear-gradient(to right, #d18f5c, #b8533b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+  background: linear-gradient(217deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.3), rgba(0, 0, 255, 0) 70.71%);
   min-height: 100vh;
   padding: 40px max(calc(100vw - 1150px) / 2, 0px);
   margin-bottom: 40px;
@@ -17,19 +18,8 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-body > nav {
-  grid-column: 1 / 1;
-  grid-row: 1 / span 2;
-  display: none;
-}
-
+body > section,
 body > aside {
-  grid-column: 1 / 1;
-  grid-row: 1 / span 2;
-  display: none;
-}
-
-body > section {
   grid-column: 1 / 1;
   grid-row: 1 / span 2;
 }
@@ -69,11 +59,10 @@ body > address {
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
   }
-  body > section {
+  body > section,
+  body > aside,
+  body > nav {
     grid-column: 1 / span 2;
     grid-row: 3 / span 1;
-  }
-  body > aside {
-    display: none;
   }
 }

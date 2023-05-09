@@ -3,17 +3,25 @@
   src: url("/woff2/fa-regular-400.woff2") format("woff2");
 }
 
+/* When resume selected */
+section:target {
+  transform: translateY(0);
+}
+
 /* Section booklet */
 section {
   height: 1300px;
+
+  transition: transform 900ms;
+  transform: translateY(-3000px);
+  z-index: 3;
 
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: fit-content(9999px);
 
-  padding: 20px;
+  padding: 10px;
   border-radius: 3px;
-  gap: 8px;
 
   --body-highlight: inset 2px 2px 4px #fff2;
   --body-shadow: inset -2px -2px 4px #0006;
@@ -21,7 +29,7 @@ section {
   --hard-shadow: 3px 3px 6px #0008;
   --soft-shadow: 15px 15px 30px #0005;
   box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--hard-shadow), var(--soft-shadow);
-  background-color: #12243d;
+  background-color: #123d19;
 }
 
 section::before,
@@ -46,7 +54,7 @@ section::after {
   --hard-shadow: 3px 3px 6px #0008;
   --soft-shadow: 15px 15px 30px #0005;
   box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--hard-shadow), var(--soft-shadow);
-  background-color: #0a1d38;
+  background-color: #0a260f;
 }
 section::after {
   align-self: end;
@@ -62,7 +70,7 @@ section > h2 {
   height: 40px;
   border-radius: 30px;
 
-  margin: 0 auto;
+  margin: 10px auto 0 auto;
   padding: 0;
   width: 180px;
 
@@ -72,7 +80,6 @@ section > h2 {
   color: #453716;
   text-shadow: 1px 1px 2px #d1b464;
 
-  background: gold;
   --left: radial-gradient(ellipse farthest-corner at left top, #ffffff 0%, #ffffac 8%, #d1b464 25%, #94783a 62.5%, #876d32 100%);
   background: var(--left);
 
