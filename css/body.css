@@ -89,7 +89,7 @@ body > address {
 }
 body {
   opacity: 0;
-  animation-name: slidein;
+  animation-name: fadein;
   animation-duration: 300ms;
   animation-delay: 300ms;
   animation-fill-mode: forwards;
