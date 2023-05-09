@@ -1,81 +1,69 @@
-# Jamie Bray UI
+# [Jamie Bray UI](https://jamiebray.me)
 
-## Goals
+My personal website - with semantic HTML & zero JS.
+
+## The challenge
+
+I built this site as a challenge to push my knowledge of native browser functionality, and improve my skills CSS.
+
+With this challenge I set about some rules, and I've documented my learnings.
+
+## Rules
 
 ### Semantic HTML
 
-Each element must actually convey meaning (no arbitrary `div`s)
+- Each element must actually convey meaning. (no arbitrary `div`)
 
-Minimal HTML elements (no bloating html to make CSS "easier")
+- Minimal HTML elements. (no CSS selector bloat)
 
-### Beautiful raw CSS
+### Beautiful CSS
 
-Modern SPA visuals (animations on actions & transitions between content)
-
-Raw HTML (animations on actions & transitions between content)
+- Modern SPA animations. (using `:target`)
 
 ### No JS
 
-Static pages do not need "logic"
+- Need I say more.
 
-## Favourite learned features
+## Favourite learnings
 
 ##### `isolation: isolate`
 
 Creates a new stacking context within child elements, allowing locally scoped z-index usage.
 
-##### `position: fixed` creates a relative context for a child `position: fixed` element
+##### `section:target ~ section`
 
-huh!
+You can create an SPA "like" site by just transitioning between elements based on whether they're the current target. (`url.com/#target`)
 
-## Stastics
+With this CSS query, you can transition (almost) any arbitrary element based on a specific adjacent element being targeted.
 
-### Size comparisson with my previous React portfolio
+#####  `box-shadow`
 
-## Learnings
-
-### What is the difference between `section` and `article`?
-
-
-
-### How do you make "single letter" buttons, without losing HTML semantics & accessibility?
-
-In making keyboard style buttons; I encounted the challenge of making my `a` tags look like keyboard buttons. The issue being; how do you make a semantic & accessible html document that has "keyboard" style buttons .
-
-Normally - I'd just modify the HTML, slap on an aria tag, and a tooltip element that spawned on hover.
-
-Today - we can't break the integrity of the HTML just for "style reasons".
-
-##### Using CSS to only show the first letter
-
-(Found an equivilant stack overflow question)[https://stackoverflow.com/questions/11512989/display-first-letter-only]
+Box shadow is magnitudes easier to think about when you create a template.
 
 ```css
-element {
-  font-size: 0;
-}
-element:first-letter {
-  font-size: 12px;
-}
+--body-highlight: inset 2px 2px 4px #f00f;
+--body-shadow: inset -2px -2px 4px #0f0f;
+--reflection: -2px -2px 4px #00ff;
+--shadow: 2px 2px 0px #ff0f;
+box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--shadow);
 ```
 
+##### `::after` & `::before`
 
-##### Using CSS to generate tooltips
+I didn't realise how *easy* these selectors were to use - just 2 free adjacent "elements" to style.
 
-So initially I was just trying to find out how to "make elements" in CSS, that obviously didn't turn up anything useful. But, then I stumbled upon this (article about making shapes in CSS)[https://css-tricks.com/the-shapes-of-css/]. Then I realised that you can leverage the "before" and "after" tags as effectively new canvases to draw.
+##### `grid-column` & `grid-row` overlapping
 
+You can overlap elements if you assign the same starting position of 2 grid elements with `grid-column` and `grid-row`.
 
-### How do you make SPA page transitions without JS?
+##### `webkit-background-clip: text`
 
-(Found an equivilant stack overflow question)[https://stackoverflow.com/questions/6894125/how-to-open-a-hidden-div-when-a-hash-is-on-the-url]
+This snippet creates a gradient font colour!
 
 ```css
-element {
-  display: none;
-}
-element:target {
-  display: block;
-}
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 ```
 
 ## References
@@ -88,5 +76,5 @@ https://codepen.io/thomasrye/pen/VaRoYv
 https://codepen.io/slimsmearlapp/pen/DqVqPy
 https://codepen.io/bingwa/pen/vYERWpv
 https://cssgradient.io/
-just cool: https://codepen.io/dev_loop/pen/jOborLv
 https://heropatterns.com/
+https://codepen.io/dev_loop/pen/jOborLv (didn't even reference this one, but it's so cool)
