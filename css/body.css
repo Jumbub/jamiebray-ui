@@ -77,6 +77,20 @@ body > address {
     width: 99dvw;
   }
 }
+@media only screen and (max-width: 600px) {
+  nav,
+  section,
+  header,
+  aside {
+    display: none !important;
+  }
+  address {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-60%, -60%) rotate(2deg) !important;
+  }
+}
 
 @keyframes fadein {
   from {
