@@ -5,7 +5,7 @@
 
 /* Section booklet */
 section {
-  height: 1270px;
+  height: 1300px;
 
   display: grid;
   grid-template-columns: 100%;
@@ -117,22 +117,22 @@ iframe {
   height: 1200px;
   background: #fff;
   border: none;
-  margin: 10px;
+  margin: 25px;
   padding: 0;
 
-  --reflection: -4px -4px 6px #fff2;
+  --reflection: -2px -2px 6px #fff2;
   --shadow: 2px 2px 3px #0008;
   box-shadow: var(--reflection), var(--shadow);
 }
 
-/* Section fullscreen button */
+/* Stamp outer wonky circle */
 section > a {
   grid-row: 2 / span 1;
   grid-column: 1 / span 1;
 
   position: relative;
   top: 35px;
-  left: 570px;
+  left: 590px;
 
   font-size: 0;
   text-decoration: none;
@@ -152,6 +152,7 @@ section > a {
   box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--shadow);
 }
 
+/* Stamp inner circle */
 section > a::before {
   content: "";
   width: 90px;
@@ -171,9 +172,9 @@ section > a::before {
   box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--shadow);
 }
 
+/* Stamp download button */
 section > a::after {
   content: "\f358";
-  /* content: "\f063"; */
 
   font-size: 60px;
   display: block;

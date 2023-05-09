@@ -1,8 +1,13 @@
 body {
-  background-color: #6e8b5b;
+  background: #ff7e5f; /* fallback for old browsers */
+  background: linear-gradient(to right, #d18f5c, #b8533b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  min-height: 100vh;
+  padding: 40px max(calc(100vw - 1150px) / 2, 0px);
+  margin-bottom: 40px;
 
   display: grid;
   grid-template-columns: fit-content(70%) auto;
+  grid-template-rows: 40svh 50svh 50svh;
 
   overflow-x: hidden;
   -ms-overflow-style: none; /* IE and Edge */
@@ -15,6 +20,13 @@ body::-webkit-scrollbar {
 body > nav {
   grid-column: 1 / 1;
   grid-row: 1 / span 2;
+  display: none;
+}
+
+body > aside {
+  grid-column: 1 / 1;
+  grid-row: 1 / span 2;
+  display: none;
 }
 
 body > section {
@@ -23,15 +35,45 @@ body > section {
 }
 
 body > header {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+
   z-index: 1;
-  position: fixed;
-  top: 40px;
-  right: 40px;
+  margin: 40px;
 }
 
 body > address {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+
   z-index: 2;
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
+  margin: 40px;
+}
+@media only screen and (max-width: 1150px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    display: grid;
+    grid-template-columns: fit-content(50svw) fit-content(50svw);
+    grid-template-rows: fit-content(100%) fit-content(100%) fit-content(100%);
+  }
+  body > header {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    z-index: 3;
+  }
+  body > address {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+  }
+  body > section {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+  }
+  body > aside {
+    display: none;
+  }
 }
