@@ -2,13 +2,14 @@
 
 My personal website - with semantic HTML & zero JS.
 
-## The challenge
+> See the "minimum" markup version at [jamiebray.me/tiny](https://jamiebray.me)
+> <br/> (same semantics with only **28 lines of HTML**)
 
-I built this site as a challenge to push my knowledge of native browser functionality, and improve my skills CSS.
+## Rules of personal website
 
-With this challenge I set about some rules, and I've documented my learnings.
+This site was a challenge to myself, improving native browser knowledge & CSS skills.
 
-## Rules
+I've documented the rules, and [my learnings](#Favourite-learnings)!
 
 ### Semantic HTML
 
