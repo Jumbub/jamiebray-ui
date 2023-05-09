@@ -38,7 +38,7 @@ address:hover {
   --soft-shadow: 48px 48px 64px rgba(0, 0, 0, 0.1);
   box-shadow: var(--heavy-shadow), var(--body-highlight), var(--soft-shadow), var(--body-shadow);
 
-  transform: rotate(-2deg) scale(1.2);
+  transform: rotate(-2deg) scale(1.15);
 }
 
 /* Calculator screen */

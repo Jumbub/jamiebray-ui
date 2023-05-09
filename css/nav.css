@@ -1,11 +1,12 @@
 nav {
   animation-delay: 6000ms;
-  /* animation-delay: 0ms; */
+  animation-delay: 0ms;
 }
 
 nav {
   position: relative;
   top: -100%;
+  z-index: 1;
 
   width: 100%;
   height: 60%;
@@ -33,8 +34,8 @@ nav > a {
   align-items: center;
 
   border-radius: 50px;
-  background: #ff8766;
-  box-shadow: 7px 7px 14px #d97357, -7px -7px 14px #ff9b75;
+  background: linear-gradient(145deg, #6a515e, #59444f);
+  box-shadow: 7px 7px 14px #54414b, -7px -7px 14px #725765;
 }
 
 nav > a:focus {
@@ -42,6 +43,6 @@ nav > a:focus {
   text-shadow: 2px 2px 8px #0005, 1px 1px 1px #fff2;
 
   border-radius: 50px;
-  background: #ff8766;
-  box-shadow: inset 7px 7px 14px #d97357, inset -7px -7px 14px #ff9b75;
+  background: #634c58;
+  box-shadow: inset 7px 7px 14px #54414b, inset -7px -7px 14px #725765;
 }

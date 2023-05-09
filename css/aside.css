@@ -51,4 +51,17 @@ aside {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  color: #eee;
+  text-shadow: 1px 1px 1px #000f;
+  /* text-shadow: -1px -1px 10px #fff5; */
+}
+
+aside > p > em {
+  text-shadow: -1px -1px 10px #fff5;
+}
+
+aside > p > a {
+  color: #00ff;
+  text-shadow: -1px -1px 10px #fff5;
 }

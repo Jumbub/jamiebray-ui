@@ -1,7 +1,7 @@
 body {
   height: 100%;
-  background: linear-gradient(217deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(336deg, rgba(0, 0, 255, 0.3), rgba(0, 0, 255, 0) 70.71%);
+  background: #2c3e50; /* fallback for old browsers */
+  background: linear-gradient(to left, #fd746c, #2c3e50 70%);
   min-height: 100vh;
   padding: 40px max(calc(100vw - 1150px) / 2, 0px);
   margin-bottom: 40px;
@@ -64,5 +64,16 @@ body > address {
   body > nav {
     grid-column: 1 / span 2;
     grid-row: 3 / span 1;
+  }
+
+  body > aside {
+    position: absolute;
+    top: 25%;
+  }
+  body > nav {
+    position: absolute;
+    top: 45%;
+    width: unset;
+    width: 99dvw;
   }
 }
