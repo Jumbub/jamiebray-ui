@@ -2,8 +2,7 @@
 
 My personal website - with semantic HTML & zero JS.
 
-> See the "minimum" markup version at [jamiebray.me/tiny](https://jamiebray.me/tiny.html)
-> <br/> (same semantics with only **28 lines of HTML**)
+> Tiny markup version at [jamiebray.me/tiny](https://jamiebray.me/tiny.html) (**28 lines of HTML**)
 
 ## Rules of personal website
 
