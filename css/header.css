@@ -1,56 +1,78 @@
-@import "figure.css";
-@import "https://fonts.googleapis.com/css?family=Reenie+Beanie";
+@import "keyframes.css";
+@import "fonts.css";
 
 header {
-  --paper-color: #ecb2ba;
-  --paper-dark: #c6939a;
-  --transparent: rgba(236, 178, 186, 0);
-  --shadow-size: 10px;
+  grid-row-start: 1;
+  grid-column-start: 1;
 
-  transform-style: preserve-3d;
-  transition: transform 300ms;
-  transform: rotate(10deg) scale(0.9);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
 
-  background: linear-gradient(to bottom right, var(--paper-dark), 20%, var(--transparent)), var(--paper-color);
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Reenie Beanie", cursive;
-  /* font-family: 'Rock Salt', cursive; */
-  /* font-family: 'Patrick Hand SC', cursive; */
-  font-size: 2rem;
-  box-shadow: 1px 1px 2px var(--paper-dark), 0px 15px 15px #0003;
-
-  margin-bottom: 150px;
-  width: 260px;
-  height: 200px;
+  font-family: "Major Mono Display";
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 6rem;
+  line-height: 6rem;
+  height: 6rem;
 }
 
-/* The paper creases */
-header::before {
-  --transparency: rgba(255, 255, 255, 0);
+header > h1 {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  place-self: center;
 
-  content: "";
-  position: absolute;
-  width: 100%;
+  margin: 0;
+  width: fit-content;
+  
+  font-size: 6rem;
+  color: #fff0;
+  text-shadow: 2px 2px 4px #0000;
+
+  animation: header-h1-in 0.3s ease-out forwards;
+  animation-delay: 2s;
+}
+
+@keyframes header-h1-in {
+  from {
+    text-shadow: 2px 2px 4px #0000;
+    color: #fff0;
+  }
+  to {
+    text-shadow: 2px 2px 4px #000f;
+    color: #ffff;
+  }
+}
+
+
+header > svg {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  place-self: center;
+  
+  width: 10ch;
   height: 100%;
-  background: linear-gradient(var(--transparency), 50%, var(--paper-dark), 51%, var(--transparency)), linear-gradient(to right, var(--transparency), 50%, var(--paper-dark), 51%, var(--transparency));
+
+  padding-left: 3px;
+  padding-bottom: 3px;
+  
+  fill: #0000;
+  stroke: var(--c-fg);
+  stroke-width: 2px;
+  
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+
+  transform: scaleY(0);
+  animation: header-svg-in 0.2s ease-out forwards, fadeIn 0.3s ease-out forwards, outline 2s linear forwards, fadeOut 0.3s ease-in forwards;
+  animation-delay: 0.35s, 0.35s, 0.2s, 2s;
 }
 
-/* The tape */
-header::after {
-  --tape-color: #dbd8be;
-  --edge-color: #b7b49d;
-
-  content: "";
-  position: absolute;
-  height: 4vmin;
-  top: -20px;
-  width: 110%;
-  background-color: var(--tape-color);
-  border-right: 2px dotted var(--edge-color);
-  border-left: 1px dotted var(--edge-color);
-  transform: rotate(1.5deg);
-  opacity: 0.5;
+@keyframes header-svg-in {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }

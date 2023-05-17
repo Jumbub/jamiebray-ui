@@ -1,111 +1,17 @@
 body {
-  height: 100%;
-  background: #2c3e50; /* fallback for old browsers */
-  background: linear-gradient(to left, #fd746c, #2c3e50 70%);
-  min-height: 100vh;
-  padding: 40px max(calc(100vw - 1150px) / 2, 0px);
-  margin-bottom: 40px;
+  background: var(--c-bg);
+  color: var(--c-fg);
 
   display: grid;
-  grid-template-columns: fit-content(70%) auto;
-  grid-template-rows: 40svh 50svh 50svh;
+  grid-template-columns: 100dvw;
+  grid-template-rows: 100dvh;
+  justify-content: center;
+  align-items: center;
 
-  overflow-x: hidden;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  overflow-y: hidden;
+  width: 100svw;
+  height: 100svh;
 }
 body::-webkit-scrollbar {
   display: none;
-}
-
-body > section,
-body > aside {
-  grid-column: 1 / 1;
-  grid-row: 1 / span 2;
-}
-
-body > header {
-  grid-column: 2 / span 1;
-  grid-row: 1 / span 1;
-
-  z-index: 1;
-  margin: 40px;
-}
-
-body > address {
-  grid-column: 2 / span 1;
-  grid-row: 2 / span 1;
-
-  z-index: 2;
-  margin: 40px;
-}
-@media only screen and (max-width: 1150px) {
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    display: grid;
-    grid-template-columns: fit-content(50svw) fit-content(50svw);
-    grid-template-rows: fit-content(100%) fit-content(100%) fit-content(100%);
-  }
-  body > header {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1;
-    z-index: 3;
-  }
-  body > address {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
-  }
-  body > section,
-  body > aside,
-  body > nav {
-    grid-column: 1 / span 2;
-    grid-row: 3 / span 1;
-  }
-
-  body > aside {
-    position: absolute;
-    top: 25%;
-  }
-  body > nav {
-    position: absolute;
-    top: 45%;
-    width: unset;
-    width: 99dvw;
-  }
-}
-@media only screen and (max-width: 600px) {
-  nav,
-  section,
-  header,
-  aside {
-    display: none !important;
-  }
-  address {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-60%, -60%) rotate(2deg) !important;
-  }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-body {
-  opacity: 0;
-  animation-name: fadein;
-  animation-duration: 300ms;
-  animation-delay: 300ms;
-  animation-fill-mode: forwards;
-  counter-increment: countPara;
 }

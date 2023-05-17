@@ -1,0 +1,19 @@
+@import "https://fonts.googleapis.com/css?family=Notable";
+@import "https://fonts.googleapis.com/css?family=Roboto";
+@import "https://fonts.googleapis.com/css?family=Major+Mono+Display";
+@import "https://fonts.googleapis.com/css?family=Lobster";
+
+@import "https://fonts.googleapis.com/css?family=Montserrat+Subrayada";
+@import "https://fonts.googleapis.com/css?family=Lobster";
+@import "https://fonts.googleapis.com/css?family=Lobster";
+
+
+
+@font-face {
+  font-family: "LineIcons";
+  src: url("/woff2/fa-regular-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BrandIcons";
+  src: url("/woff2/fa-brands-400.woff2") format("woff2");
+}

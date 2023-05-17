@@ -1,52 +1,118 @@
+@import "keyframes.css";
+
 figure {
-  position: fixed;
-  top: 50px;
-  left: 0;
+  --offset: 20px;
 
-  transform-style: preserve-3d;
-  transform: rotate(-15deg) translateZ(-1em);
-  transition: transform 300ms;
+  grid-row-start: 1;
+  grid-column-start: 1;
 
-  position: absolute;
-  width: 180px;
-  height: 235px;
-
-  padding: 10px;
-  background: #eee;
-  color: #fff;
-  font-size: 21px;
-  font-weight: bold;
-  line-height: 1.3em;
-  border: 1px dashed #eef;
-  border-radius: 1px;
-  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
-  font-weight: normal;
-
-  pointer-events: none;
+  z-index: -1;
+  
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
-
-header:hover > figure {
-  transition: transform 300ms;
-  pointer-events: none;
-  transform: rotate(-17deg) translateY(15svh) translateZ(-16px);
-}
-@media only screen and (max-width: 1150px) {
-  header:hover > figure {
-    transform: rotate(-17deg) translateX(-200px) translateZ(-16px);
-  }
+figure:has(figcaption:hover) {
+  font-size: 1.2rem;
 }
 
 figure > img {
+  inset: 0;
+  height: 100%;
   width: 100%;
-  border-radius: 2px;
-  border: 1px solid #0002;
+
+  object-fit: cover;
+  object-position: 0 0;
+
+  filter: blur(10px);
+  animation: unBlur 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+  transition: height 0.3s;
+}
+figure:has(figcaption:hover) > img {
+  margin: 45px auto;
+  object-fit: contain;
+  width: auto;
+  height: calc(100dvh - var(--offset) * 2);
+  box-shadow: 5px 5px 15px black;
+  border: solid 1px #fff;
 }
 
-figure > figcaption {
-  top: 240px;
+figcaption {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  
+  text-shadow: 1px 2px var(--c-bg);
+  font-size: 0.75rem;
+  transition: all 0.15s;
+  background-color: #fff0;
+  padding: 0;
+}
+figcaption:hover {
+  font-size: 1rem;
+  padding: 5px;
+  background-color: var(--c-fg);
+}
 
-  margin-top: 5px;
-  color: #000;
-  font-size: 60px;
-  text-align: center;
+
+@keyframes unBlur {
+  from {
+    filter: blur(10px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
+figure::before,
+figure::after {
+  content: "";
+
+  position: fixed;
+  z-index: 1;
+  inset: 50%;
+
+  background: #ffff;
+  height: var(--line-size);
+
+  animation: borderGoWide 0.3s ease-out forwards, borderGoToTop 0.3s ease-out forwards;
+  animation-delay: 0.1s, 0.4s;
+}
+
+figure::after {
+  animation: borderGoWide 0.3s ease-out forwards, borderGoToBottom 0.3s ease-out forwards;
+  animation-delay: 0.1s, 0.4s;
+}
+figure:has(figcaption:hover)::after, figure:has(figcaption:hover)::before {
+  background: #fff0;
+}
+
+@keyframes borderGoWide {
+  from {
+    left: 50%;
+    right: 50%;
+  }
+  to {
+    left: var(--offset);
+    right: var(--offset);
+  }
+}
+@keyframes borderGoToTop {
+  from {
+    top: 50%;
+  }
+  to {
+    top: var(--offset);
+  }
+}
+@keyframes borderGoToBottom {
+  from {
+    bottom: 50%;
+    top: unset;
+  }
+  to {
+    bottom: var(--offset);
+    top: unset;
+  }
 }
