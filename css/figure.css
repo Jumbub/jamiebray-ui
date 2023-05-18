@@ -46,7 +46,7 @@ figure:has(figcaption:hover) > img {
 
 figcaption {
   position: absolute;
-  bottom: 20px;
+  bottom: 5px;
   right: 20px;
 
   text-shadow: 1px 2px var(--c-bg);

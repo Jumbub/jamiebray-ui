@@ -85,7 +85,10 @@ header > svg {
 @media only screen and (max-width: 800px) {
   header {
     margin-right: 0;
-    margin-bottom: 50px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    right: 50%;
   }
   header > h1 {
     margin-right: 0;
@@ -95,6 +98,7 @@ header > svg {
   header > svg {
     margin-right: 0;
     font-size: calc(100dvw / 8);
+    margin-bottom: calc(100dvh / 25);
     overflow-x: hidden;
   }
 }
