@@ -27,8 +27,6 @@ My personal website - with semantic HTML & **zero** JS.
 
 ## Notable learnings
 
-<br/>
-
 #### `isolation: isolate`
 
 Creates a new stacking context within child elements, allowing locally scoped z-index usage.
