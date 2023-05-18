@@ -1,3 +1,152 @@
+@import "keyframes.css";
+@import "fonts.css";
+
 nav {
-  display: none;
+  --size-wide: 150px;
+
+  position: absolute;
+  left: calc(50% - var(--size) / 2);
+  top: 60%;
+
+  width: var(--size);
+  height: var(--size);
+
+  background-color: #fff0;
+  border-radius: calc(var(--size) / 2);
+  border: solid var(--line-size) #ffff;
+
+  animation: 0.1s nav-in linear forwards;
+  animation-fill-mode: backwards;
+  animation-delay: 2.5s;
+
+  transition: 0.3s all;
+}
+
+@keyframes nav-in {
+  from {
+    border-color: #fff0;
+    left: calc(50%);
+    top: calc(60% + var(--size) / 2);
+    width: 0;
+    height: 0;
+  }
+  10% {
+    border-color: #ffff;
+  }
+  to {
+    border-color: #ffff;
+    left: calc(50% - var(--size) / 2);
+    width: var(--size);
+    height: var(--size);
+  }
+}
+
+nav:hover {
+  left: calc(50% - var(--size-wide) / 2);
+  width: var(--size-wide);
+  background-color: #ffff;
+}
+
+nav > a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+  height: 100%;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0;
+
+  transition: all 0.1s;
+}
+
+nav > a:hover {
+  color: rgba(30, 40, 75, 1);
+  text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
+  font-size: 1rem;
+}
+
+nav > a::before {
+  content: "\f15c";
+
+  display: block;
+  margin-left: 15px;
+
+  color: #fff;
+  text-align: center;
+  font-family: "LineIcons";
+  font-weight: 100;
+  font-size: 2.5rem;
+  font-style: normal;
+
+  animation: 0.1s nav-a-before-in linear forwards;
+  animation-fill-mode: backwards;
+  animation-delay: 2.5s;
+  transition: 0.2s color;
+}
+@keyframes nav-a-before-in {
+  from {
+    font-size: 0rem;
+  }
+  to {
+    font-size: 2.5rem;
+  }
+}
+
+nav > a:hover::before {
+  color: rgba(30, 40, 75, 1);
+  text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
+
+  margin-left: 0;
+}
+
+/*  */
+
+:target ~ nav {
+  border-color: #fff0;
+  border-width: 0px;
+  left: calc(50%);
+  top: calc(60% + var(--size) / 2);
+  width: 0;
+  height: 0;
+  font-size: 0px;
+}
+:target ~ nav > a {
+  visibility: hidden;
+  font-size: 1px;
+}
+:target ~ nav > a::before {
+  font-size: 0;
+}
+
+/*  */
+
+@media only screen and (max-width: 800px) {
+  nav {
+    display: none;
+  }
+}
+@media (hover: none) {
+  nav {
+    left: calc(50% - var(--size-wide) / 2);
+    width: var(--size-wide);
+    background-color: #ffff;
+  }
+  nav > a {
+    color: rgba(30, 40, 75, 1);
+    text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
+    font-size: 1rem;
+  }
+  nav > a::before {
+    color: rgba(30, 40, 75, 1);
+    text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
+
+    margin-left: 0;
+  }
 }

@@ -1,14 +1,184 @@
 section {
-  display: none;
-  box-shadow: var(--no-shadow);
+  grid-row-start: 1;
+  grid-column-start: 1;
+  align-self: start;
 
-  padding: 30px;
-  animation: var(--shadow-in-animation);
-  animation-delay: var(--shadow-in-delay);
+  z-index: -2;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  height: 0;
+
+  position: relative;
+}
+
+section > h2 {
+  position: absolute;
+  top: 10px;
+
+  font-family: "Major Mono Display";
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px black;
 }
 
 section > iframe {
+  position: absolute;
+  top: calc(var(--offset) + var(--size));
+
   border: none;
-  height: 1200px;
-  width: 700px;
+  background-color: white;
+  box-shadow: 0 0 10px #0009;
+  height: calc(100dvh - var(--size) * 2 - var(--offset) * 2);
+  width: max(800px, min(100dvw, 800px));
+}
+
+section > a {
+  position: absolute;
+  top: 0;
+  left: calc(min(80dvw, 50dvw + 280px));
+  z-index: 3;
+
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+
+  background-color: #fff0;
+  border-radius: 0 0 calc(var(--size) / 2) calc(var(--size) / 2);
+  border: solid var(--line-size) #fff;
+
+  font-size: 0;
+
+  animation: section-a-in 0.2s ease-out forwards;
+  animation-delay: var(--delay);
+  animation-fill-mode: backwards;
+}
+
+@keyframes section-a-in {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    height: var(--height);
+  }
+}
+
+section > a[href*="export"] {
+  --height: 210px;
+  --delay: 2.1s;
+}
+
+section > a:hover {
+  box-shadow: 2px 2px 4px #0009;
+  height: calc(var(--height) + 1px);
+}
+
+section > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+
+  width: var(--size);
+  height: 0;
+
+  white-space: nowrap;
+  color: #0000;
+  background-color: #ffff;
+  border-radius: 0 0 calc(var(--size) / 2.1) calc(var(--size) / 2.1);
+
+  transition: 0.2s height, 0.2s color;
+  transition-delay: 0s, 0s;
+
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1rem;
+  font-style: normal;
+  writing-mode: vertical-rl;
+  text-align: end;
+  text-align: start;
+  text-indent: calc(var(--size) * 1.2);
+  line-height: var(--size);
+}
+section > a:hover::before {
+  height: calc(var(--height) + 1px);
+  transition: 0.1s height, 0.3s color, 0.1s text-shadow;
+  transition-delay: 0s, 0.01s, 0.01s;
+}
+section > a[href*="export"]:hover::before {
+  content: "Download";
+  color: rgba(24, 118, 213, 1);
+}
+
+section > a::after {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+
+  color: #fff;
+  font-family: "LineIcons";
+  font-size: 3rem;
+
+  text-shadow: 1px 1px 2px black;
+
+  animation: idleContact 3s linear both infinite;
+  transition: all 0.3s, font-size 0s;
+}
+
+section > a[href*="export"]::after {
+  content: "\f358";
+}
+
+section > a[href*="export"]:hover::after {
+  background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 2px, rgba(10, 102, 194, 0.4) -1px 1px 40px;
+}
+
+/*  */
+
+section:target {
+  transition: height 0.3s;
+  height: calc(100% - var(--size) * 1.5);
+  z-index: 2;
+}
+
+/*  */
+
+@media (hover: none) {
+  section > a {
+    box-shadow: 2px 2px 4px #0009;
+    height: calc(var(--height) + 1px);
+  }
+
+  section > a::before {
+    height: calc(var(--height) + 1px);
+    transition: 0.1s height, 0.3s color, 0.1s text-shadow;
+    transition-delay: 0s, 0.01s, 0.01s;
+  }
+
+  section > a[href*="export"]::before {
+    content: "Download";
+    color: rgba(24, 118, 213, 1);
+  }
+
+  section > a[href*="export"]::after {
+    background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 2px, rgba(10, 102, 194, 0.4) -1px 1px 40px;
+  }
 }

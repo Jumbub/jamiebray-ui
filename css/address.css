@@ -2,9 +2,6 @@
 @import "fonts.css";
 
 address {
-  --offset: 20px;
-  --size: 60px;
-
   position: absolute;
   left: var(--offset);
   right: var(--offset);
@@ -15,8 +12,6 @@ address {
   align-items: end;
   justify-content: center;
   gap: calc(var(--size) / 2);
-
-  width: 100%;
 }
 
 address > a {
@@ -24,21 +19,17 @@ address > a {
 
   display: block;
   width: var(--size);
-  height: 0;
+  height: var(--height);
 
-  opacity: 0;
   background-color: #fff0;
   border-radius: calc(var(--size) / 2) calc(var(--size) / 2) 0 0;
   border: solid var(--line-size) #fff;
 
   font-size: 0;
-  
-  animation: address-a-in 0.2s ease-out forwards;
-  animation-delay: 2s;
-}
 
-address > a:hover {
-  background-color: white;
+  animation: address-a-in 0.2s ease-out forwards;
+  animation-delay: var(--delay);
+  animation-fill-mode: backwards;
 }
 
 @keyframes address-a-in {
@@ -55,20 +46,78 @@ address > a:hover {
   }
 }
 
-address > a[href*="linkedin"] {
-  --height: 120px;
-}
-address > a[href*="github"] {
-  --height: 140px;
+address > a[href*="mailto"] {
+  --height: 150px;
+  --delay: 2s;
 }
 address > a[href*="instagram"] {
-  --height: 120px;
+  --height: 180px;
+  --delay: 2.05s;
 }
-address > a[href*="mailto"] {
-  --height: 100px;
+address > a[href*="linkedin"] {
+  --height: 210px;
+  --delay: 2.1s;
+}
+address > a[href*="github"] {
+  --height: 240px;
+  --delay: 2.15s;
 }
 
 address > a::before {
+  content: "";
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  font-weight: 900;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: var(--size);
+  height: 0;
+
+  white-space: nowrap;
+  color: #0000;
+  background-color: #ffff;
+  border-radius: calc(var(--size) / 2.1) calc(var(--size) / 2.1) 0 0;
+
+  transition: 0.2s height, 0.2s color;
+  transition-delay: 0s, 0s;
+
+  font-size: 1rem;
+  font-style: normal;
+  writing-mode: vertical-rl;
+  text-align: end;
+  text-align: start;
+  text-indent: calc(var(--size) * 1.2);
+  line-height: var(--size);
+}
+address > a:hover::before {
+  height: calc(var(--height) + 1px);
+  transition: 0.1s height, 0.3s color, 0.1s text-shadow;
+  transition-delay: 0s, 0.01s, 0.01s;
+}
+address > a[href*="linkedin"]:hover::before {
+  content: "LinkedIn";
+  color: rgba(24, 118, 213, 1);
+}
+address > a[href*="github"]:hover::before {
+  content: "GitHub";
+  color: rgba(30, 40, 75, 1);
+  text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
+}
+address > a[href*="instagram"]:hover::before {
+  content: "Instagram";
+  color: rgba(255, 70, 100, 1);
+  text-shadow: rgba(255, 125, 125, 1) -1px 1px 20px;
+}
+address > a[href*="mailto"]:hover::before {
+  content: "Email";
+  text-indent: calc(var(--size) * 1);
+  text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 2px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
+  color: rgba(238, 157, 0, 1);
+}
+
+address > a::after {
   position: absolute;
   top: 5px;
   width: 100%;
@@ -80,48 +129,144 @@ address > a::before {
   font-size: 3rem;
   font-style: normal;
 
-  text-shadow: 2px 2px 4px black;
+  text-shadow: 1px 1px 2px black;
 
   animation: idleContact 3s linear both infinite;
-  transition: all 0.3s;
+  transition: all 0.3s, font-size 0s;
 }
 
-address > a[href*="linkedin"]::before {
+address > a[href*="linkedin"]::after {
   content: "\f08c";
 }
-address > a[href*="github"]::before {
+address > a[href*="github"]::after {
   content: "\f09b";
 }
-address > a[href*="instagram"]::before {
+address > a[href*="instagram"]::after {
   content: "\f16d";
 }
-address > a[href*="mailto"]::before {
+address > a[href*="mailto"]::after {
   font-family: "LineIcons";
   font-size: 2.5rem;
   content: "\f0e0";
 }
 
-address > a[href*="linkedin"]:hover::before {
+address > a[href*="linkedin"]:hover::after {
   background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 2px, rgba(10, 102, 194, 0.4) -1px 1px 40px;
 }
-address > a[href*="github"]:hover::before {
+address > a[href*="github"]:hover::after {
   background: radial-gradient(circle, rgba(64, 78, 152, 1) 20%, rgba(0, 0, 0, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
 }
-address > a[href*="instagram"]:hover::before {
+address > a[href*="instagram"]:hover::after {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: rgba(255, 125, 125, 1) -1px 1px 20px;
 }
-address > a[href*="mailto"]:hover::before {
+address > a[href*="mailto"]:hover::after {
   background: radial-gradient(circle, rgba(238, 157, 0, 1) 0%, rgba(175, 150, 0, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 2px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
+}
+
+/*  */
+
+:target ~ address {
+  transition: bottom 0.1s;
+  bottom: 0;
+  z-index: 3;
+}
+:target ~ address > a {
+  transition: height 0.4s;
+  height: calc(var(--size));
+}
+:target ~ address > a:hover {
+  box-shadow: 2px 2px 4px #0009;
+  transition: height 0.1s;
+  height: var(--height);
+}
+
+/*  */
+
+@media (hover: none) {
+  address > a[href*="github"] {
+    --height: 200px;
+    order: 2;
+  }
+  address > a[href*="linkedin"] {
+    --height: 240px;
+    order: 3;
+  }
+  address > a[href*="instagram"] {
+    --height: 280px;
+    order: 4;
+  }
+  address > a[href*="mail"] {
+    --height: 160px;
+    order: 1;
+  }
+  address > a::before {
+    height: calc(var(--height) + 1px);
+    transition: 0.1s height, 0.3s color, 0.1s text-shadow;
+    transition-delay: 0s, 0.01s, 0.01s;
+  }
+  address > a[href*="linkedin"]::before {
+    content: "LinkedIn";
+    color: rgba(24, 118, 213, 1);
+  }
+  address > a[href*="github"]::before {
+    content: "GitHub";
+    color: rgba(30, 40, 75, 1);
+    text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
+  }
+  address > a[href*="instagram"]::before {
+    content: "Instagram";
+    color: rgba(255, 70, 100, 1);
+    text-shadow: rgba(255, 125, 125, 1) -1px 1px 20px;
+  }
+  address > a[href*="mailto"]::before {
+    content: "Email";
+    text-indent: calc(var(--size) * 1);
+    text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 2px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
+    color: rgba(238, 157, 0, 1);
+  }
+
+  address > a[href*="linkedin"]::after {
+    background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 2px, rgba(10, 102, 194, 0.4) -1px 1px 40px;
+  }
+  address > a[href*="github"]::after {
+    background: radial-gradient(circle, rgba(64, 78, 152, 1) 20%, rgba(0, 0, 0, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
+  }
+  address > a[href*="instagram"]::after {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: rgba(255, 125, 125, 1) -1px 1px 20px;
+  }
+  address > a[href*="mailto"]::after {
+    background: radial-gradient(circle, rgba(238, 157, 0, 1) 0%, rgba(175, 150, 0, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 2px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
+  }
+
+  /*  */
+
+  :target ~ address > a {
+    transition: height 0.1s;
+    --height: var(--size);
+    overflow: hidden;
+  }
 }

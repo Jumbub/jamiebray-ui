@@ -2,27 +2,33 @@
 
 My personal website - with semantic HTML & zero JS.
 
-> Tiny markup version at [jamiebray.me/tiny](https://jamiebray.me/tiny.html) (**28 lines of HTML**)
+## Why?
 
-## Rules of personal website
+Using React can invite some bad habits, so this is a personal reminder on good habits for HTML 5.
 
-This site was a challenge to myself, improving native browser knowledge & CSS skills.
-
-I've documented the rules, and [my learnings](#Favourite-learnings)!
+I've noted [some learnings](#Favourite-learnings), and the repository rules below:
 
 ### Semantic HTML
 
 - Each element must actually convey meaning. (no arbitrary `div`)
 
+> In fact, there are no `div`s at all.
+
 - Minimal HTML elements. (no CSS selector bloat)
+
+> CSS selectors are actually safe when you use HTML semantically.
 
 ### Beautiful CSS
 
 - Modern SPA animations. (using `:target`)
 
+> Animating to the next "page".
+
 ### No JS
 
 - Need I say more.
+
+> Maybe an unecessary restriction, but makes it a little more interesting.
 
 ## Favourite learnings
 
@@ -36,7 +42,7 @@ You can create an SPA "like" site by just transitioning between elements based o
 
 With this CSS query, you can transition (almost) any arbitrary element based on a specific adjacent element being targeted.
 
-#####  `box-shadow`
+##### `box-shadow`
 
 Box shadow is magnitudes easier to think about when you create a template.
 
@@ -50,7 +56,7 @@ box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--
 
 ##### `::after` & `::before`
 
-I didn't realise how *easy* these selectors were to use - just 2 free adjacent "elements" to style.
+I didn't realise how _easy_ these selectors were to use - just 2 free adjacent "elements" to style.
 
 ##### `grid-column` & `grid-row` overlapping
 
@@ -65,6 +71,14 @@ background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 ```
+
+##### `img` `line-height`
+
+This was so frustrating to debug - by default an image will behave like text and have "line-height padding" much like text would.
+
+https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image
+
+To remove this, set the image to `display: block`.
 
 ## References
 

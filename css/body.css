@@ -8,10 +8,14 @@ body {
   justify-content: center;
   align-items: center;
 
-  overflow-y: hidden;
-  width: 100svw;
-  height: 100svh;
+  font-family: sans-serif;
+
+  width: 100dvw;
+  height: 100dvh;
+  max-width: 100dvw;
+  max-height: 100dvh;
 }
+
 body::-webkit-scrollbar {
   display: none;
 }
