@@ -4,11 +4,11 @@
 
 @keyframes outline {
   from {
-    stroke-dasharray: 600;
-    stroke-dashoffset: 600;
+    stroke-dasharray: var(--stroke-offset);
+    stroke-dashoffset: var(--stroke-offset);
   }
   to {
-    stroke-dasharray: 600;
+    stroke-dasharray: var(--stroke-offset);
     stroke-dashoffset: 0;
   }
 }

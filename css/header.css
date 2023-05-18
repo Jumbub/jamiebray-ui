@@ -62,8 +62,9 @@ header > svg {
   stroke: var(--c-fg);
   stroke-width: 2px;
 
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
+  --stroke-offset: 400;
+  stroke-dasharray: var(--stroke-offset);
+  stroke-dashoffset: var(--stroke-offset);
 
   transform: scaleY(0);
   animation: header-svg-in 0.2s ease-out forwards, fadeIn 0.3s ease-out forwards, outline 2s linear forwards,
@@ -96,6 +97,8 @@ header > svg {
     overflow-x: hidden;
   }
   header > svg {
+    --stroke-offset: 200;
+    stroke-width: 1.5px;
     margin-right: 0;
     font-size: calc(100dvw / 8);
     margin-bottom: calc(100dvh / 25);
