@@ -23,7 +23,7 @@ I invite you to check out the HTML document (only 25 elements): [index.html](htt
 
 ### No JS
 
-- With great power, comes great responsibility.
+- Did someone say *free server side rendering*?
 
 <br/>
 
@@ -59,7 +59,7 @@ box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--
 
 #### `::after` & `::before`
 
-I didn't realise how _easy_ these selectors were to use - I really was leaning on React components too much.
+Having spent so much time in React, I am reminded of how powerful these selectors are for keeping HTML markup clean.
 
 <br/>
 
