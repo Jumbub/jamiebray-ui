@@ -1,48 +1,49 @@
 # [Jamie Bray UI](https://jamiebray.me)
 
-My personal website - with semantic HTML & zero JS.
+My personal website - with semantic HTML & **zero** JS.
 
-## Why?
+> Having worked professionally with React for 5 years now, raw HTML 5 is somewhat satisfying.
 
-Using React can invite some bad habits, so this is a personal reminder on good habits for HTML 5.
+<br/>
 
-I've noted [some learnings](#Favourite-learnings), and the repository rules below:
+### Pure Semantic HTML
 
-### Semantic HTML
+- Every element conveys meaning.
+> (in fact - there are no `div` elements)
 
-- Each element must actually convey meaning. (no arbitrary `div`)
-
-> In fact, there are no `div`s at all.
-
-- Minimal HTML elements. (no CSS selector bloat)
-
-> CSS selectors are actually safe when you use HTML semantically.
+- Minimal element attributes.
+> (for example - no class attributes required, thanks to semantic HTML)
 
 ### Beautiful CSS
 
-- Modern SPA animations. (using `:target`)
-
-> Animating to the next "page".
+- Modern SPA animations.
+> (for example - leveraging `:target` selector for page transitions)
 
 ### No JS
 
-- Need I say more.
+- With great power, comes great responsibility.
 
-> Maybe an unecessary restriction, but makes it a little more interesting.
+<br/>
 
-## Favourite learnings
+## Notable learnings
 
-##### `isolation: isolate`
+<br/>
+
+#### `isolation: isolate`
 
 Creates a new stacking context within child elements, allowing locally scoped z-index usage.
 
-##### `section:target ~ section`
+<br/>
+
+#### `section:target ~ section`
 
 You can create an SPA "like" site by just transitioning between elements based on whether they're the current target. (`url.com/#target`)
 
 With this CSS query, you can transition (almost) any arbitrary element based on a specific adjacent element being targeted.
 
-##### `box-shadow`
+<br/>
+
+#### `box-shadow`
 
 Box shadow is magnitudes easier to think about when you create a template.
 
@@ -54,15 +55,21 @@ Box shadow is magnitudes easier to think about when you create a template.
 box-shadow: var(--body-shadow), var(--body-highlight), var(--reflection), var(--shadow);
 ```
 
-##### `::after` & `::before`
+<br/>
 
-I didn't realise how _easy_ these selectors were to use - just 2 free adjacent "elements" to style.
+#### `::after` & `::before`
 
-##### `grid-column` & `grid-row` overlapping
+I didn't realise how _easy_ these selectors were to use - I really was leaning on React components too much.
+
+<br/>
+
+#### `grid-column` & `grid-row` overlapping
 
 You can overlap elements if you assign the same starting position of 2 grid elements with `grid-column` and `grid-row`.
 
-##### `webkit-background-clip: text`
+<br/>
+
+#### `webkit-background-clip: text`
 
 This snippet creates a gradient font colour!
 
@@ -72,13 +79,17 @@ background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 
 -webkit-text-fill-color: transparent;
 ```
 
-##### `img` `line-height`
+<br/>
+
+#### `img` elements have `line-height`
 
 This was so frustrating to debug - by default an image will behave like text and have "line-height padding" much like text would.
 
 https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image
 
 To remove this, set the image to `display: block`.
+
+<br/>
 
 ## References
 
