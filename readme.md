@@ -2,6 +2,8 @@
 
 My personal website - with semantic HTML & **zero** JS.
 
+I invite you to check out the HTML document (only 25 elements): [index.html](https://github.com/Jumbub/jamiebray-ui/blob/master/index.html)
+
 > Having worked professionally with React for 5 years now, raw HTML 5 is somewhat satisfying.
 
 <br/>
