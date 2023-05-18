@@ -137,6 +137,24 @@ section > a::after {
   transition: all 0.3s, font-size 0s;
 }
 
+section > a:focus::after {
+  animation: 1s section-a-focus-after;
+}
+@keyframes section-a-focus-after {
+  from {
+    transform: scale(1) translateY(0);
+  }
+  60% {
+    transform: scale(0.7) translateY(-10px);
+  }
+  80% {
+    transform: scale(1.1) translateY(5px);
+  }
+  to {
+    transform: scale(1) translateY(0);
+  }
+}
+
 section > a[href*="export"]::after {
   content: "\f358";
   bottom: 0;
@@ -155,6 +173,10 @@ section:target {
   transition: height 0.3s;
   height: calc(100% - var(--size) * 1.5);
   z-index: 2;
+}
+
+section:target > a {
+  animation: unset;
 }
 
 /*  */

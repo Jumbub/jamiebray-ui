@@ -134,6 +134,7 @@ figure:has(figcaption:hover)::before {
   right: 0 !important;
 }
 :target ~ figure::after {
+  top: unset;
   bottom: 0 !important;
   left: 0 !important;
   right: 0 !important;
