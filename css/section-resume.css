@@ -1,4 +1,4 @@
-section {
+#resume {
   grid-row-start: 1;
   grid-column-start: 1;
   align-self: start;
@@ -17,7 +17,7 @@ section {
   position: relative;
 }
 
-section > h2 {
+#resume > h2 {
   position: absolute;
   top: 10px;
 
@@ -29,7 +29,7 @@ section > h2 {
   text-shadow: 2px 2px 4px black;
 }
 
-section > iframe {
+#resume > iframe {
   position: absolute;
   top: calc(var(--offset) + var(--size));
 
@@ -40,7 +40,7 @@ section > iframe {
   width: max(800px, min(100dvw, 800px));
 }
 
-section > a {
+#resume > a {
   position: absolute;
   top: 0;
   left: calc(min(80dvw, 50dvw + 280px));
@@ -56,13 +56,13 @@ section > a {
 
   font-size: 0;
 
-  animation: section-a-in 0.2s ease-out forwards;
+  animation: #resume-a-in 0.2s ease-out forwards;
   animation-delay: var(--delay);
   animation-fill-mode: backwards;
   transition: 0.1s height, 0.3s color, 0.1s text-shadow;
 }
 
-@keyframes section-a-in {
+@keyframes #resume-a-in {
   from {
     opacity: 0;
     height: 0;
@@ -76,17 +76,17 @@ section > a {
   }
 }
 
-section > a[href*="export"] {
+#resume > a[href*="export"] {
   --height: 220px;
   --delay: 2.1s;
 }
 
-section > a:hover {
+#resume > a:hover {
   box-shadow: 2px 2px 4px #0009;
   height: calc(var(--height) + 1px);
 }
 
-section > a::before {
+#resume > a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -112,17 +112,17 @@ section > a::before {
   text-indent: var(--size);
   line-height: var(--size);
 }
-section > a:hover::before {
+#resume > a:hover::before {
   height: calc(var(--height) + 1px);
   transition: 0.1s height, 0.3s color, 0.1s text-shadow;
   transition-delay: 0s, 0.01s, 0.01s;
 }
-section > a[href*="export"]:hover::before {
+#resume > a[href*="export"]:hover::before {
   content: "Download";
   color: rgba(24, 118, 213, 1);
 }
 
-section > a::after {
+#resume > a::after {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -137,10 +137,10 @@ section > a::after {
   transition: all 0.3s, font-size 0s;
 }
 
-section > a:focus::after {
-  animation: 1s section-a-focus-after;
+#resume > a:focus::after {
+  animation: 1s #resume-a-focus-after;
 }
-@keyframes section-a-focus-after {
+@keyframes #resume-a-focus-after {
   from {
     transform: scale(1) translateY(0);
   }
@@ -155,12 +155,12 @@ section > a:focus::after {
   }
 }
 
-section > a[href*="export"]::after {
+#resume > a[href*="export"]::after {
   content: "\f358";
   bottom: 0;
 }
 
-section > a[href*="export"]:hover::after {
+#resume > a[href*="export"]:hover::after {
   background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -169,36 +169,36 @@ section > a[href*="export"]:hover::after {
 
 /*  */
 
-section:target {
+#resume:target {
   transition: height 0.3s;
   height: calc(100% - var(--size) * 1.5);
   z-index: 2;
 }
 
-section:target > a {
+#resume:target > a {
   animation: unset;
 }
 
 /*  */
 
 @media (hover: none) {
-  section > a {
+  #resume > a {
     box-shadow: 2px 2px 4px #0009;
     height: calc(var(--height) + 1px);
   }
 
-  section > a::before {
+  #resume > a::before {
     height: calc(var(--height) + 1px);
     transition: 0.1s height, 0.3s color, 0.1s text-shadow;
     transition-delay: 0s, 0.01s, 0.01s;
   }
 
-  section > a[href*="export"]::before {
+  #resume > a[href*="export"]::before {
     content: "Download";
     color: rgba(24, 118, 213, 1);
   }
 
-  section > a[href*="export"]::after {
+  #resume > a[href*="export"]::after {
     background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -209,37 +209,37 @@ section:target > a {
 /*  */
 
 @media only screen and (max-width: 800px) {
-  section {
+  #resume {
     height: 30%;
     z-index: 2;
   }
-  section > h2,
-  section > iframe {
+  #resume > h2,
+  #resume > iframe {
     display: none;
   }
 
-  section > a[href*="export"] {
+  #resume > a[href*="export"] {
     --height: 150px;
   }
-  section > a[href*="export"]::before {
+  #resume > a[href*="export"]::before {
     text-align: start;
     text-indent: 15px;
     color: rgba(24, 118, 213, 1);
   }
   @media (hover: none) {
-    section > a[href*="export"]::before {
+    #resume > a[href*="export"]::before {
       content: "Resume";
     }
   }
-  section > a[href*="export"]:hover::before {
+  #resume > a[href*="export"]:hover::before {
     content: "Resume";
   }
-  section > a[href*="export"]::after {
+  #resume > a[href*="export"]::after {
     content: "\f15b";
     font-size: 2.5rem;
     bottom: 5px;
   }
-  section > a {
+  #resume > a {
     --height: 150px;
     height: calc(var(--height) + 1px);
     top: var(--offset);
