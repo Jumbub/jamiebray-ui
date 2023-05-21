@@ -1,6 +1,6 @@
 @import "keyframes.css";
 
-figure {
+body > figure {
   --offset: 20px;
 
   grid-row-start: 1;
@@ -12,11 +12,11 @@ figure {
   height: 100%;
   margin: 0;
 }
-figure:has(figcaption:hover) {
+body > figure:has(figcaption:hover) {
   font-size: 1.2rem;
 }
 
-figure > img {
+body > figure > img {
   display: block;
 
   inset: 0;
@@ -35,7 +35,7 @@ figure > img {
   transition: height 0.3s;
 }
 
-figure:has(figcaption:hover) > img {
+body > figure:has(figcaption:hover) > img {
   margin: 45px auto;
   object-fit: contain;
   width: auto;
@@ -44,7 +44,7 @@ figure:has(figcaption:hover) > img {
   border: solid 1px #fff;
 }
 
-figcaption {
+body > figure > figcaption {
   position: absolute;
   bottom: 5px;
   right: 20px;
@@ -55,7 +55,7 @@ figcaption {
   background-color: #fff0;
   padding: 0;
 }
-figcaption:hover {
+body > figure > figcaption:hover {
   font-size: 1rem;
   padding: 5px;
   background-color: var(--c-fg);
@@ -70,8 +70,8 @@ figcaption:hover {
   }
 }
 
-figure::before,
-figure::after {
+body > figure::before,
+body > figure::after {
   content: "";
 
   position: absolute;
@@ -85,12 +85,12 @@ figure::after {
   animation-delay: 0.1s, 0.4s;
 }
 
-figure::after {
+body > figure::after {
   animation: borderGoWide 0.3s ease-out forwards, borderGoToBottom 0.3s ease-out forwards;
   animation-delay: 0.1s, 0.4s;
 }
-figure:has(figcaption:hover)::after,
-figure:has(figcaption:hover)::before {
+body > figure:has(figcaption:hover)::after,
+body > figure:has(figcaption:hover)::before {
   background: #fff0;
 }
 
