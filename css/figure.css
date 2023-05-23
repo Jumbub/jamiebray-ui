@@ -3,6 +3,8 @@
 body > figure {
   --offset: 20px;
 
+  position: relative;
+
   grid-row-start: 1;
   grid-column-start: 1;
 
@@ -12,11 +14,9 @@ body > figure {
   height: 100%;
   margin: 0;
 }
-body > figure:has(figcaption:hover) {
-  font-size: 1.2rem;
-}
 
 body > figure > img {
+  position: absolute;
   display: block;
 
   inset: 0;
@@ -31,8 +31,14 @@ body > figure > img {
 
   filter: blur(10px);
   animation: unBlur 0.5s ease-out forwards;
-  animation-delay: 0.3s;
+  animation-delay: 2s;
   transition: height 0.3s;
+}
+
+@media only screen and (min-width: 1920px) {
+  body > figure > img {
+    content: url("webp/2k-80.webp");
+  }
 }
 
 body > figure:has(figcaption:hover) > img {
