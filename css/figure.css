@@ -37,7 +37,7 @@ body > figure > img {
 
 @media only screen and (min-width: 1920px) {
   body > figure > img {
-    content: url("webp/2k-80.webp");
+    content: url("../webp/pyrenees-2k-80q.webp");
   }
 }
 
