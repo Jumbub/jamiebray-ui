@@ -1,6 +1,3 @@
-@import "keyframes.css";
-@import "fonts.css";
-
 address {
   position: absolute;
   left: var(--offset);
