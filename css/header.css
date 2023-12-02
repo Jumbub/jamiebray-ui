@@ -44,6 +44,44 @@ header > h1 {
   }
 }
 
+@keyframes outline {
+  from {
+    stroke-dasharray: var(--stroke-offset);
+    stroke-dashoffset: var(--stroke-offset);
+  }
+  to {
+    stroke-dasharray: var(--stroke-offset);
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes header-svg-in {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
 header > svg {
   grid-row-start: 1;
   grid-column-start: 1;
@@ -68,17 +106,6 @@ header > svg {
     fadeOut 0.3s ease-in forwards;
   animation-delay: 0.35s, 0.35s, 0.2s, 2s;
 }
-
-@keyframes header-svg-in {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
-
-/*  */
 
 @media only screen and (max-width: 800px) {
   header {
