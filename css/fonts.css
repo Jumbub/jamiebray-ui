@@ -1,5 +1,7 @@
-@import "https://fonts.googleapis.com/css?family=Major+Mono+Display";
-
+@font-face {
+  font-family: "Major Mono Display";
+  src: url("/woff2/MajorMonoDisplay-Regular.woff2") format("woff2");
+}
 @font-face {
   font-family: "LineIcons";
   src: url("/woff2/fa-regular-400.woff2") format("woff2");
