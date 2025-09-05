@@ -124,26 +124,8 @@ nav > a:hover::before {
 
 /*  */
 
-@media only screen and (max-width: 800px) {
-  nav {
-    display: none;
-  }
-}
 @media (hover: none) {
   nav {
-    left: calc(50% - var(--size-wide) / 2);
-    width: var(--size-wide);
-    background-color: #ffff;
-  }
-  nav > a {
-    color: rgba(30, 40, 75, 1);
-    text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
-    font-size: 1rem;
-  }
-  nav > a::before {
-    color: rgba(30, 40, 75, 1);
-    text-shadow: rgba(0, 0, 0, 0.3) -1px 1px 10px;
-
-    margin-left: 0;
+    display: none;
   }
 }

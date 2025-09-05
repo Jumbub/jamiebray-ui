@@ -59,7 +59,10 @@
   animation: #resume-a-in 0.2s ease-out forwards;
   animation-delay: var(--delay);
   animation-fill-mode: backwards;
-  transition: 0.1s height, 0.3s color, 0.1s text-shadow;
+  transition:
+    0.1s height,
+    0.3s color,
+    0.1s text-shadow;
 }
 
 @keyframes #resume-a-in {
@@ -99,7 +102,9 @@
   background-color: #ffff;
   border-radius: 0 0 calc(var(--size) / 2.1) calc(var(--size) / 2.1);
 
-  transition: 0.2s height, 0.2s color;
+  transition:
+    0.2s height,
+    0.2s color;
   transition-delay: 0s, 0s;
 
   text-overflow: ellipsis;
@@ -114,7 +119,10 @@
 }
 #resume > a:hover::before {
   height: calc(var(--height) + 1px);
-  transition: 0.1s height, 0.3s color, 0.1s text-shadow;
+  transition:
+    0.1s height,
+    0.3s color,
+    0.1s text-shadow;
   transition-delay: 0s, 0.01s, 0.01s;
 }
 #resume > a[href*="export"]:hover::before {
@@ -134,13 +142,15 @@
   text-shadow: 1px 1px 2px black;
 
   animation: idleContact 3s linear both infinite;
-  transition: all 0.3s, font-size 0s;
+  transition:
+    all 0.3s,
+    font-size 0s;
 }
 
 #resume > a:focus::after {
-  animation: 1s #resume-a-focus-after;
+  animation: 1s resume-a-focus-after;
 }
-@keyframes #resume-a-focus-after {
+@keyframes resume-a-focus-after {
   from {
     transform: scale(1) translateY(0);
   }
@@ -164,7 +174,9 @@
   background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 2px, rgba(10, 102, 194, 0.4) -1px 1px 40px;
+  text-shadow:
+    rgba(10, 102, 194, 0.2) -1px 1px 2px,
+    rgba(10, 102, 194, 0.4) -1px 1px 40px;
 }
 
 /*  */
@@ -189,7 +201,10 @@
 
   #resume > a::before {
     height: calc(var(--height) + 1px);
-    transition: 0.1s height, 0.3s color, 0.1s text-shadow;
+    transition:
+      0.1s height,
+      0.3s color,
+      0.1s text-shadow;
     transition-delay: 0s, 0.01s, 0.01s;
   }
 
@@ -202,16 +217,28 @@
     background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 2px, rgba(10, 102, 194, 0.4) -1px 1px 40px;
+    text-shadow:
+      rgba(10, 102, 194, 0.2) -1px 1px 2px,
+      rgba(10, 102, 194, 0.4) -1px 1px 40px;
   }
 }
 
-/*  */
-
-@media only screen and (max-width: 800px) {
+@media (hover: none) {
   #resume {
     height: 30%;
     z-index: 2;
+
+    opacity: 0;
+    animation: 0.1s resss linear forwards;
+    animation-delay: 2s;
+  }
+  @keyframes resss {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   #resume > h2,
   #resume > iframe {
@@ -226,12 +253,7 @@
     text-indent: 15px;
     color: rgba(24, 118, 213, 1);
   }
-  @media (hover: none) {
-    #resume > a[href*="export"]::before {
-      content: "Resume";
-    }
-  }
-  #resume > a[href*="export"]:hover::before {
+  #resume > a[href*="export"]::before {
     content: "Resume";
   }
   #resume > a[href*="export"]::after {

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Jamie Bray</title>
@@ -10,17 +10,32 @@
       @import "css/section-resume.css";
       @import "css/figure.css";
       @import "css/nav.css";
-      @font-face { font-family: "Major Mono Display"; src: url("/woff2/MajorMonoDisplay-Regular.woff2") format("woff2"); }
-      @font-face { font-family: "LineIcons"; src: url("/woff2/fa-regular-400.woff2") format("woff2"); }
-      @font-face { font-family: "BrandIcons"; src: url("/woff2/fa-brands-400.woff2") format("woff2"); }
+      @font-face {
+        font-family: "Major Mono Display";
+        src: url("/woff2/MajorMonoDisplay-Regular.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "LineIcons";
+        src: url("/woff2/fa-regular-400.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "BrandIcons";
+        src: url("/woff2/fa-brands-400.woff2") format("woff2");
+      }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <section id="resume">
       <h2>Resume</h2>
-      <a href="https://docs.google.com/document/export?format=pdf&id=1FESs3u2h9QKAIyUuv-CUKS9Zg28KG-thU6V0lXFWen8&includes_info_params=true">Download resume</a>
-      <iframe loading="lazy" src="https://docs.google.com/document/d/e/2PACX-1vTkjRqBL4FggNhesUUeCp8u9Qdqgbb_WZMoIskLHLQcVicOmU_fLbkHhhPIiBEi2QwLHWtcL2GpnL5x/pub?embedded=true"></iframe>
+      <a
+        href="https://docs.google.com/document/export?format=pdf&id=1FESs3u2h9QKAIyUuv-CUKS9Zg28KG-thU6V0lXFWen8&includes_info_params=true"
+        >Download resume</a
+      >
+      <iframe
+        loading="lazy"
+        src="https://docs.google.com/document/d/e/2PACX-1vTkjRqBL4FggNhesUUeCp8u9Qdqgbb_WZMoIskLHLQcVicOmU_fLbkHhhPIiBEi2QwLHWtcL2GpnL5x/pub?embedded=true"
+      ></iframe>
     </section>
 
     <figure>
@@ -31,13 +46,9 @@
     <header>
       <h1>Jamie Bray</h1>
       <svg alt="Animated Name">
-        <text y="90%">Jamie Bray</text>
+        <text text-anchor="middle" dominant-baseline="central" x="50%" y="50%">Jamie Bray</text>
       </svg>
     </header>
-
-    <nav>
-      <a href="#resume">Resume</a>
-    </nav>
 
     <address>
       <a href="https://github.com/jumbub">GitHub</a>
@@ -45,5 +56,9 @@
       <a href="https://instagram.com/jamie__bray">Instagram</a>
       <a href="mailto://jamie@jamiebray.xyz">Email</a>
     </address>
+
+    <nav>
+      <a href="#resume">Resume</a>
+    </nav>
   </body>
 </html>

@@ -13,7 +13,6 @@ header {
   line-height: 6rem;
   height: 6rem;
   text-align: center;
-  margin-right: 1ch;
 }
 
 header > h1 {
@@ -87,45 +86,33 @@ header > svg {
   grid-column-start: 1;
   place-self: center;
 
-  width: 10ch;
+  width: 100%;
   height: 100%;
-
-  padding-left: 3px;
-  padding-bottom: 3px;
 
   fill: #0000;
   stroke: var(--c-fg);
-  stroke-width: 2px;
 
   --stroke-offset: 400;
   stroke-dasharray: var(--stroke-offset);
   stroke-dashoffset: var(--stroke-offset);
 
   transform: scaleY(0);
-  animation: header-svg-in 0.2s ease-out forwards, fadeIn 0.3s ease-out forwards, outline 2s linear forwards,
+  animation:
+    header-svg-in 0.2s ease-out forwards,
+    fadeIn 0.3s ease-out forwards,
+    outline 2s linear forwards,
     fadeOut 0.3s ease-in forwards;
   animation-delay: 0.35s, 0.35s, 0.2s, 2s;
 }
+header > svg > text {
+  font-size: 6.15rem;
+}
 
 @media only screen and (max-width: 800px) {
-  header {
-    margin-right: 0;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    right: 50%;
-  }
   header > h1 {
-    margin-right: 0;
     font-size: calc(100dvw / 8);
-    overflow-x: hidden;
   }
-  header > svg {
-    --stroke-offset: 200;
-    stroke-width: 1.5px;
-    margin-right: 0;
-    font-size: calc(100dvw / 8);
-    margin-bottom: calc(100dvh / 25);
-    overflow-x: hidden;
+  header > svg > text {
+    font-size: calc(100dvw / 8 * 1.02);
   }
 }

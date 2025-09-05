@@ -33,11 +33,11 @@ body > figure > img {
   transition: height 0.3s;
 }
 
-@media only screen and (min-width: 1920px) {
-  body > figure > img {
-    content: url("../webp/pyrenees-2k-80q.webp");
-  }
-}
+/* @media only screen and (min-width: 1920px) { */
+/*   body > figure > img { */
+/*     content: url("../webp/pyrenees-2k-80q.webp"); */
+/*   } */
+/* } */
 
 body > figure:has(figcaption:hover) > img {
   margin: 45px auto;
@@ -85,12 +85,16 @@ body > figure::after {
   background: #ffff;
   height: var(--line-size);
 
-  animation: borderGoWide 0.3s ease-out forwards, borderGoToTop 0.3s ease-out forwards;
+  animation:
+    borderGoWide 0.3s ease-out forwards,
+    borderGoToTop 0.3s ease-out forwards;
   animation-delay: 0.1s, 0.4s;
 }
 
 body > figure::after {
-  animation: borderGoWide 0.3s ease-out forwards, borderGoToBottom 0.3s ease-out forwards;
+  animation:
+    borderGoWide 0.3s ease-out forwards,
+    borderGoToBottom 0.3s ease-out forwards;
   animation-delay: 0.1s, 0.4s;
 }
 body > figure:has(figcaption:hover)::after,

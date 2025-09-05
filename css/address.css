@@ -77,7 +77,9 @@ address > a::before {
   background-color: #ffff;
   border-radius: calc(var(--size) / 2.1) calc(var(--size) / 2.1) 0 0;
 
-  transition: 0.2s height, 0.2s color;
+  transition:
+    0.2s height,
+    0.2s color;
   transition-delay: 0s, 0s;
 
   font-size: 1rem;
@@ -90,7 +92,10 @@ address > a::before {
 }
 address > a:hover::before {
   height: calc(var(--height) + 1px);
-  transition: 0.1s height, 0.3s color, 0.1s text-shadow;
+  transition:
+    0.1s height,
+    0.3s color,
+    0.1s text-shadow;
   transition-delay: 0s, 0.01s, 0.01s;
 }
 address > a[href*="linkedin"]:hover::before {
@@ -110,7 +115,9 @@ address > a[href*="instagram"]:hover::before {
 address > a[href*="mailto"]:hover::before {
   content: "Email";
   text-indent: calc(var(--size) * 1);
-  text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 2px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
+  text-shadow:
+    rgba(255, 200, 0, 0.2) -1px 1px 2px,
+    rgba(255, 200, 0, 0.5) -1px 1px 40px;
   color: rgba(238, 157, 0, 1);
 }
 
@@ -129,7 +136,9 @@ address > a::after {
   text-shadow: 1px 1px 2px black;
 
   animation: idleContact 3s linear both infinite;
-  transition: all 0.3s, font-size 0s;
+  transition:
+    all 0.3s,
+    font-size 0s;
 }
 
 address > a[href*="linkedin"]::after {
@@ -170,7 +179,9 @@ address > a[href*="linkedin"]:hover::after {
   background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 2px, rgba(10, 102, 194, 0.4) -1px 1px 40px;
+  text-shadow:
+    rgba(10, 102, 194, 0.2) -1px 1px 2px,
+    rgba(10, 102, 194, 0.4) -1px 1px 40px;
 }
 address > a[href*="github"]:hover::after {
   background: radial-gradient(circle, rgba(64, 78, 152, 1) 20%, rgba(0, 0, 0, 1) 100%);
@@ -188,7 +199,9 @@ address > a[href*="mailto"]:hover::after {
   background: radial-gradient(circle, rgba(238, 157, 0, 1) 0%, rgba(175, 150, 0, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 2px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
+  text-shadow:
+    rgba(255, 200, 0, 0.2) -1px 1px 2px,
+    rgba(255, 200, 0, 0.5) -1px 1px 40px;
 }
 
 /*  */
@@ -213,25 +226,12 @@ address > a[href*="mailto"]:hover::after {
 /*  */
 
 @media (hover: none) {
-  address > a[href*="github"] {
-    --height: 200px;
-    order: 2;
-  }
-  address > a[href*="linkedin"] {
-    --height: 240px;
-    order: 3;
-  }
-  address > a[href*="instagram"] {
-    --height: 280px;
-    order: 4;
-  }
-  address > a[href*="mail"] {
-    --height: 160px;
-    order: 1;
-  }
   address > a::before {
     height: calc(var(--height) + 1px);
-    transition: 0.1s height, 0.3s color, 0.1s text-shadow;
+    transition:
+      0.1s height,
+      0.3s color,
+      0.1s text-shadow;
     transition-delay: 0s, 0.01s, 0.01s;
   }
   address > a[href*="linkedin"]::before {
@@ -251,7 +251,9 @@ address > a[href*="mailto"]:hover::after {
   address > a[href*="mailto"]::before {
     content: "Email";
     text-indent: calc(var(--size) * 1);
-    text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 2px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
+    text-shadow:
+      rgba(255, 200, 0, 0.2) -1px 1px 2px,
+      rgba(255, 200, 0, 0.5) -1px 1px 40px;
     color: rgba(238, 157, 0, 1);
   }
 
@@ -259,7 +261,9 @@ address > a[href*="mailto"]:hover::after {
     background: radial-gradient(circle, rgba(24, 118, 213, 1) 0%, rgba(10, 102, 194, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: rgba(10, 102, 194, 0.2) -1px 1px 2px, rgba(10, 102, 194, 0.4) -1px 1px 40px;
+    text-shadow:
+      rgba(10, 102, 194, 0.2) -1px 1px 2px,
+      rgba(10, 102, 194, 0.4) -1px 1px 40px;
   }
   address > a[href*="github"]::after {
     background: radial-gradient(circle, rgba(64, 78, 152, 1) 20%, rgba(0, 0, 0, 1) 100%);
@@ -277,14 +281,14 @@ address > a[href*="mailto"]:hover::after {
     background: radial-gradient(circle, rgba(238, 157, 0, 1) 0%, rgba(175, 150, 0, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: rgba(255, 200, 0, 0.2) -1px 1px 2px, rgba(255, 200, 0, 0.5) -1px 1px 40px;
+    text-shadow:
+      rgba(255, 200, 0, 0.2) -1px 1px 2px,
+      rgba(255, 200, 0, 0.5) -1px 1px 40px;
   }
 
-  /*  */
-
   :target ~ address > a {
+    box-shadow: 2px 2px 4px #0009;
     transition: height 0.1s;
-    --height: var(--size);
-    overflow: hidden;
+    height: var(--height);
   }
 }
