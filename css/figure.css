@@ -11,6 +11,20 @@ body > figure {
   width: 100%;
   height: 100%;
   margin: 0;
+
+  background:
+      /* Alpine sky */
+    linear-gradient(180deg, #83b5ef 0%, #8dbbf0 17%, #a2c9f3 23%, transparent 34%),
+    /* Distant mountain peaks */ radial-gradient(ellipse 35% 19% at 72% 31%, #a7a89e 0%, #788ca5 55%, transparent 100%),
+    radial-gradient(ellipse 38% 17% at 28% 32%, #879bb4 0%, #627b99 65%, transparent 100%),
+    /* Mountain shadows */
+    linear-gradient(190deg, transparent 27%, #8294a8 30%, #596f89 39%, #52677f 48%, transparent 57%),
+    /* Rocky ridge */ radial-gradient(ellipse 65% 23% at 40% 61%, #77766b 0%, #55584f 55%, transparent 100%),
+    /* Rocky shadows */ linear-gradient(160deg, transparent 46%, #45483e 55%, #64634f 66%, transparent 72%),
+    /* Alpine grass */ radial-gradient(ellipse 75% 20% at 72% 83%, #829054 0%, #73834b 55%, transparent 100%),
+    linear-gradient(180deg, transparent 65%, #84915a 77%, #667944 91%, #485c35 100%);
+
+  background-color: #667b80;
 }
 
 body > figure > img {
@@ -32,12 +46,6 @@ body > figure > img {
   animation-delay: 2s;
   transition: height 0.3s;
 }
-
-/* @media only screen and (min-width: 1920px) { */
-/*   body > figure > img { */
-/*     content: url("../webp/pyrenees-2k-80q.webp"); */
-/*   } */
-/* } */
 
 body > figure:has(figcaption:hover) > img {
   margin: 45px auto;
